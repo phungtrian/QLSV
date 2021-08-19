@@ -1,0 +1,10 @@
+D:\DoAn\QLSV\QLSV\bin\Release\QLSV.exe.config
+D:\DoAn\QLSV\QLSV\bin\Release\QLSV.exe
+D:\DoAn\QLSV\QLSV\bin\Release\QLSV.pdb
+D:\DoAn\QLSV\QLSV\obj\Release\QLSV.csprojAssemblyReference.cache
+D:\DoAn\QLSV\QLSV\obj\Release\QLSV.frmMain.resources
+D:\DoAn\QLSV\QLSV\obj\Release\QLSV.Properties.Resources.resources
+D:\DoAn\QLSV\QLSV\obj\Release\QLSV.csproj.GenerateResource.cache
+D:\DoAn\QLSV\QLSV\obj\Release\QLSV.csproj.CoreCompileInputs.cache
+D:\DoAn\QLSV\QLSV\obj\Release\QLSV.exe
+D:\DoAn\QLSV\QLSV\obj\Release\QLSV.pdb
