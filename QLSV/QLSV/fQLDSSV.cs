@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLSV
 {
-    public partial class QLMH : Form
+    public partial class fQLDSSV : Form
     {
-        public QLMH()
+        public fQLDSSV()
         {
             InitializeComponent();
         }

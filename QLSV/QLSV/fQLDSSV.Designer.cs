@@ -1,7 +1,7 @@
 ﻿
 namespace QLSV
 {
-    partial class QLGV
+    partial class fQLDSSV
     {
         /// <summary>
         /// Required designer variable.
@@ -55,8 +55,7 @@ namespace QLSV
             this.txtTuKhoa.Name = "txtTuKhoa";
             this.txtTuKhoa.Size = new System.Drawing.Size(326, 35);
             this.txtTuKhoa.TabIndex = 1;
-            this.txtTuKhoa.Text = "Nhập tên giảng viên";
-            this.txtTuKhoa.Enter += new System.EventHandler(this.txtTuKhoa_Enter);
+            this.txtTuKhoa.Text = "Nhập tên sinh viên";
             // 
             // btTraCuu
             // 
@@ -75,7 +74,7 @@ namespace QLSV
             this.groupBox2.Size = new System.Drawing.Size(1079, 551);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Bảng thông tin giảng viên";
+            this.groupBox2.Text = "Bảng thông tin sinh viên";
             // 
             // dataGridView
             // 
@@ -93,9 +92,9 @@ namespace QLSV
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(364, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(501, 60);
+            this.label1.Size = new System.Drawing.Size(469, 60);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Danh Sách Giảng Viên";
+            this.label1.Text = "Danh Sách Sinh Viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btThem
@@ -107,9 +106,8 @@ namespace QLSV
             this.btThem.TabIndex = 6;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
-            // QLGV
+            // fQLDSSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,8 +117,8 @@ namespace QLSV
             this.Controls.Add(this.txtTuKhoa);
             this.Controls.Add(this.btTraCuu);
             this.Controls.Add(this.groupBox2);
-            this.Name = "QLGV";
-            this.Text = "QLMH";
+            this.Name = "fQLDSSV";
+            this.Text = "QLSV";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

@@ -1,7 +1,7 @@
 ﻿
 namespace QLSV
 {
-    partial class QLMH
+    partial class fQLDSMH
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,6 @@ namespace QLSV
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btTraCuu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -67,7 +66,6 @@ namespace QLSV
             this.groupBox1.Controls.Add(this.txtTuKhoa);
             this.groupBox1.Controls.Add(this.btTraCuu);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(227, 128);
@@ -104,10 +102,12 @@ namespace QLSV
             // txtTuKhoa
             // 
             this.txtTuKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuKhoa.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtTuKhoa.Location = new System.Drawing.Point(176, 188);
             this.txtTuKhoa.Name = "txtTuKhoa";
             this.txtTuKhoa.Size = new System.Drawing.Size(326, 39);
             this.txtTuKhoa.TabIndex = 1;
+            this.txtTuKhoa.Text = "Nhập tên môn học";
             // 
             // btTraCuu
             // 
@@ -126,15 +126,6 @@ namespace QLSV
             this.label4.Size = new System.Drawing.Size(74, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Số tín chỉ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Từ khóa";
             // 
             // label3
             // 
@@ -213,7 +204,7 @@ namespace QLSV
             this.label1.Text = "Danh Sách Môn Học";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // QLMH
+            // fQLDSMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,7 +213,7 @@ namespace QLSV
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "QLMH";
+            this.Name = "fQLDSMH";
             this.Text = "QLMH";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -244,7 +235,6 @@ namespace QLSV
         private System.Windows.Forms.TextBox txtTuKhoa;
         private System.Windows.Forms.Button btTraCuu;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;

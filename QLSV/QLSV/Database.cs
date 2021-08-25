@@ -31,7 +31,7 @@ namespace QLSV
             }
 
         }
-        public DataTable SelectData()
+        public DataTable SelectData(string sql, List<CustomParameter> lstPara)
         {
             try
             {

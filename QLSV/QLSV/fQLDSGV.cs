@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLSV
 {
-    public partial class QLGV : Form
+    public partial class fQLDSGV : Form
     {
-        public QLGV()
+        public fQLDSGV()
         {
             InitializeComponent();
         }
@@ -29,6 +29,19 @@ namespace QLSV
         private void btThem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private string tukhoa = "";
+        private void loadDSGV()
+        {
+            string sql = "selectAllGV";
+            List<CustomParameter> lstPara = new List<CustomParameter>();
+            lstPara.Add(new CustomParameter()
+            {
+                key = "@tukhoa",
+                value = tukhoa
+            });
+            dataGridView.DataSource = new Database().SelectData(sql, lstPara);
         }
     }
 }
