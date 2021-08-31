@@ -36,16 +36,19 @@ namespace QLSV
             try
             {
                 conn.Open();
-                sql = "select * from SinhVien";
-                cmd = new SqlCommand(sql, conn);
+                cmd = new SqlCommand(sql, conn);//nội dung sql đc truyền vào
+                cmd.CommandType = CommandType.Text;//set command type cho cmd
+                foreach (var para in lstPara)//gán các tham số cho cmd
+                {
+                    cmd.Parameters.AddWithValue(para.key, para.value);
+                }
                 dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
                 return dt;
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Lỗi Load dữ liệu: " + ex.Message);
+                MessageBox.Show("Lỗi load dữ liệu: " + ex.Message);
                 return null;
             }
             finally
