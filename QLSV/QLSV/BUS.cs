@@ -15,6 +15,7 @@ namespace QLSV
             da = new DAO();
         }
 
+        //bắt đầu form DSMH
         public void DSMonHoc(DataGridView dg)
         {
             dg.DataSource = da.LayDSMonHoc();
@@ -34,5 +35,15 @@ namespace QLSV
 
             }
         }
+        //kết thúc form DSMH
+
+        //bắt đầu form DSSV
+
+        public void DSSinhVien(DataGridView dg)
+        {
+            dg.DataSource = da.LayDSSinhVIen();
+        }
+
+        //kết thúc form DSSV
     }
 }

@@ -47,5 +47,22 @@ namespace QLSV
             db.MonHocs.InsertOnSubmit(monHoc);
             db.SubmitChanges();
         }
+
+        public dynamic LayDSSinhVIen()
+        {
+            
+            dynamic dsSV = db.SinhViens.Select(s => new
+            {
+                s.maSinhVien,
+                s.Ho,
+                s.Ten,
+                s.gioiTinh,
+                s.namSinh,
+                s.diaChi,
+                s.queQuan,
+                s.dienThoai
+            });
+            return dsSV;
+        }
     }
 }
