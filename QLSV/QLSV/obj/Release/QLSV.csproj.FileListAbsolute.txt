@@ -24,3 +24,16 @@ C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.csproj.GenerateResource.cache
 C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.csproj.CoreCompileInputs.cache
 C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.exe
 C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.pdb
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.csprojAssemblyReference.cache
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.fQLDSSV.resources
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.frmMain.resources
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.Properties.Resources.resources
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.fQLDSGV.resources
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.fQLDSMH.resources
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.csproj.GenerateResource.cache
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.csproj.CoreCompileInputs.cache
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.exe
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.pdb
+D:\gitDoAn\QLSV\QLSV\bin\Release\QLSV.exe.config
+D:\gitDoAn\QLSV\QLSV\bin\Release\QLSV.exe
+D:\gitDoAn\QLSV\QLSV\bin\Release\QLSV.pdb

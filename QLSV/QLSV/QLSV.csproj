@@ -47,9 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS_DSMH.cs" />
+    <Compile Include="BUS.cs" />
     <Compile Include="CustomParameter.cs" />
-    <Compile Include="DAO_DSMH.cs" />
+    <Compile Include="DAO.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="fQLDSSV.cs">
       <SubType>Form</SubType>

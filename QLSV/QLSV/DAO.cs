@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace QLSV
 {
-    class DAO_DSMH
+    class DAO
     {
         QLSVDataContext db;
-        public DAO_DSMH()
+        public DAO()
         {
             db = new QLSVDataContext();
         }
