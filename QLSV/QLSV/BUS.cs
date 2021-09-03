@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace QLSV
 {
-    class BUS_DSMH
+    class BUS
     {
-        DAO_DSMH da;
-        public BUS_DSMH()
+        DAO da;
+        public BUS()
         {
-            da = new DAO_DSMH();
+            da = new DAO();
         }
 
         public void DSMonHoc(DataGridView dg)

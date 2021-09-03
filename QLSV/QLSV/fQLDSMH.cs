@@ -12,11 +12,11 @@ namespace QLSV
 {
     public partial class fQLDSMH : Form
     {
-        BUS_DSMH busDSMH;
+        BUS busDSMH;
         public fQLDSMH()
         {
             InitializeComponent();
-            busDSMH = new BUS_DSMH();
+            busDSMH = new BUS();
         }
 
         private void fQLDSMH_Load(object sender, EventArgs e)
