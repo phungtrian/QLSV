@@ -34,11 +34,11 @@ namespace QLSV
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btTraCuu = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.dgvDSGV = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSGV)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -69,7 +69,7 @@ namespace QLSV
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView);
+            this.groupBox2.Controls.Add(this.dgvDSGV);
             this.groupBox2.Location = new System.Drawing.Point(41, 309);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1079, 551);
@@ -77,15 +77,15 @@ namespace QLSV
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bảng thông tin giảng viên";
             // 
-            // dataGridView
+            // dgvDSGV
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(6, 25);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersWidth = 62;
-            this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(1067, 520);
-            this.dataGridView.TabIndex = 0;
+            this.dgvDSGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSGV.Location = new System.Drawing.Point(6, 25);
+            this.dgvDSGV.Name = "dgvDSGV";
+            this.dgvDSGV.RowHeadersWidth = 62;
+            this.dgvDSGV.RowTemplate.Height = 28;
+            this.dgvDSGV.Size = new System.Drawing.Size(1067, 520);
+            this.dgvDSGV.TabIndex = 0;
             // 
             // label1
             // 
@@ -122,7 +122,7 @@ namespace QLSV
             this.Name = "fQLDSGV";
             this.Text = "QLGV";
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,7 +134,7 @@ namespace QLSV
         private System.Windows.Forms.TextBox txtTuKhoa;
         private System.Windows.Forms.Button btTraCuu;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dgvDSGV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btThem;
     }

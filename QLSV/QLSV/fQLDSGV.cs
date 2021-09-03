@@ -31,17 +31,17 @@ namespace QLSV
 
         }
 
-        private string tukhoa = "";
-        private void loadDSGV()
-        {
-            string sql = "selectAllGV";
-            List<CustomParameter> lstPara = new List<CustomParameter>();
-            lstPara.Add(new CustomParameter()
-            {
-                key = "@tukhoa",
-                value = tukhoa
-            });
-            dataGridView.DataSource = new Database().SelectData(sql, lstPara);
-        }
+        //private string tukhoa = "";
+        //private void loadDSGV()
+        //{
+        //    string sql = "selectAllGV";
+        //    List<CustomParameter> lstPara = new List<CustomParameter>();
+        //    lstPara.Add(new CustomParameter()
+        //    {
+        //        key = "@tukhoa",
+        //        value = tukhoa
+        //    });
+        //    dgvDSGV.DataSource = new Database().SelectData(sql, lstPara);
+        //}
     }
 }

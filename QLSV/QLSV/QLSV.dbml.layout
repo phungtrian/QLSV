@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.5" name="QLSV">
+  <DataContextMoniker Name="/QLSVDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5676b901-87e2-4997-bd48-66eeb63afe87" absoluteBounds="5.125, 3, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/QLSVDataContext/Diem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="833b2988-48f5-4fdd-bdbb-e31b870b7c1a" absoluteBounds="5.1400000000000006, 3.4600000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e403daa8-d767-4a00-8a35-359c2d0b3c15" absoluteBounds="1.5, 1.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QLSVDataContext/MonHoc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8f755f2-c4fb-4ad9-aa5e-1fa20a753ce6" absoluteBounds="1.5150000000000001, 2.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9bb6546f-bf92-4b51-8b8f-8d431bf26405" absoluteBounds="1.375, 4.75, 2, 3.1170068359375014">
+      <DataClassMoniker Name="/QLSVDataContext/GiangVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae15c546-4ae4-4c60-8456-ce567b7f2392" absoluteBounds="1.3900000000000001, 5.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="befdde61-422c-4e74-b6f0-5b1be8de6d8b" absoluteBounds="3.5, 8.125, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/QLSVDataContext/SinhVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64081b0f-b4ae-4725-b7c9-63fdf1b7ba2c" absoluteBounds="3.515, 8.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="91e8487c-7f9c-4476-9b8f-5153dac9dcf7" absoluteBounds="6.5, 6, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/QLSVDataContext/TaiKhoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c04b739-74de-452f-86a1-21e510658dec" absoluteBounds="6.5150000000000006, 6.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 3.45274983723958); (5.125 : 3.45274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLSVDataContext/MonHoc/MonHoc_Diem" />
+      <nodes>
+        <classShapeMoniker Id="e403daa8-d767-4a00-8a35-359c2d0b3c15" />
+        <classShapeMoniker Id="5676b901-87e2-4997-bd48-66eeb63afe87" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.375 : 5.14505126953125); (4.22916416666667 : 5.14505126953125 : JumpStart); (4.39583083333333 : 5.14505126953125 : JumpEnd); (5.125 : 5.14505126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLSVDataContext/GiangVien/GiangVien_Diem" />
+      <nodes>
+        <classShapeMoniker Id="9bb6546f-bf92-4b51-8b8f-8d431bf26405" />
+        <classShapeMoniker Id="5676b901-87e2-4997-bd48-66eeb63afe87" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.3124975 : 8.125); (4.3124975 : 4.29890055338542); (5.125 : 4.29890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLSVDataContext/SinhVien/SinhVien_Diem" />
+      <nodes>
+        <classShapeMoniker Id="befdde61-422c-4e74-b6f0-5b1be8de6d8b" />
+        <classShapeMoniker Id="5676b901-87e2-4997-bd48-66eeb63afe87" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

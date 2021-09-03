@@ -19,7 +19,7 @@ namespace QLSV
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            var db = new Database();
+            //var db = new Database();
             //dgvData.DataSource = db.SelectData();
         }
     }

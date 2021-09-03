@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSV" Class="QLSVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QLSV;User ID=sa" SettingsObjectName="QLSV.Properties.Settings" SettingsPropertyName="QLSVConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Diem" Member="Diems">
+    <Type Name="Diem">
+      <Column Name="maMonHoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maGiangVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maSinhVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="diemGV1" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="diemGV2" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nguoiCapNhat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="MonHoc_Diem" Member="MonHoc" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="MonHoc" IsForeignKey="true" />
+      <Association Name="GiangVien_Diem" Member="GiangVien" ThisKey="maGiangVien" OtherKey="maGiangVien" Type="GiangVien" IsForeignKey="true" />
+      <Association Name="SinhVien_Diem" Member="SinhVien" ThisKey="maSinhVien" OtherKey="maSinhVien" Type="SinhVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MonHoc" Member="MonHocs">
+    <Type Name="MonHoc">
+      <Column Name="maMonHoc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenMonHoc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="soTinChi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nguoiCapNhat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="MonHoc_Diem" Member="Diems" ThisKey="maMonHoc" OtherKey="maMonHoc" Type="Diem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GiangVien" Member="GiangViens">
+    <Type Name="GiangVien">
+      <Column Name="maGiangVien" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ho" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gioiTinh" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="namSinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="diaChi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="soDienThoai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nguoiCapNhat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="GiangVien_Diem" Member="Diems" ThisKey="maGiangVien" OtherKey="maGiangVien" Type="Diem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SinhVien" Member="SinhViens">
+    <Type Name="SinhVien">
+      <Column Name="maSinhVien" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ho" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gioiTinh" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="namSinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="queQuan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dienThoai" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="diaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nguoiTao" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nguoiCapNhat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SinhVien_Diem" Member="Diems" ThisKey="maSinhVien" OtherKey="maSinhVien" Type="Diem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoan" Member="TaiKhoans">
+    <Type Name="TaiKhoan">
+      <Column Name="tenTaiKhoan" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="matKhau" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

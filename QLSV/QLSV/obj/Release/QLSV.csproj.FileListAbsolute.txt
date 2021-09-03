@@ -11,3 +11,16 @@ D:\DoAn\QLSV\QLSV\obj\Release\QLSV.pdb
 D:\DoAn\QLSV\QLSV\obj\Release\QLSV.fQLDSSV.resources
 D:\DoAn\QLSV\QLSV\obj\Release\QLSV.fQLDSGV.resources
 D:\DoAn\QLSV\QLSV\obj\Release\QLSV.fQLDSMH.resources
+C:\DoAnNganh\QLSV\QLSV\QLSV\bin\Release\QLSV.exe.config
+C:\DoAnNganh\QLSV\QLSV\QLSV\bin\Release\QLSV.exe
+C:\DoAnNganh\QLSV\QLSV\QLSV\bin\Release\QLSV.pdb
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.csproj.AssemblyReference.cache
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.fQLDSSV.resources
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.frmMain.resources
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.Properties.Resources.resources
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.fQLDSGV.resources
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.fQLDSMH.resources
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.csproj.GenerateResource.cache
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.csproj.CoreCompileInputs.cache
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.exe
+C:\DoAnNganh\QLSV\QLSV\QLSV\obj\Release\QLSV.pdb
