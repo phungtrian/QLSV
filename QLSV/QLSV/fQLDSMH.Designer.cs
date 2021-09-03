@@ -35,7 +35,6 @@ namespace QLSV
             this.txtTinChi = new System.Windows.Forms.TextBox();
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.txtMaMon = new System.Windows.Forms.TextBox();
-            this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btTraCuu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@ namespace QLSV
             this.btCapNhat = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMH)).BeginInit();
@@ -62,9 +62,9 @@ namespace QLSV
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtTinChi);
+            this.groupBox1.Controls.Add(this.txtTuKhoa);
             this.groupBox1.Controls.Add(this.txtTenMon);
             this.groupBox1.Controls.Add(this.txtMaMon);
-            this.groupBox1.Controls.Add(this.txtTuKhoa);
             this.groupBox1.Controls.Add(this.btTraCuu);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
@@ -106,17 +106,6 @@ namespace QLSV
             this.txtMaMon.Size = new System.Drawing.Size(260, 39);
             this.txtMaMon.TabIndex = 1;
             // 
-            // txtTuKhoa
-            // 
-            this.txtTuKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTuKhoa.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.txtTuKhoa.Location = new System.Drawing.Point(176, 188);
-            this.txtTuKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(326, 39);
-            this.txtTuKhoa.TabIndex = 1;
-            this.txtTuKhoa.Visible = false;
-            // 
             // btTraCuu
             // 
             this.btTraCuu.Location = new System.Drawing.Point(528, 188);
@@ -139,7 +128,7 @@ namespace QLSV
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(77, 197);
+            this.label5.Location = new System.Drawing.Point(82, 197);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 20);
             this.label5.TabIndex = 0;
@@ -185,6 +174,7 @@ namespace QLSV
             this.dgvDSMH.RowTemplate.Height = 28;
             this.dgvDSMH.Size = new System.Drawing.Size(1004, 308);
             this.dgvDSMH.TabIndex = 0;
+            this.dgvDSMH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMH_CellClick);
             // 
             // groupBox3
             // 
@@ -229,6 +219,15 @@ namespace QLSV
             this.label1.Text = "Danh Sách Môn Học";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // txtTuKhoa
+            // 
+            this.txtTuKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuKhoa.Location = new System.Drawing.Point(176, 188);
+            this.txtTuKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTuKhoa.Name = "txtTuKhoa";
+            this.txtTuKhoa.Size = new System.Drawing.Size(311, 39);
+            this.txtTuKhoa.TabIndex = 1;
+            // 
             // fQLDSMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -259,7 +258,6 @@ namespace QLSV
         private System.Windows.Forms.TextBox txtTinChi;
         private System.Windows.Forms.TextBox txtTenMon;
         private System.Windows.Forms.TextBox txtMaMon;
-        private System.Windows.Forms.TextBox txtTuKhoa;
         private System.Windows.Forms.Button btTraCuu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -271,5 +269,6 @@ namespace QLSV
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtTuKhoa;
     }
 }

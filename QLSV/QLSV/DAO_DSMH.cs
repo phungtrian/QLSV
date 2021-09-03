@@ -13,10 +13,31 @@ namespace QLSV
         {
             db = new QLSVDataContext();
         }
-        
-        public List<MonHoc> LayDSMonHoc()
+
+        //Cach 1
+        //(trả về danh sách môn học)
+        //public List<MonHoc> LayDSMonHoc()
+        //{
+        //    List<MonHoc> dsMH = db.MonHocs.Select(s => s).ToList();
+        //    return dsMH;
+        //}
+
+        //Cach 2
+        //public IEnumerable<MonHoc> LayDSMonHoc2()
+        //{
+        //    IEnumerable<MonHoc> dsMH = db.MonHocs.Select(s => s);
+        //    return dsMH;
+        //}
+
+        //chỉ lấy những cột muốn lấy thì sử dụng dynamic
+        public dynamic LayDSMonHoc()
         {
-            List<MonHoc> dsMH = db.MonHocs.Select(s => s).ToList();
+            dynamic dsMH = db.MonHocs.Select(s => new
+            {
+                s.maMonHoc,
+                s.tenMonHoc,
+                s.soTinChi
+            });
             return dsMH;
         }
     }

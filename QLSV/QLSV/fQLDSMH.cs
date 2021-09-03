@@ -21,7 +21,21 @@ namespace QLSV
 
         private void fQLDSMH_Load(object sender, EventArgs e)
         {
-            busDSMH.DSMonHoc(dgvDSMH); 
+            busDSMH.DSMonHoc(dgvDSMH);
+            //Chia các cột đều đẹp mắt
+            dgvDSMH.Columns[0].Width = (int)(0.3 * dgvDSMH.Width);
+            dgvDSMH.Columns[1].Width = (int)(0.4 * dgvDSMH.Width);
+            dgvDSMH.Columns[2].Width = (int)(0.25 * dgvDSMH.Width);
+        }
+
+        private void dgvDSMH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvDSMH.Rows.Count )
+            {
+                txtMaMon.Text = dgvDSMH.Rows[e.RowIndex].Cells["maMonHoc"].Value.ToString();
+                txtTenMon.Text = dgvDSMH.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtTinChi.Text = dgvDSMH.Rows[e.RowIndex].Cells[2].Value.ToString(); 
+            }
         }
 
 
