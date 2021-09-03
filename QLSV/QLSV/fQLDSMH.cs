@@ -38,6 +38,13 @@ namespace QLSV
             }
         }
 
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            MonHoc monHoc = new MonHoc();
+            busDSMH.ThemMH(monHoc);
+            busDSMH.DSMonHoc(dgvDSMH);
+        }
+
 
         //private string tukhoa = "";
         //private void LoadDSMH()

@@ -19,5 +19,20 @@ namespace QLSV
         {
             dg.DataSource = da.LayDSMonHoc();
         }
+
+        public void ThemMH(MonHoc monHoc)
+        {
+            try
+            {
+                da.ThemMonHoc(monHoc);
+                MessageBox.Show("Bạn đã thêm môn học thành công!!!");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bạn đã nhập sai!");
+
+            }
+        }
     }
 }

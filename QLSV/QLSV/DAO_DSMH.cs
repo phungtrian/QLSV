@@ -40,5 +40,12 @@ namespace QLSV
             });
             return dsMH;
         }
+
+        //Thêm môn học
+        public void ThemMonHoc(MonHoc monHoc)
+        {
+            db.MonHocs.InsertOnSubmit(monHoc);
+            db.SubmitChanges();
+        }
     }
 }
