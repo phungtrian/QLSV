@@ -45,16 +45,16 @@ namespace QLSV
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTen = new System.Windows.Forms.TextBox();
-            this.txtHo = new System.Windows.Forms.TextBox();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
-            this.txtNamSinh = new System.Windows.Forms.TextBox();
-            this.txtQueQuan = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.btCapNhat = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.btCapNhat = new System.Windows.Forms.Button();
+            this.txtQueQuan = new System.Windows.Forms.TextBox();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtMSSV = new System.Windows.Forms.TextBox();
+            this.txtHo = new System.Windows.Forms.TextBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.dtpNamSinh = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -132,6 +132,7 @@ namespace QLSV
             this.btThem.TabIndex = 6;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // label2
             // 
@@ -198,13 +199,13 @@ namespace QLSV
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpNamSinh);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtSDT);
             this.groupBox1.Controls.Add(this.btCapNhat);
             this.groupBox1.Controls.Add(this.btThem);
             this.groupBox1.Controls.Add(this.txtQueQuan);
-            this.groupBox1.Controls.Add(this.txtNamSinh);
             this.groupBox1.Controls.Add(this.txtGioiTinh);
             this.groupBox1.Controls.Add(this.txtMSSV);
             this.groupBox1.Controls.Add(this.txtHo);
@@ -223,53 +224,14 @@ namespace QLSV
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông TIn Sinh Viên";
             // 
-            // txtTen
+            // label9
             // 
-            this.txtTen.Location = new System.Drawing.Point(438, 32);
-            this.txtTen.Multiline = true;
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(199, 22);
-            this.txtTen.TabIndex = 8;
-            // 
-            // txtHo
-            // 
-            this.txtHo.Location = new System.Drawing.Point(105, 32);
-            this.txtHo.Multiline = true;
-            this.txtHo.Name = "txtHo";
-            this.txtHo.Size = new System.Drawing.Size(263, 22);
-            this.txtHo.TabIndex = 8;
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(438, 63);
-            this.txtGioiTinh.Multiline = true;
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(199, 22);
-            this.txtGioiTinh.TabIndex = 8;
-            // 
-            // txtNamSinh
-            // 
-            this.txtNamSinh.Location = new System.Drawing.Point(105, 105);
-            this.txtNamSinh.Multiline = true;
-            this.txtNamSinh.Name = "txtNamSinh";
-            this.txtNamSinh.Size = new System.Drawing.Size(263, 22);
-            this.txtNamSinh.TabIndex = 8;
-            // 
-            // txtQueQuan
-            // 
-            this.txtQueQuan.Location = new System.Drawing.Point(105, 147);
-            this.txtQueQuan.Multiline = true;
-            this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.Size = new System.Drawing.Size(532, 22);
-            this.txtQueQuan.TabIndex = 8;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(438, 105);
-            this.txtSDT.Multiline = true;
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(196, 22);
-            this.txtSDT.TabIndex = 8;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 66);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 17);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "MSSV";
             // 
             // txtDiaChi
             // 
@@ -278,6 +240,14 @@ namespace QLSV
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(532, 22);
             this.txtDiaChi.TabIndex = 8;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(438, 105);
+            this.txtSDT.Multiline = true;
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(196, 22);
+            this.txtSDT.TabIndex = 8;
             // 
             // btCapNhat
             // 
@@ -290,14 +260,21 @@ namespace QLSV
             this.btCapNhat.Text = "Cập Nhật";
             this.btCapNhat.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // txtQueQuan
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 66);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 17);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "MSSV";
+            this.txtQueQuan.Location = new System.Drawing.Point(105, 147);
+            this.txtQueQuan.Multiline = true;
+            this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.Size = new System.Drawing.Size(532, 22);
+            this.txtQueQuan.TabIndex = 8;
+            // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.Location = new System.Drawing.Point(438, 63);
+            this.txtGioiTinh.Multiline = true;
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(199, 22);
+            this.txtGioiTinh.TabIndex = 8;
             // 
             // txtMSSV
             // 
@@ -306,6 +283,29 @@ namespace QLSV
             this.txtMSSV.Name = "txtMSSV";
             this.txtMSSV.Size = new System.Drawing.Size(263, 22);
             this.txtMSSV.TabIndex = 8;
+            // 
+            // txtHo
+            // 
+            this.txtHo.Location = new System.Drawing.Point(105, 32);
+            this.txtHo.Multiline = true;
+            this.txtHo.Name = "txtHo";
+            this.txtHo.Size = new System.Drawing.Size(263, 22);
+            this.txtHo.TabIndex = 8;
+            // 
+            // txtTen
+            // 
+            this.txtTen.Location = new System.Drawing.Point(438, 32);
+            this.txtTen.Multiline = true;
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(199, 22);
+            this.txtTen.TabIndex = 8;
+            // 
+            // dtpNamSinh
+            // 
+            this.dtpNamSinh.Location = new System.Drawing.Point(105, 104);
+            this.dtpNamSinh.Name = "dtpNamSinh";
+            this.dtpNamSinh.Size = new System.Drawing.Size(263, 22);
+            this.dtpNamSinh.TabIndex = 10;
             // 
             // fQLDSSV
             // 
@@ -350,12 +350,12 @@ namespace QLSV
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtQueQuan;
-        private System.Windows.Forms.TextBox txtNamSinh;
         private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Button btCapNhat;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMSSV;
+        private System.Windows.Forms.DateTimePicker dtpNamSinh;
     }
 }

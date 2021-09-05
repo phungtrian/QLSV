@@ -64,5 +64,11 @@ namespace QLSV
             });
             return dsSV;
         }
+        //thêm sinh viên
+        public void ThemSV(SinhVien sv)
+        {
+            db.SinhViens.InsertOnSubmit(sv);
+            db.SubmitChanges();
+        }
     }
 }

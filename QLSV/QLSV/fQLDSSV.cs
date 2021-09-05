@@ -42,12 +42,29 @@ namespace QLSV
                 txtHo.Text = dgvDSSV.Rows[e.RowIndex].Cells["Ho"].Value.ToString();
                 txtTen.Text = dgvDSSV.Rows[e.RowIndex].Cells["Ten"].Value.ToString();
                 txtGioiTinh.Text = dgvDSSV.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString();
-                txtNamSinh.Text = dgvDSSV.Rows[e.RowIndex].Cells["NamSinh"].Value.ToString();
+                dtpNamSinh = (DateTimePicker)dgvDSSV.Rows[e.RowIndex].Cells["NamSinh"].Value;
                 txtQueQuan.Text = dgvDSSV.Rows[e.RowIndex].Cells["QueQuan"].Value.ToString();
                 txtDiaChi.Text = dgvDSSV.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
                 txtSDT.Text = dgvDSSV.Rows[e.RowIndex].Cells["DienThoai"].Value.ToString();
                 
             }
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            SinhVien sv = new SinhVien();
+            sv.maSinhVien = int.Parse(txtMSSV.Text.ToString());
+            sv.Ho = txtHo.Text.ToString();
+            sv.Ten = txtTen.Text.ToString();
+            sv.gioiTinh = byte.Parse(txtGioiTinh.Text.ToString());
+            sv.namSinh = dtpNamSinh.Value;
+            sv.queQuan = txtQueQuan.Text.ToString();
+            sv.diaChi = txtDiaChi.Text.ToString();           
+            sv.dienThoai = int.Parse(txtSDT.Text.ToString());
+
+            busDSSV.ThemSV(sv);
+
+            busDSSV.DSSinhVien(dgvDSSV);
         }
     }
 

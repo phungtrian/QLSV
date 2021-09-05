@@ -44,6 +44,21 @@ namespace QLSV
             dg.DataSource = da.LayDSSinhVIen();
         }
 
+        public void ThemSV(SinhVien sv)
+        {
+            try
+            {
+                da.ThemSV(sv);
+                MessageBox.Show("Bạn đã thêm Sinh viên thành công!!!");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bạn đã nhập sai!");
+
+            }
+        }
+
         //kết thúc form DSSV
     }
 }
