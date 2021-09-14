@@ -103,6 +103,9 @@
     <EmbeddedResource Include="fQLDSMH.resx">
       <DependentUpon>fQLDSMH.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="QLSV.dbml.layout">
+      <DependentUpon>QLSV.dbml</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,9 +119,6 @@
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>QLSV.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="QLSV.dbml.layout">
-      <DependentUpon>QLSV.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
