@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLSVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Diem">
+    <Key>
+      <PropertyRef Name="maMonHoc" />
+      <PropertyRef Name="maGiangVien" />
+      <PropertyRef Name="maSinhVien" />
+    </Key>
+    <Property Name="maMonHoc" Type="Int32" Nullable="false" />
+    <Property Name="maGiangVien" Type="Int32" Nullable="false" />
+    <Property Name="maSinhVien" Type="Int32" Nullable="false" />
+    <Property Name="diemGV1" Type="Double" Nullable="false" />
+    <Property Name="diemGV2" Type="Double" Nullable="false" />
+    <Property Name="ngayTao" Type="DateTime" Precision="3" />
+    <Property Name="ngayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="nguoiTao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nguoiCapNhat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GiangVien" Relationship="Self.FK_Diem_GiangVien" FromRole="Diem" ToRole="GiangVien" />
+    <NavigationProperty Name="MonHoc" Relationship="Self.FK_Diem_MonHoc" FromRole="Diem" ToRole="MonHoc" />
+  </EntityType>
+  <EntityType Name="GiangVien">
+    <Key>
+      <PropertyRef Name="maGiangVien" />
+    </Key>
+    <Property Name="maGiangVien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="namSinh" Type="DateTime" Precision="0" />
+    <Property Name="diaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="soDienThoai" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngayTao" Type="DateTime" Precision="3" />
+    <Property Name="ngayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="nguoiTao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nguoiCapNhat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Diems" Relationship="Self.FK_Diem_GiangVien" FromRole="GiangVien" ToRole="Diem" />
+    <NavigationProperty Name="LopHocs" Relationship="Self.FK_lopHoc_GiangVien" FromRole="GiangVien" ToRole="LopHoc" />
+  </EntityType>
+  <EntityType Name="LoaiGioiTinh">
+    <Key>
+      <PropertyRef Name="MaGioTinh" />
+    </Key>
+    <Property Name="MaGioTinh" Type="Byte" Nullable="false" />
+    <Property Name="TenGioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LopHoc">
+    <Key>
+      <PropertyRef Name="maLopHoc" />
+    </Key>
+    <Property Name="ngayTao" Type="DateTime" Precision="3" />
+    <Property Name="nguoiTao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ngayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="nguoiCapNhat" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="maLopHoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="maMonHoc" Type="Int32" />
+    <Property Name="maGiangVien" Type="Int32" />
+    <Property Name="daKetThuc" Type="Byte" />
+    <NavigationProperty Name="GiangVien" Relationship="Self.FK_lopHoc_GiangVien" FromRole="LopHoc" ToRole="GiangVien" />
+    <NavigationProperty Name="MonHoc" Relationship="Self.FK_LopHoc_MonHoc" FromRole="LopHoc" ToRole="MonHoc" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="maMonHoc" />
+    </Key>
+    <Property Name="maMonHoc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="soTinChi" Type="Int32" />
+    <Property Name="ngayTao" Type="DateTime" Precision="3" />
+    <Property Name="ngayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="nguoiTao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nguoiCapNhat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Diems" Relationship="Self.FK_Diem_MonHoc" FromRole="MonHoc" ToRole="Diem" />
+    <NavigationProperty Name="LopHocs" Relationship="Self.FK_LopHoc_MonHoc" FromRole="MonHoc" ToRole="LopHoc" />
+  </EntityType>
+  <EntityType Name="SinhVien">
+    <Key>
+      <PropertyRef Name="maSinhVien" />
+    </Key>
+    <Property Name="maSinhVien" Type="Int32" Nullable="false" />
+    <Property Name="Ho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="namSinh" Type="DateTime" Precision="0" />
+    <Property Name="queQuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dienThoai" Type="Int32" Nullable="false" />
+    <Property Name="diaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngayTao" Type="DateTime" Precision="3" />
+    <Property Name="ngayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="nguoiTao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nguoiCapNhat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="tenTaiKhoan" />
+      <PropertyRef Name="matKhau" />
+    </Key>
+    <Property Name="tenTaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="matKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Diem_GiangVien">
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="1" />
+    <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiangVien">
+        <PropertyRef Name="maGiangVien" />
+      </Principal>
+      <Dependent Role="Diem">
+        <PropertyRef Name="maGiangVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diem_MonHoc">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
+    <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="maMonHoc" />
+      </Principal>
+      <Dependent Role="Diem">
+        <PropertyRef Name="maMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lopHoc_GiangVien">
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="0..1" />
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiangVien">
+        <PropertyRef Name="maGiangVien" />
+      </Principal>
+      <Dependent Role="LopHoc">
+        <PropertyRef Name="maGiangVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LopHoc_MonHoc">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="maMonHoc" />
+      </Principal>
+      <Dependent Role="LopHoc">
+        <PropertyRef Name="maMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLSVEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Diems" EntityType="Self.Diem" />
+    <EntitySet Name="GiangViens" EntityType="Self.GiangVien" />
+    <EntitySet Name="LoaiGioiTinhs" EntityType="Self.LoaiGioiTinh" />
+    <EntitySet Name="LopHocs" EntityType="Self.LopHoc" />
+    <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
+    <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
+    <AssociationSet Name="FK_Diem_GiangVien" Association="Self.FK_Diem_GiangVien">
+      <End Role="GiangVien" EntitySet="GiangViens" />
+      <End Role="Diem" EntitySet="Diems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diem_MonHoc" Association="Self.FK_Diem_MonHoc">
+      <End Role="MonHoc" EntitySet="MonHocs" />
+      <End Role="Diem" EntitySet="Diems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lopHoc_GiangVien" Association="Self.FK_lopHoc_GiangVien">
+      <End Role="GiangVien" EntitySet="GiangViens" />
+      <End Role="LopHoc" EntitySet="LopHocs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LopHoc_MonHoc" Association="Self.FK_LopHoc_MonHoc">
+      <End Role="MonHoc" EntitySet="MonHocs" />
+      <End Role="LopHoc" EntitySet="LopHocs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

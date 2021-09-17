@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLSVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Diem">
+    <Key>
+      <PropertyRef Name="maMonHoc" />
+      <PropertyRef Name="maGiangVien" />
+      <PropertyRef Name="maSinhVien" />
+    </Key>
+    <Property Name="maMonHoc" Type="int" Nullable="false" />
+    <Property Name="maGiangVien" Type="int" Nullable="false" />
+    <Property Name="maSinhVien" Type="int" Nullable="false" />
+    <Property Name="diemGV1" Type="float" Nullable="false" />
+    <Property Name="diemGV2" Type="float" Nullable="false" />
+    <Property Name="ngayTao" Type="datetime" />
+    <Property Name="ngayCapNhat" Type="datetime" />
+    <Property Name="nguoiTao" Type="nvarchar" MaxLength="50" />
+    <Property Name="nguoiCapNhat" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GiangVien">
+    <Key>
+      <PropertyRef Name="maGiangVien" />
+    </Key>
+    <Property Name="maGiangVien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ho" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="namSinh" Type="date" />
+    <Property Name="diaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="soDienThoai" Type="int" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ngayTao" Type="datetime" />
+    <Property Name="ngayCapNhat" Type="datetime" />
+    <Property Name="nguoiTao" Type="nvarchar" MaxLength="50" />
+    <Property Name="nguoiCapNhat" Type="nvarchar" MaxLength="50" />
+    <Property Name="gioiTinh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LoaiGioiTinh">
+    <Key>
+      <PropertyRef Name="MaGioTinh" />
+    </Key>
+    <Property Name="MaGioTinh" Type="tinyint" Nullable="false" />
+    <Property Name="TenGioiTinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LopHoc">
+    <Key>
+      <PropertyRef Name="maLopHoc" />
+    </Key>
+    <Property Name="ngayTao" Type="datetime" />
+    <Property Name="nguoiTao" Type="varchar" MaxLength="30" />
+    <Property Name="ngayCapNhat" Type="datetime" />
+    <Property Name="nguoiCapNhat" Type="varchar" MaxLength="30" />
+    <Property Name="maLopHoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="maMonHoc" Type="int" />
+    <Property Name="maGiangVien" Type="int" />
+    <Property Name="daKetThuc" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="maMonHoc" />
+    </Key>
+    <Property Name="maMonHoc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenMonHoc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="soTinChi" Type="int" />
+    <Property Name="ngayTao" Type="datetime" />
+    <Property Name="ngayCapNhat" Type="datetime" />
+    <Property Name="nguoiTao" Type="nvarchar" MaxLength="50" />
+    <Property Name="nguoiCapNhat" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SinhVien">
+    <Key>
+      <PropertyRef Name="maSinhVien" />
+    </Key>
+    <Property Name="maSinhVien" Type="int" Nullable="false" />
+    <Property Name="Ho" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="namSinh" Type="date" />
+    <Property Name="queQuan" Type="nvarchar" MaxLength="50" />
+    <Property Name="dienThoai" Type="int" Nullable="false" />
+    <Property Name="diaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngayTao" Type="datetime" />
+    <Property Name="ngayCapNhat" Type="datetime" />
+    <Property Name="nguoiTao" Type="nvarchar" MaxLength="50" />
+    <Property Name="nguoiCapNhat" Type="nvarchar" MaxLength="50" />
+    <Property Name="gioiTinh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="tenTaiKhoan" />
+      <PropertyRef Name="matKhau" />
+    </Key>
+    <Property Name="tenTaiKhoan" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="matKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Diem_GiangVien">
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="1" />
+    <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiangVien">
+        <PropertyRef Name="maGiangVien" />
+      </Principal>
+      <Dependent Role="Diem">
+        <PropertyRef Name="maGiangVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diem_MonHoc">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
+    <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="maMonHoc" />
+      </Principal>
+      <Dependent Role="Diem">
+        <PropertyRef Name="maMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lopHoc_GiangVien">
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="0..1" />
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiangVien">
+        <PropertyRef Name="maGiangVien" />
+      </Principal>
+      <Dependent Role="LopHoc">
+        <PropertyRef Name="maGiangVien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LopHoc_MonHoc">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
+    <End Role="LopHoc" Type="Self.LopHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="maMonHoc" />
+      </Principal>
+      <Dependent Role="LopHoc">
+        <PropertyRef Name="maMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLSVModelStoreContainer">
+    <EntitySet Name="Diem" EntityType="Self.Diem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiGioiTinh" EntityType="Self.LoaiGioiTinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LopHoc" EntityType="Self.LopHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TaiKhoan].[tenTaiKhoan] AS [tenTaiKhoan], 
+    [TaiKhoan].[matKhau] AS [matKhau]
+    FROM [dbo].[TaiKhoan] AS [TaiKhoan]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Diem_GiangVien" Association="Self.FK_Diem_GiangVien">
+      <End Role="GiangVien" EntitySet="GiangVien" />
+      <End Role="Diem" EntitySet="Diem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diem_MonHoc" Association="Self.FK_Diem_MonHoc">
+      <End Role="MonHoc" EntitySet="MonHoc" />
+      <End Role="Diem" EntitySet="Diem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lopHoc_GiangVien" Association="Self.FK_lopHoc_GiangVien">
+      <End Role="GiangVien" EntitySet="GiangVien" />
+      <End Role="LopHoc" EntitySet="LopHoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LopHoc_MonHoc" Association="Self.FK_LopHoc_MonHoc">
+      <End Role="MonHoc" EntitySet="MonHoc" />
+      <End Role="LopHoc" EntitySet="LopHoc" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

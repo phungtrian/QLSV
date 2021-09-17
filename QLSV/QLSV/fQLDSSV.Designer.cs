@@ -45,16 +45,17 @@ namespace QLSV
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbLoaiGioiTinh = new System.Windows.Forms.ComboBox();
+            this.dtpNamSinh = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.btCapNhat = new System.Windows.Forms.Button();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.txtHo = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.dtpNamSinh = new System.Windows.Forms.DateTimePicker();
+            this.btXoa = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -125,7 +126,7 @@ namespace QLSV
             // btThem
             // 
             this.btThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.Location = new System.Drawing.Point(166, 214);
+            this.btThem.Location = new System.Drawing.Point(87, 214);
             this.btThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(134, 38);
@@ -199,14 +200,15 @@ namespace QLSV
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbLoaiGioiTinh);
             this.groupBox1.Controls.Add(this.dtpNamSinh);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtSDT);
+            this.groupBox1.Controls.Add(this.btXoa);
             this.groupBox1.Controls.Add(this.btCapNhat);
             this.groupBox1.Controls.Add(this.btThem);
             this.groupBox1.Controls.Add(this.txtQueQuan);
-            this.groupBox1.Controls.Add(this.txtGioiTinh);
             this.groupBox1.Controls.Add(this.txtMSSV);
             this.groupBox1.Controls.Add(this.txtHo);
             this.groupBox1.Controls.Add(this.txtTen);
@@ -223,6 +225,21 @@ namespace QLSV
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông TIn Sinh Viên";
+            // 
+            // cbLoaiGioiTinh
+            // 
+            this.cbLoaiGioiTinh.FormattingEnabled = true;
+            this.cbLoaiGioiTinh.Location = new System.Drawing.Point(438, 64);
+            this.cbLoaiGioiTinh.Name = "cbLoaiGioiTinh";
+            this.cbLoaiGioiTinh.Size = new System.Drawing.Size(199, 24);
+            this.cbLoaiGioiTinh.TabIndex = 11;
+            // 
+            // dtpNamSinh
+            // 
+            this.dtpNamSinh.Location = new System.Drawing.Point(105, 104);
+            this.dtpNamSinh.Name = "dtpNamSinh";
+            this.dtpNamSinh.Size = new System.Drawing.Size(263, 22);
+            this.dtpNamSinh.TabIndex = 10;
             // 
             // label9
             // 
@@ -252,13 +269,14 @@ namespace QLSV
             // btCapNhat
             // 
             this.btCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCapNhat.Location = new System.Drawing.Point(456, 214);
+            this.btCapNhat.Location = new System.Drawing.Point(305, 214);
             this.btCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btCapNhat.Name = "btCapNhat";
             this.btCapNhat.Size = new System.Drawing.Size(134, 38);
             this.btCapNhat.TabIndex = 6;
             this.btCapNhat.Text = "Cập Nhật";
             this.btCapNhat.UseVisualStyleBackColor = true;
+            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
             // 
             // txtQueQuan
             // 
@@ -267,14 +285,6 @@ namespace QLSV
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(532, 22);
             this.txtQueQuan.TabIndex = 8;
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(438, 63);
-            this.txtGioiTinh.Multiline = true;
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(199, 22);
-            this.txtGioiTinh.TabIndex = 8;
             // 
             // txtMSSV
             // 
@@ -300,12 +310,17 @@ namespace QLSV
             this.txtTen.Size = new System.Drawing.Size(199, 22);
             this.txtTen.TabIndex = 8;
             // 
-            // dtpNamSinh
+            // btXoa
             // 
-            this.dtpNamSinh.Location = new System.Drawing.Point(105, 104);
-            this.dtpNamSinh.Name = "dtpNamSinh";
-            this.dtpNamSinh.Size = new System.Drawing.Size(263, 22);
-            this.dtpNamSinh.TabIndex = 10;
+            this.btXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXoa.Location = new System.Drawing.Point(522, 214);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(134, 38);
+            this.btXoa.TabIndex = 6;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // fQLDSSV
             // 
@@ -350,12 +365,13 @@ namespace QLSV
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtQueQuan;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Button btCapNhat;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMSSV;
         private System.Windows.Forms.DateTimePicker dtpNamSinh;
+        private System.Windows.Forms.ComboBox cbLoaiGioiTinh;
+        private System.Windows.Forms.Button btXoa;
     }
 }

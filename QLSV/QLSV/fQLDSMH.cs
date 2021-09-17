@@ -7,25 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLSV.BUS;
 
 namespace QLSV
 {
     public partial class fQLDSMH : Form
     {
-        BUS busDSMH;
+        BUSMonHoc busDSMH;
         public fQLDSMH()
         {
             InitializeComponent();
-            busDSMH = new BUS();
+            busDSMH = new BUSMonHoc();
         }
 
-        private void fQLDSMH_Load(object sender, EventArgs e)
+        private void HienThiDSMH()
         {
             busDSMH.DSMonHoc(dgvDSMH);
             //Chia các cột đều đẹp mắt
             dgvDSMH.Columns[0].Width = (int)(0.3 * dgvDSMH.Width);
             dgvDSMH.Columns[1].Width = (int)(0.4 * dgvDSMH.Width);
             dgvDSMH.Columns[2].Width = (int)(0.25 * dgvDSMH.Width);
+
+        }
+
+        private void fQLDSMH_Load(object sender, EventArgs e)
+        {
+            HienThiDSMH();
         }
 
         private void dgvDSMH_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -41,8 +48,46 @@ namespace QLSV
         private void btThem_Click(object sender, EventArgs e)
         {
             MonHoc monHoc = new MonHoc();
+            //monHoc.maMonHoc = int.Parse(txtMaMon.Text);
+            monHoc.tenMonHoc = txtTenMon.Text;
+            monHoc.soTinChi = int.Parse(txtTinChi.Text);
             busDSMH.ThemMH(monHoc);
             busDSMH.DSMonHoc(dgvDSMH);
+            HienThiDSMH();
+        }
+
+        private void btCapNhat_Click(object sender, EventArgs e)
+        {
+            MonHoc monHoc = new MonHoc();
+            monHoc.maMonHoc = int.Parse(txtMaMon.Text);
+            monHoc.tenMonHoc = txtTenMon.Text;
+            monHoc.soTinChi = int.Parse(txtTinChi.Text);
+
+            if (busDSMH.SuaMonHoc(monHoc))
+            {
+                MessageBox.Show("Sửa thông tin Môn Học thành công");
+            }
+            else
+                MessageBox.Show("Không tìm thấy mã môn học");
+            HienThiDSMH();
+
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            MonHoc monHoc = new MonHoc();
+            monHoc.maMonHoc = int.Parse(txtMaMon.Text);
+            monHoc.tenMonHoc = txtTenMon.Text;
+            monHoc.soTinChi = int.Parse(txtTinChi.Text);
+
+            if (busDSMH.XoaMonHoc(monHoc))
+            {
+                MessageBox.Show("Xóa thông tin Môn Học thành công");
+            }
+            else
+                MessageBox.Show("Không tìm thấy mã môn học");
+            HienThiDSMH();
+
         }
 
 
