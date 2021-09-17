@@ -32,22 +32,23 @@ namespace QLSV
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btXoa = new System.Windows.Forms.Button();
+            this.btCapNhat = new System.Windows.Forms.Button();
+            this.btThem = new System.Windows.Forms.Button();
             this.txtTinChi = new System.Windows.Forms.TextBox();
-            this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.txtMaMon = new System.Windows.Forms.TextBox();
-            this.btTraCuu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtTuKhoa = new System.Windows.Forms.TextBox();
+            this.btTraCuu = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDSMH = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btCapNhat = new System.Windows.Forms.Button();
-            this.btThem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btXoa = new System.Windows.Forms.Button();
+            this.btBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMH)).BeginInit();
@@ -80,6 +81,39 @@ namespace QLSV
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
             // 
+            // btXoa
+            // 
+            this.btXoa.Location = new System.Drawing.Point(470, 140);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(151, 52);
+            this.btXoa.TabIndex = 0;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // btCapNhat
+            // 
+            this.btCapNhat.Location = new System.Drawing.Point(263, 140);
+            this.btCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btCapNhat.Name = "btCapNhat";
+            this.btCapNhat.Size = new System.Drawing.Size(151, 52);
+            this.btCapNhat.TabIndex = 0;
+            this.btCapNhat.Text = "Cập nhật";
+            this.btCapNhat.UseVisualStyleBackColor = true;
+            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
+            // 
+            // btThem
+            // 
+            this.btThem.Location = new System.Drawing.Point(49, 140);
+            this.btThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(151, 52);
+            this.btThem.TabIndex = 0;
+            this.btThem.Text = "Thêm";
+            this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
             // txtTinChi
             // 
             this.txtTinChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,15 +122,6 @@ namespace QLSV
             this.txtTinChi.Name = "txtTinChi";
             this.txtTinChi.Size = new System.Drawing.Size(84, 34);
             this.txtTinChi.TabIndex = 1;
-            // 
-            // txtTuKhoa
-            // 
-            this.txtTuKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTuKhoa.Location = new System.Drawing.Point(156, 50);
-            this.txtTuKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(277, 34);
-            this.txtTuKhoa.TabIndex = 1;
             // 
             // txtTenMon
             // 
@@ -116,16 +141,6 @@ namespace QLSV
             this.txtMaMon.Size = new System.Drawing.Size(232, 34);
             this.txtMaMon.TabIndex = 1;
             // 
-            // btTraCuu
-            // 
-            this.btTraCuu.Location = new System.Drawing.Point(487, 56);
-            this.btTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btTraCuu.Name = "btTraCuu";
-            this.btTraCuu.Size = new System.Drawing.Size(151, 30);
-            this.btTraCuu.TabIndex = 0;
-            this.btTraCuu.Text = "Tra cứu";
-            this.btTraCuu.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -134,15 +149,6 @@ namespace QLSV
             this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Số tín chỉ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 17);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Từ khóa";
             // 
             // label3
             // 
@@ -162,10 +168,38 @@ namespace QLSV
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã môn học";
             // 
+            // txtTuKhoa
+            // 
+            this.txtTuKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuKhoa.Location = new System.Drawing.Point(156, 25);
+            this.txtTuKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTuKhoa.Name = "txtTuKhoa";
+            this.txtTuKhoa.Size = new System.Drawing.Size(277, 34);
+            this.txtTuKhoa.TabIndex = 1;
+            // 
+            // btTraCuu
+            // 
+            this.btTraCuu.Location = new System.Drawing.Point(487, 24);
+            this.btTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btTraCuu.Name = "btTraCuu";
+            this.btTraCuu.Size = new System.Drawing.Size(151, 30);
+            this.btTraCuu.TabIndex = 0;
+            this.btTraCuu.Text = "Tra cứu";
+            this.btTraCuu.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Từ khóa";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvDSMH);
-            this.groupBox2.Location = new System.Drawing.Point(64, 446);
+            this.groupBox2.Location = new System.Drawing.Point(74, 414);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -191,35 +225,13 @@ namespace QLSV
             this.groupBox3.Controls.Add(this.txtTuKhoa);
             this.groupBox3.Controls.Add(this.btTraCuu);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(202, 332);
+            this.groupBox3.Location = new System.Drawing.Point(202, 334);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(661, 109);
+            this.groupBox3.Size = new System.Drawing.Size(661, 76);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            // 
-            // btCapNhat
-            // 
-            this.btCapNhat.Location = new System.Drawing.Point(263, 140);
-            this.btCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btCapNhat.Name = "btCapNhat";
-            this.btCapNhat.Size = new System.Drawing.Size(151, 52);
-            this.btCapNhat.TabIndex = 0;
-            this.btCapNhat.Text = "Cập nhật";
-            this.btCapNhat.UseVisualStyleBackColor = true;
-            this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
-            // 
-            // btThem
-            // 
-            this.btThem.Location = new System.Drawing.Point(49, 140);
-            this.btThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(151, 52);
-            this.btThem.TabIndex = 0;
-            this.btThem.Text = "Thêm";
-            this.btThem.UseVisualStyleBackColor = true;
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // label1
             // 
@@ -232,22 +244,22 @@ namespace QLSV
             this.label1.Text = "Danh Sách Môn Học";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btXoa
+            // btBack
             // 
-            this.btXoa.Location = new System.Drawing.Point(470, 140);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(151, 52);
-            this.btXoa.TabIndex = 0;
-            this.btXoa.Text = "Xóa";
-            this.btXoa.UseVisualStyleBackColor = true;
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            this.btBack.BackgroundImage = global::QLSV.Properties.Resources.buttonback3;
+            this.btBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btBack.Location = new System.Drawing.Point(12, 12);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(69, 45);
+            this.btBack.TabIndex = 10;
+            this.btBack.UseVisualStyleBackColor = true;
             // 
             // fQLDSMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 752);
+            this.Controls.Add(this.btBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -287,5 +299,6 @@ namespace QLSV
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTuKhoa;
         private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.Button btBack;
     }
 }

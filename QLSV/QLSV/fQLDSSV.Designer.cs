@@ -50,12 +50,13 @@ namespace QLSV
             this.label9 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.btXoa = new System.Windows.Forms.Button();
             this.btCapNhat = new System.Windows.Forms.Button();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.txtHo = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.btXoa = new System.Windows.Forms.Button();
+            this.btBack = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -266,6 +267,18 @@ namespace QLSV
             this.txtSDT.Size = new System.Drawing.Size(196, 22);
             this.txtSDT.TabIndex = 8;
             // 
+            // btXoa
+            // 
+            this.btXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXoa.Location = new System.Drawing.Point(522, 214);
+            this.btXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(134, 38);
+            this.btXoa.TabIndex = 6;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
             // btCapNhat
             // 
             this.btCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,23 +323,22 @@ namespace QLSV
             this.txtTen.Size = new System.Drawing.Size(199, 22);
             this.txtTen.TabIndex = 8;
             // 
-            // btXoa
+            // btBack
             // 
-            this.btXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXoa.Location = new System.Drawing.Point(522, 214);
-            this.btXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(134, 38);
-            this.btXoa.TabIndex = 6;
-            this.btXoa.Text = "Xóa";
-            this.btXoa.UseVisualStyleBackColor = true;
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            this.btBack.BackgroundImage = global::QLSV.Properties.Resources.buttonback3;
+            this.btBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btBack.Location = new System.Drawing.Point(12, 12);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(69, 45);
+            this.btBack.TabIndex = 10;
+            this.btBack.UseVisualStyleBackColor = true;
             // 
             // fQLDSSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 706);
+            this.Controls.Add(this.btBack);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTuKhoa);
@@ -373,5 +385,6 @@ namespace QLSV
         private System.Windows.Forms.DateTimePicker dtpNamSinh;
         private System.Windows.Forms.ComboBox cbLoaiGioiTinh;
         private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.Button btBack;
     }
 }

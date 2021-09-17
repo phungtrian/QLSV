@@ -42,6 +42,7 @@ namespace QLSV
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
+            this.btBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -102,7 +103,7 @@ namespace QLSV
             this.label3.AutoSize = true;
             this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(373, 19);
+            this.label3.Location = new System.Drawing.Point(334, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(336, 49);
             this.label3.TabIndex = 3;
@@ -111,20 +112,20 @@ namespace QLSV
             // dgvDSLH
             // 
             this.dgvDSLH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSLH.Location = new System.Drawing.Point(6, 21);
+            this.dgvDSLH.Location = new System.Drawing.Point(70, 21);
             this.dgvDSLH.Name = "dgvDSLH";
             this.dgvDSLH.RowHeadersWidth = 51;
             this.dgvDSLH.RowTemplate.Height = 24;
-            this.dgvDSLH.Size = new System.Drawing.Size(1065, 216);
+            this.dgvDSLH.Size = new System.Drawing.Size(849, 260);
             this.dgvDSLH.TabIndex = 4;
             this.dgvDSLH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvDSLH);
-            this.groupBox1.Location = new System.Drawing.Point(6, 346);
+            this.groupBox1.Location = new System.Drawing.Point(12, 346);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1078, 243);
+            this.groupBox1.Size = new System.Drawing.Size(998, 307);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Lớp Học";
@@ -158,7 +159,7 @@ namespace QLSV
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
             this.groupBox2.Controls.Add(this.cbMonhoc);
-            this.groupBox2.Location = new System.Drawing.Point(122, 67);
+            this.groupBox2.Location = new System.Drawing.Point(85, 71);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(840, 253);
             this.groupBox2.TabIndex = 7;
@@ -189,11 +190,22 @@ namespace QLSV
             this.btSua.UseVisualStyleBackColor = true;
             this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
+            // btBack
+            // 
+            this.btBack.BackgroundImage = global::QLSV.Properties.Resources.buttonback3;
+            this.btBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btBack.Location = new System.Drawing.Point(12, 12);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(69, 45);
+            this.btBack.TabIndex = 10;
+            this.btBack.UseVisualStyleBackColor = true;
+            // 
             // fQLLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 594);
+            this.ClientSize = new System.Drawing.Size(1029, 679);
+            this.Controls.Add(this.btBack);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
@@ -226,5 +238,6 @@ namespace QLSV
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.Button btBack;
     }
 }

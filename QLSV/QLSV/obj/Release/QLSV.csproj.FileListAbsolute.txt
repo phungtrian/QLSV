@@ -43,3 +43,4 @@ D:\gitDoAn\QLSV\QLSV\bin\Release\EntityFramework.xml
 D:\gitDoAn\QLSV\QLSV\bin\Release\EntityFramework.SqlServer.xml
 D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.csproj.CopyComplete
 D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.FQLLopHoc.resources
+D:\gitDoAn\QLSV\QLSV\obj\Release\QLSV.fAdmin.resources

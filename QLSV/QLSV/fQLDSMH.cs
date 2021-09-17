@@ -25,7 +25,7 @@ namespace QLSV
             busDSMH.DSMonHoc(dgvDSMH);
             //Chia các cột đều đẹp mắt
             dgvDSMH.Columns[0].Width = (int)(0.3 * dgvDSMH.Width);
-            dgvDSMH.Columns[1].Width = (int)(0.4 * dgvDSMH.Width);
+            dgvDSMH.Columns[1].Width = (int)(0.35 * dgvDSMH.Width);
             dgvDSMH.Columns[2].Width = (int)(0.25 * dgvDSMH.Width);
 
         }

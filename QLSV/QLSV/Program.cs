@@ -16,7 +16,7 @@ namespace QLSV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fQLLopHoc());
+            Application.Run(new fAdmin());
         }
     }
 }

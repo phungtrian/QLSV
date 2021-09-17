@@ -56,6 +56,7 @@ namespace QLSV
             this.txtMaGV = new System.Windows.Forms.TextBox();
             this.txtHo = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
+            this.btBack = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSGV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -321,16 +322,29 @@ namespace QLSV
             this.txtTen.Size = new System.Drawing.Size(199, 22);
             this.txtTen.TabIndex = 8;
             // 
+            // btBack
+            // 
+            this.btBack.BackgroundImage = global::QLSV.Properties.Resources.buttonback3;
+            this.btBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btBack.Location = new System.Drawing.Point(23, 12);
+            this.btBack.Name = "btBack";
+            this.btBack.Size = new System.Drawing.Size(69, 45);
+            this.btBack.TabIndex = 9;
+            this.btBack.UseVisualStyleBackColor = true;
+            // 
             // fQLDSGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1042, 706);
+            this.Controls.Add(this.btBack);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTuKhoa);
             this.Controls.Add(this.btTraCuu);
             this.Controls.Add(this.groupBox2);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fQLDSGV";
             this.Text = "QLSV";
@@ -372,5 +386,6 @@ namespace QLSV
         private System.Windows.Forms.DateTimePicker dtpNamSinh;
         private System.Windows.Forms.ComboBox cbLoaiGioiTinh;
         private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.Button btBack;
     }
 }
