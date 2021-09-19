@@ -150,6 +150,18 @@ warning 6002: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="TraCuuGiangVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="TraCuuLopHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="TraCuuMonHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="TraCuuSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="QLSVModelStoreContainer">
     <EntitySet Name="Diem" EntityType="Self.Diem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />

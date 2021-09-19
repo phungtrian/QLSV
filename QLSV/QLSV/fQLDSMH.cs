@@ -44,6 +44,21 @@ namespace QLSV
                 txtTinChi.Text = dgvDSMH.Rows[e.RowIndex].Cells[2].Value.ToString(); 
             }
         }
+        private bool KiemTraTXTMa()
+        {
+            string kt = txtMaMon.Text;
+            kt = kt.Replace(" ", string.Empty);
+
+            if (kt == "")
+            {
+                MessageBox.Show("bạn chưa nhập Mã Môn Học");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         private void btThem_Click(object sender, EventArgs e)
         {
@@ -58,36 +73,55 @@ namespace QLSV
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            MonHoc monHoc = new MonHoc();
-            monHoc.maMonHoc = int.Parse(txtMaMon.Text);
-            monHoc.tenMonHoc = txtTenMon.Text;
-            monHoc.soTinChi = int.Parse(txtTinChi.Text);
-
-            if (busDSMH.SuaMonHoc(monHoc))
+            if (KiemTraTXTMa())
             {
-                MessageBox.Show("Sửa thông tin Môn Học thành công");
+                MonHoc monHoc = new MonHoc();
+                
+                monHoc.maMonHoc = int.Parse(txtMaMon.Text);
+                monHoc.tenMonHoc = txtTenMon.Text;
+                monHoc.soTinChi = int.Parse(txtTinChi.Text);
+
+                if (busDSMH.SuaMonHoc(monHoc))
+                {
+                    MessageBox.Show("Sửa thông tin Môn Học thành công");
+                }
+                else
+                    MessageBox.Show("Không tìm thấy mã môn học");
+                HienThiDSMH();
             }
-            else
-                MessageBox.Show("Không tìm thấy mã môn học");
-            HienThiDSMH();
 
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            MonHoc monHoc = new MonHoc();
-            monHoc.maMonHoc = int.Parse(txtMaMon.Text);
-            monHoc.tenMonHoc = txtTenMon.Text;
-            monHoc.soTinChi = int.Parse(txtTinChi.Text);
-
-            if (busDSMH.XoaMonHoc(monHoc))
+            if (KiemTraTXTMa())
             {
-                MessageBox.Show("Xóa thông tin Môn Học thành công");
-            }
-            else
-                MessageBox.Show("Không tìm thấy mã môn học");
-            HienThiDSMH();
+                MonHoc monHoc = new MonHoc();
+                monHoc.maMonHoc = int.Parse(txtMaMon.Text);
+                monHoc.tenMonHoc = txtTenMon.Text;
+                monHoc.soTinChi = int.Parse(txtTinChi.Text);
 
+                if (busDSMH.XoaMonHoc(monHoc))
+                {
+                    MessageBox.Show("Xóa thông tin Môn Học thành công");
+                }
+                else
+                    MessageBox.Show("Không tìm thấy mã môn học");
+                HienThiDSMH();
+            }
+        }
+
+        private void btTraCuu_Click(object sender, EventArgs e)
+        {
+            busDSMH.TimKiemHienThiMH(txtTuKhoa.Text, dgvDSMH);
+        }
+
+        private void txtTuKhoa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                btTraCuu.PerformClick();
+            }
         }
 
 

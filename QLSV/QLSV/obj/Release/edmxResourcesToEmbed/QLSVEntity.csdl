@@ -181,5 +181,47 @@
       <End Role="MonHoc" EntitySet="MonHocs" />
       <End Role="LopHoc" EntitySet="LopHocs" />
     </AssociationSet>
+    <FunctionImport Name="TraCuuGiangVien" ReturnType="Collection(QLSVModel.TraCuuGiangVien_Result)">
+      <Parameter Name="tukhoa" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TraCuuLopHoc" ReturnType="Collection(QLSVModel.TraCuuLopHoc_Result)">
+      <Parameter Name="tukhoa" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TraCuuMonHoc" ReturnType="Collection(QLSVModel.TraCuuMonHoc_Result)">
+      <Parameter Name="tukhoa" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TraCuuSinhVien" ReturnType="Collection(QLSVModel.TraCuuSinhVien_Result)">
+      <Parameter Name="tukhoa" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="TraCuuGiangVien_Result">
+    <Property Type="Int32" Name="maGiangVien" Nullable="false" />
+    <Property Type="String" Name="Ho" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ten" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="namSinh" Nullable="true" />
+    <Property Type="String" Name="gioiTinh" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="diaChi" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="soDienThoai" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="TraCuuLopHoc_Result">
+    <Property Type="Int32" Name="maLopHoc" Nullable="false" />
+    <Property Type="Int32" Name="maMonHoc" Nullable="true" />
+    <Property Type="Int32" Name="maGiangVien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="TraCuuMonHoc_Result">
+    <Property Type="Int32" Name="maMonHoc" Nullable="false" />
+    <Property Type="String" Name="tenMonHoc" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="soTinChi" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="TraCuuSinhVien_Result">
+    <Property Type="Int32" Name="maSinhVien" Nullable="false" />
+    <Property Type="String" Name="Ho" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Ten" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="namSinh" Nullable="true" />
+    <Property Type="String" Name="gioiTinh" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="queQuan" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="diaChi" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="dienThoai" Nullable="false" />
+  </ComplexType>
 </Schema>

@@ -56,8 +56,13 @@ namespace QLSV.BUS
                 }
             }
             else
+            {
+                MessageBox.Show("Không tìm thấy Môn Học bằng mã Môn Học");
                 return false;
+
+            }
         }
+            
 
         public bool XoaMonHoc(MonHoc mh)
         {
@@ -76,7 +81,15 @@ namespace QLSV.BUS
                 }
             }
             else
+            {
+                MessageBox.Show("Không tìm thấy Môn Học bằng mã Môn Học ");
                 return false;
+
+            }
+        }
+        public void TimKiemHienThiMH(string tuKhoa, DataGridView dg)
+        {
+            dg.DataSource = da.TimKiemMonHoc(tuKhoa);
         }
     }
 }

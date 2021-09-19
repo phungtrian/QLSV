@@ -56,6 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Diem.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,9 +75,6 @@
     <Compile Include="DAO\DAOMonHoc.cs" />
     <Compile Include="DAO\DAOSinhVien.cs" />
     <Compile Include="Database.cs" />
-    <Compile Include="Diem.cs">
-      <DependentUpon>QLSVEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="fQLDSSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +143,18 @@
     <Compile Include="TaiKhoan.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="TraCuuGiangVien_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuLopHoc_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuMonHoc_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuSinhVien_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +212,8 @@
     <None Include="image\buttonback.png" />
     <None Include="image\buttonback2.png" />
     <None Include="image\buttonback3.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="QLSVEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLSVEntity.edmx</DependentUpon>
@@ -211,6 +225,5 @@
       <LastGenOutput>QLSVEntity.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

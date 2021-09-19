@@ -55,7 +55,10 @@ namespace QLSV.BUS
                 }
             }
             else
+            {
+                MessageBox.Show("Không tìm thấy Giảng Viên bằng mã Sinh Giảng Viên ");
                 return false;
+            }
 
 
         }
@@ -77,7 +80,10 @@ namespace QLSV.BUS
                 }
             }
             else
+            {
+                MessageBox.Show("Không tìm thấy Giảng Viên bằng mã Sinh Giảng Viên ");
                 return false;
+            }
         }
         public void HienThiLoaiGioiTinh(ComboBox cb)
         {
@@ -86,6 +92,11 @@ namespace QLSV.BUS
             cb.ValueMember = "MaGioTinh";
 
 
+        }
+
+        public void TimKiemHienThiMH(string tuKhoa, DataGridView dg)
+        {
+            dg.DataSource = da.TimKiemGiangVien(tuKhoa);
         }
     }
 }

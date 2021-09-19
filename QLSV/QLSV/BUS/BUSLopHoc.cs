@@ -59,7 +59,10 @@ namespace QLSV.BUS
                 }
             }
             else
+            {
+                MessageBox.Show("Không tìm thấy Lớp học bằng mã lớp ");
                 return false;
+            }
 
         }
 
@@ -80,7 +83,10 @@ namespace QLSV.BUS
                 }
             }
             else
+            {
+                MessageBox.Show("Không tìm thấy Lớp học bằng mã lớp ");
                 return false;
+            }
 
         }
 
@@ -100,6 +106,11 @@ namespace QLSV.BUS
             cb.ValueMember = "maMonHoc";
 
 
+        }
+
+        public void TimKiemHienThiLH(string tuKhoa, DataGridView dg)
+        {
+            dg.DataSource = daLH.TimKiemLopHoc(tuKhoa);
         }
 
     }

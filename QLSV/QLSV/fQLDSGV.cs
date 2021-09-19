@@ -43,6 +43,22 @@ namespace QLSV
             dgvDSGV.Columns[7].Width = (int)(0.1 * dgvDSGV.Width);
         }
 
+        private bool KiemTraTXTMa()
+        {
+            string kt = txtMaGV.Text;
+            kt = kt.Replace(" ", string.Empty);
+
+            if (kt == "")
+            {
+                MessageBox.Show("bạn chưa nhập Mã Giảng Viên");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btThem_Click(object sender, EventArgs e)
         {
             GiangVien gv = new GiangVien();
@@ -66,51 +82,58 @@ namespace QLSV
             busGV.HienThiLoaiGioiTinh(cbLoaiGioiTinh);
         }
 
+
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            GiangVien gv = new GiangVien();
-            gv.maGiangVien = int.Parse(txtMaGV.Text.ToString());
-            gv.ho = txtHo.Text.ToString();
-            gv.ten = txtTen.Text.ToString();
-            gv.gioiTinh = cbLoaiGioiTinh.Text;
-            gv.namSinh = dtpNamSinh.Value;
-            gv.email = txtEmail.Text.ToString();
-            gv.diaChi = txtDiaChi.Text.ToString();
-            gv.soDienThoai = int.Parse(txtSDT.Text.ToString());
-
-            
-            if (busGV.SuaGV(gv))
+            if (KiemTraTXTMa())
             {
-                MessageBox.Show("Cập nhật thông tin Giảng Viên Thành Công");
-            }
-            else
-                MessageBox.Show("Bạn nhập Mã Giảng Viên sai. Hoặc không tìm thấy Giảng Viên");
+                GiangVien gv = new GiangVien();
+                gv.maGiangVien = int.Parse(txtMaGV.Text.ToString());
+                gv.ho = txtHo.Text.ToString();
+                gv.ten = txtTen.Text.ToString();
+                gv.gioiTinh = cbLoaiGioiTinh.Text;
+                gv.namSinh = dtpNamSinh.Value;
+                gv.email = txtEmail.Text.ToString();
+                gv.diaChi = txtDiaChi.Text.ToString();
+                gv.soDienThoai = int.Parse(txtSDT.Text.ToString());
 
-            HienThiDSGV();
+
+                if (busGV.SuaGV(gv))
+                {
+                    MessageBox.Show("Cập nhật thông tin Giảng Viên Thành Công");
+                }
+                else
+                    MessageBox.Show("Bạn nhập Mã Giảng Viên sai. Hoặc không tìm thấy Giảng Viên");
+
+                HienThiDSGV();
+            }
 
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            GiangVien gv = new GiangVien();
-            gv.maGiangVien = int.Parse(txtMaGV.Text.ToString());
-            gv.ho = txtHo.Text.ToString();
-            gv.ten = txtTen.Text.ToString();
-            gv.gioiTinh = cbLoaiGioiTinh.Text;
-            gv.namSinh = dtpNamSinh.Value;
-            gv.email = txtEmail.Text.ToString();
-            gv.diaChi = txtDiaChi.Text.ToString();
-            gv.soDienThoai = int.Parse(txtSDT.Text.ToString());
-
-
-            if (busGV.XoaGV(gv))
+            if (KiemTraTXTMa())
             {
-                MessageBox.Show("Xóa thông tin Giảng Viên Thành Công");
-            }
-            else
-                MessageBox.Show("Bạn nhập Mã Giảng Viên sai. Hoặc không tìm thấy Giảng Viên");
+                GiangVien gv = new GiangVien();
+                gv.maGiangVien = int.Parse(txtMaGV.Text.ToString());
+                gv.ho = txtHo.Text.ToString();
+                gv.ten = txtTen.Text.ToString();
+                gv.gioiTinh = cbLoaiGioiTinh.Text;
+                gv.namSinh = dtpNamSinh.Value;
+                gv.email = txtEmail.Text.ToString();
+                gv.diaChi = txtDiaChi.Text.ToString();
+                gv.soDienThoai = int.Parse(txtSDT.Text.ToString());
 
-            HienThiDSGV();
+
+                if (busGV.XoaGV(gv))
+                {
+                    MessageBox.Show("Xóa thông tin Giảng Viên Thành Công");
+                }
+                else
+                    MessageBox.Show("Bạn nhập Mã Giảng Viên sai. Hoặc không tìm thấy Giảng Viên");
+
+                HienThiDSGV();
+            }
         }
 
         private void dgvDSGV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -128,6 +151,21 @@ namespace QLSV
                 txtSDT.Text = dgvDSGV.Rows[e.RowIndex].Cells["soDienThoai"].Value.ToString();
 
             }
+        }
+
+
+
+        private void txtTuKhoa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btTraCuu.PerformClick();
+            }
+        }
+
+        private void btTraCuu_Click(object sender, EventArgs e)
+        {
+            busGV.TimKiemHienThiMH(txtTuKhoa.Text, dgvDSGV);
         }
 
         //private string tukhoa = "";

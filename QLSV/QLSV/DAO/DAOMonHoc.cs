@@ -60,5 +60,15 @@ namespace QLSV.DAO
             db.MonHocs.Remove(o);
             db.SaveChanges();
         }
+        public dynamic TimKiemMonHoc(string tukhoa)
+        {
+            var dsMH = db.TraCuuMonHoc(tukhoa).Select(s => new
+            {
+                s.maMonHoc,
+                s.tenMonHoc,
+                s.soTinChi
+            }).ToList();
+            return dsMH;
+        }
     }
 }

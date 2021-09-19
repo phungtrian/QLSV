@@ -60,38 +60,72 @@ namespace QLSV
                 cbMonhoc.SelectedValue = int.Parse(dgvDSLH.Rows[e.RowIndex].Cells["maMonHoc"].Value.ToString());
             }
         }
+        private bool KiemTraTXTMa()
+        {
+            string kt = txtMaLopHoc.Text;
+            kt = kt.Replace(" ", string.Empty);
+
+            if(kt == "")
+            {
+                MessageBox.Show("bạn chưa nhập Mã lớp học");
+                return false;
+            }  
+            else
+            {
+                return true;
+            }    
+        }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            LopHoc lh = new LopHoc();
-            lh.maLopHoc = int.Parse(txtMaLopHoc.Text);
-            lh.maGiangVien = int.Parse(cbGiangVien.SelectedValue.ToString());
-            lh.maMonHoc = int.Parse(cbMonhoc.SelectedValue.ToString());
-
-            if (busLH.SuaLopHoc(lh))
+            if (KiemTraTXTMa())
             {
-                MessageBox.Show("Cập nhật thông tin Lớp Học Thành Công");
+                LopHoc lh = new LopHoc();
+                lh.maLopHoc = int.Parse(txtMaLopHoc.Text);
+                lh.maGiangVien = int.Parse(cbGiangVien.SelectedValue.ToString());
+                lh.maMonHoc = int.Parse(cbMonhoc.SelectedValue.ToString());
+
+                if (busLH.SuaLopHoc(lh))
+                {
+                    MessageBox.Show("Cập nhật thông tin Lớp Học Thành Công");
+                }
+                else
+                    MessageBox.Show("Bạn nhập Mã Lớp Học sai. Hoặc không tìm thấy Lớp Học");
+                HienThiDSLH();
             }
-            else
-                MessageBox.Show("Bạn nhập Mã Lớp Học sai. Hoặc không tìm thấy Lớp Học");
-            HienThiDSLH();
 
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            LopHoc lh = new LopHoc();
-            lh.maLopHoc = int.Parse(txtMaLopHoc.Text);
-            lh.maGiangVien = int.Parse(cbGiangVien.SelectedValue.ToString());
-            lh.maMonHoc = int.Parse(cbMonhoc.SelectedValue.ToString());
-
-            if (busLH.XoaLopHoc(lh))
+            if (KiemTraTXTMa())
             {
-                MessageBox.Show("Xóa thông tin Lớp Học Thành Công");
+                LopHoc lh = new LopHoc();
+                lh.maLopHoc = int.Parse(txtMaLopHoc.Text);
+                lh.maGiangVien = int.Parse(cbGiangVien.SelectedValue.ToString());
+                lh.maMonHoc = int.Parse(cbMonhoc.SelectedValue.ToString());
+
+                if (busLH.XoaLopHoc(lh))
+                {
+                    MessageBox.Show("Xóa thông tin Lớp Học Thành Công");
+                }
+                else
+                    MessageBox.Show("Bạn nhập Mã Lớp Học sai. Hoặc không tìm thấy Lớp Học");
+                HienThiDSLH();
             }
-            else
-                MessageBox.Show("Bạn nhập Mã Lớp Học sai. Hoặc không tìm thấy Lớp Học");
-            HienThiDSLH();
+        }
+
+        private void btTraCuu_Click(object sender, EventArgs e)
+        {
+            busLH.TimKiemHienThiLH(txtTuKhoa.Text, dgvDSLH);
+        }
+
+        private void txtTuKhoa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btTraCuu.PerformClick();
+            }    
         }
     }
 }

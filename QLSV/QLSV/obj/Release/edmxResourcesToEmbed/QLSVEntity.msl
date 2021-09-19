@@ -106,5 +106,51 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="TraCuuGiangVien" FunctionName="QLSVModel.Store.TraCuuGiangVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLSVModel.TraCuuGiangVien_Result">
+          <ScalarProperty Name="maGiangVien" ColumnName="maGiangVien" />
+          <ScalarProperty Name="Ho" ColumnName="Ho" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="namSinh" ColumnName="namSinh" />
+          <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+          <ScalarProperty Name="soDienThoai" ColumnName="soDienThoai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TraCuuLopHoc" FunctionName="QLSVModel.Store.TraCuuLopHoc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLSVModel.TraCuuLopHoc_Result">
+          <ScalarProperty Name="maLopHoc" ColumnName="maLopHoc" />
+          <ScalarProperty Name="maMonHoc" ColumnName="maMonHoc" />
+          <ScalarProperty Name="maGiangVien" ColumnName="maGiangVien" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TraCuuMonHoc" FunctionName="QLSVModel.Store.TraCuuMonHoc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLSVModel.TraCuuMonHoc_Result">
+          <ScalarProperty Name="maMonHoc" ColumnName="maMonHoc" />
+          <ScalarProperty Name="tenMonHoc" ColumnName="tenMonHoc" />
+          <ScalarProperty Name="soTinChi" ColumnName="soTinChi" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TraCuuSinhVien" FunctionName="QLSVModel.Store.TraCuuSinhVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLSVModel.TraCuuSinhVien_Result">
+          <ScalarProperty Name="maSinhVien" ColumnName="maSinhVien" />
+          <ScalarProperty Name="Ho" ColumnName="Ho" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="namSinh" ColumnName="namSinh" />
+          <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
+          <ScalarProperty Name="queQuan" ColumnName="queQuan" />
+          <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+          <ScalarProperty Name="dienThoai" ColumnName="dienThoai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -82,5 +82,21 @@ namespace QLSV.DAO
             db.SaveChanges();
 
         }
+
+        public dynamic TimKiemSinhVien(string tuKhoa)
+        {
+            var ds = db.TraCuuSinhVien(tuKhoa).Select(s => new { 
+                s.maSinhVien,
+                s.Ho,
+                s.Ten,
+                s.gioiTinh,
+                s.namSinh,
+                s.queQuan,
+                s.diaChi,
+                s.dienThoai
+            }).ToList();
+            
+            return ds;
+        }
     }
 }

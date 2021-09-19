@@ -34,7 +34,6 @@ namespace QLSV
             this.label2 = new System.Windows.Forms.Label();
             this.cbGiangVien = new System.Windows.Forms.ComboBox();
             this.btThem = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvDSLH = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,53 +42,60 @@ namespace QLSV
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btBack = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtTuKhoa = new System.Windows.Forms.TextBox();
+            this.btTraCuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(116, 93);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(116, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Môn học";
             // 
             // cbMonhoc
             // 
             this.cbMonhoc.FormattingEnabled = true;
-            this.cbMonhoc.Location = new System.Drawing.Point(244, 90);
+            this.cbMonhoc.Location = new System.Drawing.Point(244, 72);
             this.cbMonhoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbMonhoc.Name = "cbMonhoc";
-            this.cbMonhoc.Size = new System.Drawing.Size(432, 24);
+            this.cbMonhoc.Size = new System.Drawing.Size(432, 27);
             this.cbMonhoc.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(116, 157);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(116, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 17);
+            this.label2.Size = new System.Drawing.Size(81, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Giáo viên";
             // 
             // cbGiangVien
             // 
             this.cbGiangVien.FormattingEnabled = true;
-            this.cbGiangVien.Location = new System.Drawing.Point(244, 154);
+            this.cbGiangVien.Location = new System.Drawing.Point(244, 120);
             this.cbGiangVien.Margin = new System.Windows.Forms.Padding(4);
             this.cbGiangVien.Name = "cbGiangVien";
-            this.cbGiangVien.Size = new System.Drawing.Size(432, 24);
+            this.cbGiangVien.Size = new System.Drawing.Size(432, 27);
             this.cbGiangVien.TabIndex = 1;
             // 
             // btThem
             // 
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.Location = new System.Drawing.Point(128, 206);
+            this.btThem.Location = new System.Drawing.Point(120, 171);
             this.btThem.Margin = new System.Windows.Forms.Padding(4);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(109, 40);
@@ -97,17 +103,6 @@ namespace QLSV
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Enabled = false;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(334, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(336, 49);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Quản Lý Lớp Học";
             // 
             // dgvDSLH
             // 
@@ -123,9 +118,10 @@ namespace QLSV
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvDSLH);
-            this.groupBox1.Location = new System.Drawing.Point(12, 346);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 356);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(998, 307);
+            this.groupBox1.Size = new System.Drawing.Size(998, 297);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Lớp Học";
@@ -133,10 +129,11 @@ namespace QLSV
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(116, 32);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 17);
+            this.label4.Size = new System.Drawing.Size(103, 21);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã Lớp học";
             // 
@@ -159,9 +156,10 @@ namespace QLSV
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
             this.groupBox2.Controls.Add(this.cbMonhoc);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(85, 71);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(840, 253);
+            this.groupBox2.Size = new System.Drawing.Size(840, 219);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin Lớp Học";
@@ -169,7 +167,7 @@ namespace QLSV
             // btXoa
             // 
             this.btXoa.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXoa.Location = new System.Drawing.Point(583, 206);
+            this.btXoa.Location = new System.Drawing.Point(598, 171);
             this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(133, 40);
@@ -181,7 +179,7 @@ namespace QLSV
             // btSua
             // 
             this.btSua.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSua.Location = new System.Drawing.Point(349, 206);
+            this.btSua.Location = new System.Drawing.Point(352, 171);
             this.btSua.Margin = new System.Windows.Forms.Padding(4);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(133, 40);
@@ -200,15 +198,60 @@ namespace QLSV
             this.btBack.TabIndex = 10;
             this.btBack.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(355, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(308, 46);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Quản Lý Lớp Học";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtTuKhoa);
+            this.groupBox3.Controls.Add(this.btTraCuu);
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(183, 296);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(633, 60);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tra Cứu";
+            // 
+            // txtTuKhoa
+            // 
+            this.txtTuKhoa.Location = new System.Drawing.Point(70, 26);
+            this.txtTuKhoa.Multiline = true;
+            this.txtTuKhoa.Name = "txtTuKhoa";
+            this.txtTuKhoa.Size = new System.Drawing.Size(331, 26);
+            this.txtTuKhoa.TabIndex = 0;
+            this.txtTuKhoa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTuKhoa_KeyDown);
+            // 
+            // btTraCuu
+            // 
+            this.btTraCuu.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTraCuu.Location = new System.Drawing.Point(473, 15);
+            this.btTraCuu.Margin = new System.Windows.Forms.Padding(4);
+            this.btTraCuu.Name = "btTraCuu";
+            this.btTraCuu.Size = new System.Drawing.Size(133, 40);
+            this.btTraCuu.TabIndex = 2;
+            this.btTraCuu.Text = "Tra Cứu";
+            this.btTraCuu.UseVisualStyleBackColor = true;
+            this.btTraCuu.Click += new System.EventHandler(this.btTraCuu_Click);
+            // 
             // fQLLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1029, 679);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label3);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fQLLopHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -218,6 +261,8 @@ namespace QLSV
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +275,6 @@ namespace QLSV
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbGiangVien;
         private System.Windows.Forms.Button btThem;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvDSLH;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
@@ -239,5 +283,9 @@ namespace QLSV
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtTuKhoa;
+        private System.Windows.Forms.Button btTraCuu;
     }
 }

@@ -155,6 +155,18 @@ warning 6002: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="TraCuuGiangVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TraCuuLopHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TraCuuMonHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TraCuuSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="QLSVModelStoreContainer">
           <EntitySet Name="Diem" EntityType="Self.Diem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
@@ -372,7 +384,49 @@ warning 6002: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
             <End Role="MonHoc" EntitySet="MonHocs" />
             <End Role="LopHoc" EntitySet="LopHocs" />
           </AssociationSet>
+          <FunctionImport Name="TraCuuGiangVien" ReturnType="Collection(QLSVModel.TraCuuGiangVien_Result)">
+            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TraCuuLopHoc" ReturnType="Collection(QLSVModel.TraCuuLopHoc_Result)">
+            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TraCuuMonHoc" ReturnType="Collection(QLSVModel.TraCuuMonHoc_Result)">
+            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TraCuuSinhVien" ReturnType="Collection(QLSVModel.TraCuuSinhVien_Result)">
+            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="TraCuuGiangVien_Result">
+          <Property Type="Int32" Name="maGiangVien" Nullable="false" />
+          <Property Type="String" Name="Ho" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Ten" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="namSinh" Nullable="true" />
+          <Property Type="String" Name="gioiTinh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="diaChi" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="soDienThoai" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TraCuuLopHoc_Result">
+          <Property Type="Int32" Name="maLopHoc" Nullable="false" />
+          <Property Type="Int32" Name="maMonHoc" Nullable="true" />
+          <Property Type="Int32" Name="maGiangVien" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TraCuuMonHoc_Result">
+          <Property Type="Int32" Name="maMonHoc" Nullable="false" />
+          <Property Type="String" Name="tenMonHoc" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="soTinChi" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TraCuuSinhVien_Result">
+          <Property Type="Int32" Name="maSinhVien" Nullable="false" />
+          <Property Type="String" Name="Ho" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Ten" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="namSinh" Nullable="true" />
+          <Property Type="String" Name="gioiTinh" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="queQuan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="diaChi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="dienThoai" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -484,6 +538,52 @@ warning 6002: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="TraCuuGiangVien" FunctionName="QLSVModel.Store.TraCuuGiangVien">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.TraCuuGiangVien_Result">
+                <ScalarProperty Name="maGiangVien" ColumnName="maGiangVien" />
+                <ScalarProperty Name="Ho" ColumnName="Ho" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="namSinh" ColumnName="namSinh" />
+                <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+                <ScalarProperty Name="soDienThoai" ColumnName="soDienThoai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TraCuuLopHoc" FunctionName="QLSVModel.Store.TraCuuLopHoc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.TraCuuLopHoc_Result">
+                <ScalarProperty Name="maLopHoc" ColumnName="maLopHoc" />
+                <ScalarProperty Name="maMonHoc" ColumnName="maMonHoc" />
+                <ScalarProperty Name="maGiangVien" ColumnName="maGiangVien" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TraCuuMonHoc" FunctionName="QLSVModel.Store.TraCuuMonHoc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.TraCuuMonHoc_Result">
+                <ScalarProperty Name="maMonHoc" ColumnName="maMonHoc" />
+                <ScalarProperty Name="tenMonHoc" ColumnName="tenMonHoc" />
+                <ScalarProperty Name="soTinChi" ColumnName="soTinChi" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TraCuuSinhVien" FunctionName="QLSVModel.Store.TraCuuSinhVien">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.TraCuuSinhVien_Result">
+                <ScalarProperty Name="maSinhVien" ColumnName="maSinhVien" />
+                <ScalarProperty Name="Ho" ColumnName="Ho" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="namSinh" ColumnName="namSinh" />
+                <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
+                <ScalarProperty Name="queQuan" ColumnName="queQuan" />
+                <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+                <ScalarProperty Name="dienThoai" ColumnName="dienThoai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

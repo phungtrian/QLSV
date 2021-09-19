@@ -68,6 +68,16 @@ namespace QLSV.DAO
             db.SaveChanges();
         }
 
-        
+        public dynamic TimKiemLopHoc(string tuKhoa)
+        {
+            var ds = db.TraCuuLopHoc(tuKhoa).Select(s => new
+            {
+                s.maLopHoc,
+                s.maMonHoc,
+                s.maGiangVien
+            }).ToList();
+            return ds;
+        }
+
     }
 }

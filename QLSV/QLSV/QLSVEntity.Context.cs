@@ -12,6 +12,8 @@ namespace QLSV
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QLSVEntities : DbContext
     {
@@ -33,5 +35,41 @@ namespace QLSV
         public virtual DbSet<SinhVien> SinhViens { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+    
+        public virtual ObjectResult<TraCuuGiangVien_Result> TraCuuGiangVien(string tukhoa)
+        {
+            var tukhoaParameter = tukhoa != null ?
+                new ObjectParameter("tukhoa", tukhoa) :
+                new ObjectParameter("tukhoa", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TraCuuGiangVien_Result>("TraCuuGiangVien", tukhoaParameter);
+        }
+    
+        public virtual ObjectResult<TraCuuLopHoc_Result> TraCuuLopHoc(string tukhoa)
+        {
+            var tukhoaParameter = tukhoa != null ?
+                new ObjectParameter("tukhoa", tukhoa) :
+                new ObjectParameter("tukhoa", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TraCuuLopHoc_Result>("TraCuuLopHoc", tukhoaParameter);
+        }
+    
+        public virtual ObjectResult<TraCuuMonHoc_Result> TraCuuMonHoc(string tukhoa)
+        {
+            var tukhoaParameter = tukhoa != null ?
+                new ObjectParameter("tukhoa", tukhoa) :
+                new ObjectParameter("tukhoa", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TraCuuMonHoc_Result>("TraCuuMonHoc", tukhoaParameter);
+        }
+    
+        public virtual ObjectResult<TraCuuSinhVien_Result> TraCuuSinhVien(string tukhoa)
+        {
+            var tukhoaParameter = tukhoa != null ?
+                new ObjectParameter("tukhoa", tukhoa) :
+                new ObjectParameter("tukhoa", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TraCuuSinhVien_Result>("TraCuuSinhVien", tukhoaParameter);
+        }
     }
 }

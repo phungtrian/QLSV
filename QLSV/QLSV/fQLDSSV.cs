@@ -57,64 +57,100 @@ namespace QLSV
             }
         }
 
+        private bool KiemTraTXTMa()
+        {
+            string kt = txtMSSV.Text;
+            kt = kt.Replace(" ", string.Empty);
+
+            if (kt == "")
+            {
+                MessageBox.Show("bạn chưa nhập Mã Số Sinh Viên");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btThem_Click(object sender, EventArgs e)
         {
-            SinhVien sv = new SinhVien();
-            sv.maSinhVien = int.Parse(txtMSSV.Text.ToString());
-            sv.Ho = txtHo.Text.ToString();
-            sv.Ten = txtTen.Text.ToString();
-            sv.gioiTinh = cbLoaiGioiTinh.Text;
-            sv.namSinh = dtpNamSinh.Value;
-            sv.queQuan = txtQueQuan.Text.ToString();
-            sv.diaChi = txtDiaChi.Text.ToString();           
-            sv.dienThoai = int.Parse(txtSDT.Text.ToString());
+            
+                SinhVien sv = new SinhVien();
+                sv.maSinhVien = int.Parse(txtMSSV.Text.ToString());
+                sv.Ho = txtHo.Text.ToString();
+                sv.Ten = txtTen.Text.ToString();
+                sv.gioiTinh = cbLoaiGioiTinh.Text;
+                sv.namSinh = dtpNamSinh.Value;
+                sv.queQuan = txtQueQuan.Text.ToString();
+                sv.diaChi = txtDiaChi.Text.ToString();
+                sv.dienThoai = int.Parse(txtSDT.Text.ToString());
 
-            busDSSV.ThemSV(sv);
+                busDSSV.ThemSV(sv);
 
-            HienThiDSSV();
+                HienThiDSSV();
+            
         }
 
         private void btCapNhat_Click(object sender, EventArgs e)
         {
-            SinhVien sv;
-            sv = new SinhVien();
-            sv.maSinhVien = int.Parse(txtMSSV.Text);
-            sv.Ho = txtHo.Text;
-            sv.Ten = txtTen.Text;
-            sv.namSinh = dtpNamSinh.Value;
-            sv.gioiTinh = cbLoaiGioiTinh.Text;
-            sv.diaChi = txtDiaChi.Text;
-            sv.queQuan = txtQueQuan.Text;
-
-            if (busDSSV.SuaSinhViem(sv))
+            if (KiemTraTXTMa())
             {
-                MessageBox.Show("Cập nhật thông tin sinh viên Thành Công");
-            }
-            else
-                MessageBox.Show("Bạn nhập MSSV sai. Hoặc không tìm thấy sinh viên");
-            HienThiDSSV();
+                SinhVien sv;
+                sv = new SinhVien();
+                sv.maSinhVien = int.Parse(txtMSSV.Text);
+                sv.Ho = txtHo.Text;
+                sv.Ten = txtTen.Text;
+                sv.namSinh = dtpNamSinh.Value;
+                sv.gioiTinh = cbLoaiGioiTinh.Text;
+                sv.diaChi = txtDiaChi.Text;
+                sv.queQuan = txtQueQuan.Text;
 
+                if (busDSSV.SuaSinhViem(sv))
+                {
+                    MessageBox.Show("Cập nhật thông tin sinh viên Thành Công");
+                }
+                else
+                    MessageBox.Show("Bạn nhập MSSV sai. Hoặc không tìm thấy sinh viên");
+                HienThiDSSV();
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            SinhVien sv;
-            sv = new SinhVien();
-            sv.maSinhVien = int.Parse(txtMSSV.Text);
-            sv.Ho = txtHo.Text;
-            sv.Ten = txtTen.Text;
-            sv.namSinh = dtpNamSinh.Value;
-            sv.gioiTinh = cbLoaiGioiTinh.Text;
-            sv.diaChi = txtDiaChi.Text;
-            sv.queQuan = txtQueQuan.Text;
-
-            if (busDSSV.XoaSinhVien(sv))
+            if (KiemTraTXTMa())
             {
-                MessageBox.Show("Xóa thông tin sinh viên Thành Công");
+                SinhVien sv;
+                sv = new SinhVien();
+                sv.maSinhVien = int.Parse(txtMSSV.Text);
+                sv.Ho = txtHo.Text;
+                sv.Ten = txtTen.Text;
+                sv.namSinh = dtpNamSinh.Value;
+                sv.gioiTinh = cbLoaiGioiTinh.Text;
+                sv.diaChi = txtDiaChi.Text;
+                sv.queQuan = txtQueQuan.Text;
+
+                if (busDSSV.XoaSinhVien(sv))
+                {
+                    MessageBox.Show("Xóa thông tin sinh viên Thành Công");
+                }
+                else
+                    MessageBox.Show("Bạn nhập MSSV sai. Hoặc không tìm thấy sinh viên");
+                HienThiDSSV();
             }
-            else
-                MessageBox.Show("Bạn nhập MSSV sai. Hoặc không tìm thấy sinh viên");
-            HienThiDSSV();
+        }
+
+        private void btTraCuu_Click(object sender, EventArgs e)
+        {
+            busDSSV.TimKiemHienThiSinhVien(txtTuKhoa.Text, dgvDSSV);
+        }
+
+        private void txtTuKhoa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btTraCuu.PerformClick();
+            }
         }
     }
 
