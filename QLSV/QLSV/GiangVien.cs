@@ -17,7 +17,6 @@ namespace QLSV
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GiangVien()
         {
-            this.Diems = new HashSet<Diem>();
             this.LopHocs = new HashSet<LopHoc>();
         }
     
@@ -35,8 +34,6 @@ namespace QLSV
         public string gioiTinh { get; set; }
         public string matKhau { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Diem> Diems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LopHoc> LopHocs { get; set; }
     }

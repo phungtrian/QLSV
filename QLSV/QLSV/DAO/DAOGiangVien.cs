@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Core.Objects;
 
 namespace QLSV.DAO
 {
@@ -100,5 +101,52 @@ namespace QLSV.DAO
             }).ToList();
             return dsGV;
         }
+
+        public int ChamDiem (int maGV, int maLop, int maSV, float diemLan1, float diemLan2, float diemTK)
+        {
+            var kt = new ObjectParameter("trangthai", typeof(int));
+
+            db.chamdiem(maGV, maLop, maSV, diemLan1, diemLan2,diemTK, kt);
+
+            return int.Parse(kt.Value.ToString());
+        }
+
+        public dynamic LayDSLopTheoGV (int maGV)
+        {
+            dynamic ds = db.HienThiLopTheoGV(maGV).Select(s => new
+            {
+                s.malophoc,
+                s.mamonhoc,
+                s.tenmonhoc,
+                s.siso,
+                s.sotinchi,
+                
+            }).ToList();
+            return ds;
+        }
+
+        public int KetThuLopHoc(int maGV, int maLop)
+        {
+            var kt = new ObjectParameter("trangthai", typeof(int));
+
+            db.ketthuchocphan(maGV.ToString(), maLop, kt);
+
+            return int.Parse(kt.Value.ToString());
+
+        }
+
+        public dynamic LayDSSVTheoLop( int maLop)
+        {
+            dynamic ds = db.DSSVTheoLop(maLop).Select(s => new
+            {
+                s.masinhvien,
+                s.hoten,
+                s.diemlan1,
+                s.diemlan2,
+                s.diemtongket
+            }).ToList();
+            return ds;
+        }
+
     }
 }

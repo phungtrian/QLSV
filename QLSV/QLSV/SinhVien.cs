@@ -14,6 +14,12 @@ namespace QLSV
     
     public partial class SinhVien
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SinhVien()
+        {
+            this.Diems = new HashSet<Diem>();
+        }
+    
         public int maSinhVien { get; set; }
         public string Ho { get; set; }
         public string Ten { get; set; }
@@ -27,5 +33,8 @@ namespace QLSV
         public string nguoiCapNhat { get; set; }
         public string gioiTinh { get; set; }
         public string matKhau { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Diem> Diems { get; set; }
     }
 }

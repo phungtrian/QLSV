@@ -63,7 +63,13 @@ namespace QLSV
 
         private void fAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            fDangNhap f = new fDangNhap();
+            f.Show();
+        }
+
+        private void DangXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        {           
+            this.Close();
         }
     }
 }

@@ -41,7 +41,6 @@ namespace QLSV
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
-            this.btBack = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
@@ -139,11 +138,13 @@ namespace QLSV
             // 
             // txtMaLopHoc
             // 
+            this.txtMaLopHoc.Enabled = false;
             this.txtMaLopHoc.Location = new System.Drawing.Point(244, 32);
             this.txtMaLopHoc.Multiline = true;
             this.txtMaLopHoc.Name = "txtMaLopHoc";
             this.txtMaLopHoc.Size = new System.Drawing.Size(432, 22);
             this.txtMaLopHoc.TabIndex = 6;
+            this.txtMaLopHoc.Text = "1";
             // 
             // groupBox2
             // 
@@ -187,15 +188,6 @@ namespace QLSV
             this.btSua.Text = "Cập nhật";
             this.btSua.UseVisualStyleBackColor = true;
             this.btSua.Click += new System.EventHandler(this.btSua_Click);
-            // 
-            // btBack
-            // 
-            this.btBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btBack.Location = new System.Drawing.Point(12, 12);
-            this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(69, 45);
-            this.btBack.TabIndex = 10;
-            this.btBack.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -248,7 +240,6 @@ namespace QLSV
             this.ClientSize = new System.Drawing.Size(1029, 679);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btBack);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -281,7 +272,6 @@ namespace QLSV
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btXoa;
-        private System.Windows.Forms.Button btBack;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTuKhoa;

@@ -56,7 +56,6 @@ namespace QLSV
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.txtHo = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.btBack = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSV)).BeginInit();
@@ -329,15 +328,6 @@ namespace QLSV
             this.txtTen.Size = new System.Drawing.Size(199, 22);
             this.txtTen.TabIndex = 8;
             // 
-            // btBack
-            // 
-            this.btBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btBack.Location = new System.Drawing.Point(12, 12);
-            this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(69, 45);
-            this.btBack.TabIndex = 10;
-            this.btBack.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtTuKhoa);
@@ -357,7 +347,6 @@ namespace QLSV
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1042, 706);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btBack);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -404,7 +393,6 @@ namespace QLSV
         private System.Windows.Forms.DateTimePicker dtpNamSinh;
         private System.Windows.Forms.ComboBox cbLoaiGioiTinh;
         private System.Windows.Forms.Button btXoa;
-        private System.Windows.Forms.Button btBack;
         private System.Windows.Forms.GroupBox groupBox3;
     }
 }

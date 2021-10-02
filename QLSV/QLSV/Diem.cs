@@ -17,14 +17,16 @@ namespace QLSV
         public int maMonHoc { get; set; }
         public int maGiangVien { get; set; }
         public int maSinhVien { get; set; }
-        public double diemGV1 { get; set; }
-        public double diemGV2 { get; set; }
+        public double diemLan1 { get; set; }
+        public double diemLan2 { get; set; }
         public Nullable<System.DateTime> ngayTao { get; set; }
         public Nullable<System.DateTime> ngayCapNhat { get; set; }
         public string nguoiTao { get; set; }
         public string nguoiCapNhat { get; set; }
+        public Nullable<int> maLopHoc { get; set; }
+        public Nullable<double> diemtongket { get; set; }
     
-        public virtual GiangVien GiangVien { get; set; }
         public virtual MonHoc MonHoc { get; set; }
+        public virtual SinhVien SinhVien { get; set; }
     }
 }

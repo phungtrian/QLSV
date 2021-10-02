@@ -68,7 +68,9 @@ namespace QLSV
 
             matKhau = txtMatKhau.Text;
 
-            if (busDN.DangNhap(loaiTK, tenDangNhap, matKhau) == 1)
+            int kt = busDN.DangNhap(loaiTK, tenDangNhap, matKhau);
+
+            if (kt == 1)
             {
                 MessageBox.Show("Quản Trị Viên Đăng nhập thành công");
                 fAdmin f = new fAdmin();
@@ -77,25 +79,30 @@ namespace QLSV
 
 
             }
-            else if (busDN.DangNhap(loaiTK, tenDangNhap, matKhau) == 2)
+            else if (kt == 2)
             {
                 MessageBox.Show("Giảng Viên Đăng nhập thành công ");
                 fGiangVien f = new fGiangVien();
+                f.maGV = int.Parse(txtTenDN.Text);
                 f.Show();
                 this.Hide();
 
             }
-            else if (busDN.DangNhap(loaiTK, tenDangNhap, matKhau) == 3)
+            else if (kt == 3)
             {
                 MessageBox.Show("Sinh Viên Đăng nhập thành công ");
                 fSinhVien f = new fSinhVien();
                 f.Show();
                 this.Hide();
-
             }
         }
 
         private void btThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void fDangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

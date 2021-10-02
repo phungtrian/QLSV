@@ -90,13 +90,74 @@ namespace QLSV.BUS
             cb.DataSource = da.LayLoaiGioiTinh();
             cb.DisplayMember = "TenGioiTinh";
             cb.ValueMember = "MaGioTinh";
+        }
 
-
+        public void HienThicbLop(int maGV, ComboBox cbLop,ComboBox cbMonHoc)
+        {
+            cbLop.DataSource = da.LayDSLopTheoGV(maGV);
+            cbLop.ValueMember = "malophoc";
+            cbMonHoc.DataSource = da.LayDSLopTheoGV(maGV);
+            cbMonHoc.ValueMember = "malophoc";
+            cbMonHoc.DisplayMember = "tenmonhoc";
         }
 
         public void TimKiemHienThiMH(string tuKhoa, DataGridView dg)
         {
             dg.DataSource = da.TimKiemGiangVien(tuKhoa);
         }
+
+        public void HienThiDSLopTheoGV(int maGV, DataGridView dg)
+        {
+            dg.DataSource = da.LayDSLopTheoGV(maGV);
+        }
+
+        public void HienThiGiangVien(ComboBox cb)
+        {
+            cb.DataSource = da.LayDSGiangVien();
+            cb.DisplayMember = "ten";
+            cb.ValueMember = "maGiangVien";
+
+
+        }
+
+        public int KetThucLopHoc(int maGV, int maLop)
+        {
+            int kq;
+            
+            try
+            {
+                kq = da.KetThuLopHoc(maGV, maLop);
+                return kq;
+            }
+            catch (DbUpdateException ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return 2;
+            }
+
+        }
+
+        public void HienThiDSSVTheoLop(int maLop, DataGridView dg)
+        {
+            dg.DataSource = da.LayDSSVTheoLop(maLop);
+        }
+
+       
+
+        public int ChamDiem(int maGV, int maLop, int maSV, float diemLan1, float diemLan2, float diemTK)
+        {
+            int kq;
+            try
+            {
+                kq = da.ChamDiem(maGV, maLop, maSV, diemLan1, diemLan2, diemTK);
+                return kq;
+            }
+            catch (DbUpdateException ex)
+            {
+
+                return 2;
+            }
+        }    
     }
 }

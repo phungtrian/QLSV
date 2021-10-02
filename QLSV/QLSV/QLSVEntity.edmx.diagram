@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="46a05ab152004705a10867dd9aa2e8b9" Name="Diagram1">
-        <EntityTypeShape EntityType="QLSVModel.Diem" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSVModel.GiangVien" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSVModel.LoaiGioiTinh" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSVModel.LopHoc" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSVModel.MonHoc" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSVModel.SinhVien" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLSVModel.sysdiagram" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
-        <AssociationConnector Association="QLSVModel.FK_Diem_GiangVien" ManuallyRouted="false" />
-        <AssociationConnector Association="QLSVModel.FK_Diem_MonHoc" ManuallyRouted="false" />
-        <AssociationConnector Association="QLSVModel.FK_lopHoc_GiangVien" ManuallyRouted="false" />
-        <AssociationConnector Association="QLSVModel.FK_LopHoc_MonHoc" ManuallyRouted="false" />
+      <Diagram DiagramId="0baeb7b15733493c96ff0bc37a5f3833" Name="Diagram1">
+        <EntityTypeShape EntityType="QLSVModel.Diem" Width="1.5" PointX="6" PointY="4.875" />
+        <EntityTypeShape EntityType="QLSVModel.GiangVien" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QLSVModel.LoaiGioiTinh" Width="1.5" PointX="2.75" PointY="2.625" />
+        <EntityTypeShape EntityType="QLSVModel.LopHoc" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="QLSVModel.MonHoc" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="QLSVModel.SinhVien" Width="1.5" PointX="3.75" PointY="10.75" />
+        <EntityTypeShape EntityType="QLSVModel.sysdiagram" Width="1.5" PointX="0.75" PointY="9.625" />
+        <AssociationConnector Association="QLSVModel.FK_Diem_MonHoc" />
+        <AssociationConnector Association="QLSVModel.FK_Diem_SinhVien" />
+        <AssociationConnector Association="QLSVModel.FK_lopHoc_GiangVien" />
+        <AssociationConnector Association="QLSVModel.FK_LopHoc_MonHoc" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

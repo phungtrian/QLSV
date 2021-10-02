@@ -68,11 +68,20 @@
     <Compile Include="Diem.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="DSSVTheoLop_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChamDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChamDiem.Designer.cs">
+      <DependentUpon>fChamDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="fDangNhap.cs">
       <SubType>Form</SubType>
@@ -117,6 +126,9 @@
       <DependentUpon>fSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="GiangVien.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HienThiLopTheoGV_Result.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="LoaiGioiTinh.cs">
@@ -178,8 +190,14 @@
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fChamDiem.resx">
+      <DependentUpon>fChamDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGiangVien.resx">
+      <DependentUpon>fGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQLDSGV.resx">
       <DependentUpon>fQLDSGV.cs</DependentUpon>
@@ -224,10 +242,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="QLSVEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QLSVEntity.Context.cs</LastGenOutput>
       <DependentUpon>QLSVEntity.edmx</DependentUpon>
+      <LastGenOutput>QLSVEntity.Context.cs</LastGenOutput>
     </Content>
     <Content Include="QLSVEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -235,9 +256,5 @@
       <LastGenOutput>QLSVEntity.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

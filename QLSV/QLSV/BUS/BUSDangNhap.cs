@@ -19,29 +19,18 @@ namespace QLSV.BUS
 
         public int DangNhap(string loaiTK, string tenDN, string matKhau)
         {
-
-            if (da.Dangnhap(loaiTK, tenDN, matKhau) != 0 && loaiTK == "admin")
+            int kq = da.Dangnhap(loaiTK, tenDN, matKhau);
+            if (kq != 0 && loaiTK == "admin")
             {
-
-
-
                 return 1;
-
-
             }
-            else if (da.Dangnhap(loaiTK, tenDN, matKhau) != 0 && loaiTK == "gv")
+            else if (kq != 0 && loaiTK == "gv")
             {
-
-
                 return 2;
-
             }
-            else if (da.Dangnhap(loaiTK, tenDN, matKhau) != 0 && loaiTK == "sv")
+            else if (kq != 0 && loaiTK == "sv")
             {
-
-
                 return 3;
-
             }
             else
             {

@@ -179,6 +179,7 @@ namespace QLSV
             this.MaximizeBox = false;
             this.Name = "fDangNhap";
             this.Text = "Đăng nhập hệ thống ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fDangNhap_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

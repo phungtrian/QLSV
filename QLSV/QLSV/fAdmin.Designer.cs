@@ -35,6 +35,7 @@ namespace QLSV
             this.quanLyMonHocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLylopHocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,8 @@ namespace QLSV
             this.quanLySinhVienToolStripMenuItem,
             this.quanLyGiangVienToolStripMenuItem,
             this.quanLyMonHocToolStripMenuItem,
-            this.quanLylopHocToolStripMenuItem});
+            this.quanLylopHocToolStripMenuItem,
+            this.DangXuatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1043, 30);
@@ -92,6 +94,14 @@ namespace QLSV
             this.pnlContent.Size = new System.Drawing.Size(1196, 734);
             this.pnlContent.TabIndex = 2;
             // 
+            // DangXuatToolStripMenuItem
+            // 
+            this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(107, 26);
+            this.DangXuatToolStripMenuItem.Text = "Đăng Xuất";
+            this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuatToolStripMenuItem_Click);
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -120,5 +130,6 @@ namespace QLSV
         private System.Windows.Forms.ToolStripMenuItem quanLyMonHocToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quanLylopHocToolStripMenuItem;
         private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.ToolStripMenuItem DangXuatToolStripMenuItem;
     }
 }

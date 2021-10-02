@@ -48,7 +48,6 @@ namespace QLSV
             this.dgvDSMH = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMH)).BeginInit();
@@ -120,35 +119,35 @@ namespace QLSV
             // 
             // txtTinChi
             // 
-            this.txtTinChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTinChi.Location = new System.Drawing.Point(537, 54);
+            this.txtTinChi.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTinChi.Location = new System.Drawing.Point(537, 45);
             this.txtTinChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTinChi.Name = "txtTinChi";
-            this.txtTinChi.Size = new System.Drawing.Size(84, 34);
+            this.txtTinChi.Size = new System.Drawing.Size(84, 28);
             this.txtTinChi.TabIndex = 1;
             // 
             // txtTenMon
             // 
-            this.txtTenMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenMon.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenMon.Location = new System.Drawing.Point(156, 89);
             this.txtTenMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenMon.Name = "txtTenMon";
-            this.txtTenMon.Size = new System.Drawing.Size(232, 34);
+            this.txtTenMon.Size = new System.Drawing.Size(232, 28);
             this.txtTenMon.TabIndex = 1;
             // 
             // txtMaMon
             // 
-            this.txtMaMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaMon.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaMon.Location = new System.Drawing.Point(156, 38);
             this.txtMaMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaMon.Name = "txtMaMon";
-            this.txtMaMon.Size = new System.Drawing.Size(232, 34);
+            this.txtMaMon.Size = new System.Drawing.Size(232, 28);
             this.txtMaMon.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(466, 65);
+            this.label4.Location = new System.Drawing.Point(449, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 19);
             this.label4.TabIndex = 0;
@@ -253,22 +252,12 @@ namespace QLSV
             this.label1.Text = "Danh Sách Môn Học";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btBack
-            // 
-            this.btBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btBack.Location = new System.Drawing.Point(12, 12);
-            this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(69, 45);
-            this.btBack.TabIndex = 10;
-            this.btBack.UseVisualStyleBackColor = true;
-            // 
             // fQLDSMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1052, 752);
-            this.Controls.Add(this.btBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -309,6 +298,5 @@ namespace QLSV
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTuKhoa;
         private System.Windows.Forms.Button btXoa;
-        private System.Windows.Forms.Button btBack;
     }
 }

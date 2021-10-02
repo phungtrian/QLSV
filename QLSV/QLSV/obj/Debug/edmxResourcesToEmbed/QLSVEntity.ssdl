@@ -3,18 +3,19 @@
   <EntityType Name="Diem">
     <Key>
       <PropertyRef Name="maMonHoc" />
-      <PropertyRef Name="maGiangVien" />
       <PropertyRef Name="maSinhVien" />
     </Key>
     <Property Name="maMonHoc" Type="int" Nullable="false" />
     <Property Name="maGiangVien" Type="int" Nullable="false" />
     <Property Name="maSinhVien" Type="int" Nullable="false" />
-    <Property Name="diemGV1" Type="float" Nullable="false" />
-    <Property Name="diemGV2" Type="float" Nullable="false" />
+    <Property Name="diemLan1" Type="float" Nullable="false" />
+    <Property Name="diemLan2" Type="float" Nullable="false" />
     <Property Name="ngayTao" Type="datetime" />
     <Property Name="ngayCapNhat" Type="datetime" />
     <Property Name="nguoiTao" Type="nvarchar" MaxLength="50" />
     <Property Name="nguoiCapNhat" Type="nvarchar" MaxLength="50" />
+    <Property Name="maLopHoc" Type="int" />
+    <Property Name="diemtongket" Type="float" />
   </EntityType>
   <EntityType Name="GiangVien">
     <Key>
@@ -94,25 +95,6 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TaiKhoan">
-          <Property Name="tentaikhoan" Type="nvarchar" MaxLength="50" />
-          <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
-          <Property Name="hoTen" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-  <Association Name="FK_Diem_GiangVien">
-    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="1" />
-    <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GiangVien">
-        <PropertyRef Name="maGiangVien" />
-      </Principal>
-      <Dependent Role="Diem">
-        <PropertyRef Name="maGiangVien" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Diem_MonHoc">
     <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
     <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
@@ -122,6 +104,18 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
       </Principal>
       <Dependent Role="Diem">
         <PropertyRef Name="maMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diem_SinhVien">
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="1" />
+    <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SinhVien">
+        <PropertyRef Name="maSinhVien" />
+      </Principal>
+      <Dependent Role="Diem">
+        <PropertyRef Name="maSinhVien" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -149,16 +143,36 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="chamdiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="magiangvien" Type="int" Mode="In" />
+    <Parameter Name="malop" Type="int" Mode="In" />
+    <Parameter Name="masinhvien" Type="int" Mode="In" />
+    <Parameter Name="diemlan1" Type="float" Mode="In" />
+    <Parameter Name="diemlan2" Type="float" Mode="In" />
+    <Parameter Name="diemtrongket" Type="float" Mode="In" />
+    <Parameter Name="trangThai" Type="int" Mode="InOut" />
+  </Function>
   <Function Name="dangnhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="loaitaikhoan" Type="nvarchar" Mode="In" />
     <Parameter Name="taikhoan" Type="varchar" Mode="In" />
     <Parameter Name="matkhau" Type="varchar" Mode="In" />
     <Parameter Name="dem" Type="int" Mode="InOut" />
   </Function>
+  <Function Name="DSSVTheoLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="malophoc" Type="int" Mode="In" />
+  </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="HienThiLopTheoGV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="magiangvien" Type="int" Mode="In" />
+  </Function>
   <Function Name="insertlophoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="magiaovien" Type="int" Mode="In" />
     <Parameter Name="mamonhoc" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ketthuchocphan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="magiangvien" Type="varchar" Mode="In" />
+    <Parameter Name="malop" Type="int" Mode="In" />
+    <Parameter Name="trangThai" Type="int" Mode="InOut" />
   </Function>
   <Function Name="selectALLLopHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="selectLopHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -214,12 +228,12 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
     <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Diem_GiangVien" Association="Self.FK_Diem_GiangVien">
-      <End Role="GiangVien" EntitySet="GiangVien" />
-      <End Role="Diem" EntitySet="Diem" />
-    </AssociationSet>
     <AssociationSet Name="FK_Diem_MonHoc" Association="Self.FK_Diem_MonHoc">
       <End Role="MonHoc" EntitySet="MonHoc" />
+      <End Role="Diem" EntitySet="Diem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diem_SinhVien" Association="Self.FK_Diem_SinhVien">
+      <End Role="SinhVien" EntitySet="SinhVien" />
       <End Role="Diem" EntitySet="Diem" />
     </AssociationSet>
     <AssociationSet Name="FK_lopHoc_GiangVien" Association="Self.FK_lopHoc_GiangVien">
