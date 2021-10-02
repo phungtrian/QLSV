@@ -169,6 +169,7 @@ namespace QLSV
             this.AcceptButton = this.btDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.CancelButton = this.btThoat;
             this.ClientSize = new System.Drawing.Size(551, 330);
             this.Controls.Add(this.btThoat);
@@ -176,6 +177,7 @@ namespace QLSV
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MaximizeBox = false;
             this.Name = "fDangNhap";
             this.Text = "Đăng nhập hệ thống ";

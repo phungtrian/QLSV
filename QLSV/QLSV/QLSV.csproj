@@ -211,6 +211,9 @@
     <EmbeddedResource Include="fQLLopHoc.resx">
       <DependentUpon>fQLLopHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fSinhVien.resx">
+      <DependentUpon>fSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

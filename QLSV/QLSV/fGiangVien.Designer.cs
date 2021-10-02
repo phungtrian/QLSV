@@ -46,8 +46,8 @@ namespace QLSV
             this.label2 = new System.Windows.Forms.Label();
             this.cbGiangVien = new System.Windows.Forms.ComboBox();
             this.btKetThucMon = new System.Windows.Forms.Button();
-            this.btChamDiem = new System.Windows.Forms.Button();
             this.btDangXuat = new System.Windows.Forms.Button();
+            this.btChamDiem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLH)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -239,18 +239,6 @@ namespace QLSV
             this.btKetThucMon.UseVisualStyleBackColor = true;
             this.btKetThucMon.Click += new System.EventHandler(this.btKetThucMon_Click);
             // 
-            // btChamDiem
-            // 
-            this.btChamDiem.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btChamDiem.Location = new System.Drawing.Point(86, 172);
-            this.btChamDiem.Margin = new System.Windows.Forms.Padding(4);
-            this.btChamDiem.Name = "btChamDiem";
-            this.btChamDiem.Size = new System.Drawing.Size(165, 40);
-            this.btChamDiem.TabIndex = 2;
-            this.btChamDiem.Text = "Chấm Điểm";
-            this.btChamDiem.UseVisualStyleBackColor = true;
-            this.btChamDiem.Click += new System.EventHandler(this.btChamDiem_Click);
-            // 
             // btDangXuat
             // 
             this.btDangXuat.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,11 +251,23 @@ namespace QLSV
             this.btDangXuat.UseVisualStyleBackColor = true;
             this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
             // 
+            // btChamDiem
+            // 
+            this.btChamDiem.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChamDiem.Location = new System.Drawing.Point(86, 172);
+            this.btChamDiem.Margin = new System.Windows.Forms.Padding(4);
+            this.btChamDiem.Name = "btChamDiem";
+            this.btChamDiem.Size = new System.Drawing.Size(165, 40);
+            this.btChamDiem.TabIndex = 2;
+            this.btChamDiem.Text = "Chấm Điểm";
+            this.btChamDiem.UseVisualStyleBackColor = true;
+            this.btChamDiem.Click += new System.EventHandler(this.btChamDiem_Click);
+            // 
             // fGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1007, 669);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

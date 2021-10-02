@@ -329,7 +329,7 @@ namespace QLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(873, 463);
             this.Controls.Add(this.btIn);
             this.Controls.Add(this.btThoat);

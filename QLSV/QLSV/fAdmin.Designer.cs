@@ -34,8 +34,8 @@ namespace QLSV
             this.quanLyGiangVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyMonHocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLylopHocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.DangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,13 +87,6 @@ namespace QLSV
             this.quanLylopHocToolStripMenuItem.Text = "Quản Lý Lớp Học";
             this.quanLylopHocToolStripMenuItem.Click += new System.EventHandler(this.quanLylopHocToolStripMenuItem_Click);
             // 
-            // pnlContent
-            // 
-            this.pnlContent.Location = new System.Drawing.Point(0, 33);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1196, 734);
-            this.pnlContent.TabIndex = 2;
-            // 
             // DangXuatToolStripMenuItem
             // 
             this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,6 +94,14 @@ namespace QLSV
             this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(107, 26);
             this.DangXuatToolStripMenuItem.Text = "Đăng Xuất";
             this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuatToolStripMenuItem_Click);
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.LightCyan;
+            this.pnlContent.Location = new System.Drawing.Point(0, 33);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1196, 734);
+            this.pnlContent.TabIndex = 2;
             // 
             // fAdmin
             // 
