@@ -106,7 +106,7 @@ namespace QLSV.DAO
         {
             var kt = new ObjectParameter("trangthai", typeof(int));
 
-            db.chamdiem(maGV, maLop, maSV, diemLan1, diemLan2,diemTK, kt);
+            db.ChamDiem(maGV, maLop, maSV, diemLan1, diemLan2,diemTK, kt);
 
             return int.Parse(kt.Value.ToString());
         }
@@ -129,7 +129,7 @@ namespace QLSV.DAO
         {
             var kt = new ObjectParameter("trangthai", typeof(int));
 
-            db.ketthuchocphan(maGV.ToString(), maLop, kt);
+            db.KetThucHocPhan(maGV.ToString(), maLop, kt);
 
             return int.Parse(kt.Value.ToString());
 

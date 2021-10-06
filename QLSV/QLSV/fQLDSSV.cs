@@ -24,14 +24,15 @@ namespace QLSV
         {
             busDSSV.DSSinhVien(dgvDSSV);
 
-            dgvDSSV.Columns[0].Width = (int)(0.109 * dgvDSSV.Width);
+            dgvDSSV.Columns[0].Width = (int)(0.13 * dgvDSSV.Width);
             dgvDSSV.Columns[1].Width = (int)(0.195 * dgvDSSV.Width);
-            dgvDSSV.Columns[2].Width = (int)(0.05 * dgvDSSV.Width);
-            dgvDSSV.Columns[3].Width = (int)(0.075 * dgvDSSV.Width);
+            dgvDSSV.Columns[2].Width = (int)(0.1 * dgvDSSV.Width);
+            dgvDSSV.Columns[3].Width = (int)(0.06 * dgvDSSV.Width);
             dgvDSSV.Columns[4].Width = (int)(0.1 * dgvDSSV.Width);
             dgvDSSV.Columns[5].Width = (int)(0.19 * dgvDSSV.Width);
             dgvDSSV.Columns[6].Width = (int)(0.1 * dgvDSSV.Width);
             dgvDSSV.Columns[7].Width = (int)(0.1 * dgvDSSV.Width);
+            dgvDSSV.RowHeadersVisible = false;
         }
         private bool KiemTraTXTMa()
         {
@@ -68,6 +69,7 @@ namespace QLSV
                 sv.gioiTinh = cbLoaiGioiTinh.Text;
                 sv.diaChi = txtDiaChi.Text;
                 sv.queQuan = txtQueQuan.Text;
+                sv.matKhau = "123";
 
                 if (busDSSV.SuaSinhViem(sv))
                 {
@@ -92,6 +94,7 @@ namespace QLSV
                 sv.gioiTinh = cbLoaiGioiTinh.Text;
                 sv.diaChi = txtDiaChi.Text;
                 sv.queQuan = txtQueQuan.Text;
+                sv.matKhau = "1233";
 
                 if (busDSSV.XoaSinhVien(sv))
                 {
@@ -145,6 +148,7 @@ namespace QLSV
             sv.queQuan = txtQueQuan.Text.ToString();
             sv.diaChi = txtDiaChi.Text.ToString();
             sv.dienThoai = int.Parse(txtSDT.Text.ToString());
+            sv.matKhau = "123";
 
             busDSSV.ThemSV(sv);
 

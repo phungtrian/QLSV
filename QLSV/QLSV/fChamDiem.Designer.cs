@@ -54,7 +54,6 @@ namespace QLSV
             this.dgvDiem = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btThoat = new System.Windows.Forms.Button();
-            this.btSua = new System.Windows.Forms.Button();
             this.btNhap = new System.Windows.Forms.Button();
             this.btIn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -290,22 +289,11 @@ namespace QLSV
             this.btThoat.Text = "Thoát ";
             this.btThoat.UseVisualStyleBackColor = true;
             // 
-            // btSua
-            // 
-            this.btSua.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSua.Location = new System.Drawing.Point(769, 237);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(92, 39);
-            this.btSua.TabIndex = 6;
-            this.btSua.Text = "Sửa";
-            this.btSua.UseVisualStyleBackColor = true;
-            // 
             // btNhap
             // 
             this.btNhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btNhap.Location = new System.Drawing.Point(769, 160);
+            this.btNhap.Location = new System.Drawing.Point(769, 237);
             this.btNhap.Name = "btNhap";
             this.btNhap.Size = new System.Drawing.Size(92, 39);
             this.btNhap.TabIndex = 5;
@@ -333,7 +321,6 @@ namespace QLSV
             this.ClientSize = new System.Drawing.Size(873, 463);
             this.Controls.Add(this.btIn);
             this.Controls.Add(this.btThoat);
-            this.Controls.Add(this.btSua);
             this.Controls.Add(this.btNhap);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -379,7 +366,6 @@ namespace QLSV
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btNhap;
-        private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridView dgvDiem;

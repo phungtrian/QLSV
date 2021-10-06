@@ -95,6 +95,13 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TaiKhoan">
+          <Property Name="tentaikhoan" Type="nvarchar" MaxLength="50" />
+          <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="hoTen" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
   <Association Name="FK_Diem_MonHoc">
     <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
     <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
@@ -143,7 +150,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="chamdiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="ChamDiem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="magiangvien" Type="int" Mode="In" />
     <Parameter Name="malop" Type="int" Mode="In" />
     <Parameter Name="masinhvien" Type="int" Mode="In" />
@@ -152,7 +159,7 @@
     <Parameter Name="diemtrongket" Type="float" Mode="In" />
     <Parameter Name="trangThai" Type="int" Mode="InOut" />
   </Function>
-  <Function Name="dangnhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="DangNhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="loaitaikhoan" Type="nvarchar" Mode="In" />
     <Parameter Name="taikhoan" Type="varchar" Mode="In" />
     <Parameter Name="matkhau" Type="varchar" Mode="In" />
@@ -161,22 +168,15 @@
   <Function Name="DSSVTheoLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="malophoc" Type="int" Mode="In" />
   </Function>
+  <Function Name="DSTatCaLopHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="HienThiLopTheoGV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="magiangvien" Type="int" Mode="In" />
   </Function>
-  <Function Name="insertlophoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="magiaovien" Type="int" Mode="In" />
-    <Parameter Name="mamonhoc" Type="int" Mode="In" />
-  </Function>
-  <Function Name="ketthuchocphan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="KetThucHocPhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="magiangvien" Type="varchar" Mode="In" />
     <Parameter Name="malop" Type="int" Mode="In" />
     <Parameter Name="trangThai" Type="int" Mode="InOut" />
-  </Function>
-  <Function Name="selectALLLopHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="selectLopHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="malophoc" Type="bigint" Mode="In" />
   </Function>
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />

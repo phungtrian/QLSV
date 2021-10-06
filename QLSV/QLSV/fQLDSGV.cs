@@ -33,14 +33,15 @@ namespace QLSV
         {
             busGV.DSGiangVien(dgvDSGV);
 
-            dgvDSGV.Columns[0].Width = (int)(0.109 * dgvDSGV.Width);
+            dgvDSGV.Columns[0].Width = (int)(0.075 * dgvDSGV.Width);
             dgvDSGV.Columns[1].Width = (int)(0.195 * dgvDSGV.Width);
-            dgvDSGV.Columns[2].Width = (int)(0.05 * dgvDSGV.Width);
+            dgvDSGV.Columns[2].Width = (int)(0.1 * dgvDSGV.Width);
             dgvDSGV.Columns[3].Width = (int)(0.075 * dgvDSGV.Width);
             dgvDSGV.Columns[4].Width = (int)(0.1 * dgvDSGV.Width);
             dgvDSGV.Columns[5].Width = (int)(0.19 * dgvDSGV.Width);
-            dgvDSGV.Columns[6].Width = (int)(0.1 * dgvDSGV.Width);
-            dgvDSGV.Columns[7].Width = (int)(0.1 * dgvDSGV.Width);
+            dgvDSGV.Columns[6].Width = (int)(0.15 * dgvDSGV.Width);
+            dgvDSGV.Columns[7].Width = (int)(0.12 * dgvDSGV.Width);
+            dgvDSGV.RowHeadersVisible = false;
         }
 
         private bool KiemTraTXTMa()
@@ -94,6 +95,7 @@ namespace QLSV
             gv.email = txtEmail.Text.ToString();
             gv.diaChi = txtDiaChi.Text.ToString();
             gv.soDienThoai = int.Parse(txtSDT.Text.ToString());
+            gv.matKhau = "1234";
 
             busGV.ThemGV(gv);
 
@@ -113,6 +115,8 @@ namespace QLSV
                 gv.email = txtEmail.Text.ToString();
                 gv.diaChi = txtDiaChi.Text.ToString();
                 gv.soDienThoai = int.Parse(txtSDT.Text.ToString());
+                gv.matKhau = "1234";
+
 
 
                 if (busGV.SuaGV(gv))
@@ -139,6 +143,7 @@ namespace QLSV
                 gv.email = txtEmail.Text.ToString();
                 gv.diaChi = txtDiaChi.Text.ToString();
                 gv.soDienThoai = int.Parse(txtSDT.Text.ToString());
+                gv.matKhau = "1234";
 
 
                 if (busGV.XoaGV(gv))

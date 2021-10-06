@@ -11,7 +11,7 @@ namespace QLSV
 {
     using System;
     
-    public partial class selectALLLopHoc_Result
+    public partial class DSTatCaLopHoc_Result
     {
         public string tenMonHoc { get; set; }
         public string ten { get; set; }

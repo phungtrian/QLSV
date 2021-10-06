@@ -71,6 +71,9 @@
     <Compile Include="DSSVTheoLop_Result.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="DSTatCaLopHoc_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +85,12 @@
     </Compile>
     <Compile Include="fChamDiem.Designer.cs">
       <DependentUpon>fChamDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fDangKyMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDangKyMonHoc.Designer.cs">
+      <DependentUpon>fDangKyMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="fDangNhap.cs">
       <SubType>Form</SubType>
@@ -125,6 +134,12 @@
     <Compile Include="fSinhVien.Designer.cs">
       <DependentUpon>fSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTraCuuDiemSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTraCuuDiemSV.Designer.cs">
+      <DependentUpon>fTraCuuDiemSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiangVien.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
@@ -157,12 +172,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLSVEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="selectALLLopHoc_Result.cs">
-      <DependentUpon>QLSVEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="selectLopHoc_Result.cs">
-      <DependentUpon>QLSVEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="SinhVien.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
@@ -193,6 +202,9 @@
     <EmbeddedResource Include="fChamDiem.resx">
       <DependentUpon>fChamDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fDangKyMonHoc.resx">
+      <DependentUpon>fDangKyMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fSinhVien.resx">
       <DependentUpon>fSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTraCuuDiemSV.resx">
+      <DependentUpon>fTraCuuDiemSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

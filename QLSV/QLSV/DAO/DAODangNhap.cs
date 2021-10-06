@@ -25,7 +25,7 @@ namespace QLSV.DAO
 
             var kt = new ObjectParameter("dem", typeof(int));
 
-            db.dangnhap(loaiTK, tenDN, matKhau, kt);
+            db.DangNhap(loaiTK, tenDN, matKhau, kt);
 
 
 

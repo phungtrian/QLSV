@@ -177,6 +177,7 @@ namespace QLSV
             // 
             // txtMaLopHoc
             // 
+            this.txtMaLopHoc.Enabled = false;
             this.txtMaLopHoc.Location = new System.Drawing.Point(159, 32);
             this.txtMaLopHoc.Multiline = true;
             this.txtMaLopHoc.Name = "txtMaLopHoc";
@@ -257,7 +258,7 @@ namespace QLSV
             this.btChamDiem.Location = new System.Drawing.Point(86, 172);
             this.btChamDiem.Margin = new System.Windows.Forms.Padding(4);
             this.btChamDiem.Name = "btChamDiem";
-            this.btChamDiem.Size = new System.Drawing.Size(165, 40);
+            this.btChamDiem.Size = new System.Drawing.Size(171, 40);
             this.btChamDiem.TabIndex = 2;
             this.btChamDiem.Text = "Chấm Điểm";
             this.btChamDiem.UseVisualStyleBackColor = true;

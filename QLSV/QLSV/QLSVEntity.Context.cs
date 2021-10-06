@@ -35,7 +35,7 @@ namespace QLSV
         public virtual DbSet<SinhVien> SinhViens { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     
-        public virtual int chamdiem(Nullable<int> magiangvien, Nullable<int> malop, Nullable<int> masinhvien, Nullable<double> diemlan1, Nullable<double> diemlan2, Nullable<double> diemtrongket, ObjectParameter trangThai)
+        public virtual int ChamDiem(Nullable<int> magiangvien, Nullable<int> malop, Nullable<int> masinhvien, Nullable<double> diemlan1, Nullable<double> diemlan2, Nullable<double> diemtrongket, ObjectParameter trangThai)
         {
             var magiangvienParameter = magiangvien.HasValue ?
                 new ObjectParameter("magiangvien", magiangvien) :
@@ -61,10 +61,10 @@ namespace QLSV
                 new ObjectParameter("diemtrongket", diemtrongket) :
                 new ObjectParameter("diemtrongket", typeof(double));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("chamdiem", magiangvienParameter, malopParameter, masinhvienParameter, diemlan1Parameter, diemlan2Parameter, diemtrongketParameter, trangThai);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ChamDiem", magiangvienParameter, malopParameter, masinhvienParameter, diemlan1Parameter, diemlan2Parameter, diemtrongketParameter, trangThai);
         }
     
-        public virtual int dangnhap(string loaitaikhoan, string taikhoan, string matkhau, ObjectParameter dem)
+        public virtual int DangNhap(string loaitaikhoan, string taikhoan, string matkhau, ObjectParameter dem)
         {
             var loaitaikhoanParameter = loaitaikhoan != null ?
                 new ObjectParameter("loaitaikhoan", loaitaikhoan) :
@@ -78,7 +78,21 @@ namespace QLSV
                 new ObjectParameter("matkhau", matkhau) :
                 new ObjectParameter("matkhau", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("dangnhap", loaitaikhoanParameter, taikhoanParameter, matkhauParameter, dem);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DangNhap", loaitaikhoanParameter, taikhoanParameter, matkhauParameter, dem);
+        }
+    
+        public virtual ObjectResult<DSSVTheoLop_Result> DSSVTheoLop(Nullable<int> malophoc)
+        {
+            var malophocParameter = malophoc.HasValue ?
+                new ObjectParameter("malophoc", malophoc) :
+                new ObjectParameter("malophoc", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DSSVTheoLop_Result>("DSSVTheoLop", malophocParameter);
+        }
+    
+        public virtual ObjectResult<DSTatCaLopHoc_Result> DSTatCaLopHoc()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DSTatCaLopHoc_Result>("DSTatCaLopHoc");
         }
     
         public virtual ObjectResult<HienThiLopTheoGV_Result> HienThiLopTheoGV(Nullable<int> magiangvien)
@@ -90,20 +104,7 @@ namespace QLSV
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HienThiLopTheoGV_Result>("HienThiLopTheoGV", magiangvienParameter);
         }
     
-        public virtual int insertlophoc(Nullable<int> magiaovien, Nullable<int> mamonhoc)
-        {
-            var magiaovienParameter = magiaovien.HasValue ?
-                new ObjectParameter("magiaovien", magiaovien) :
-                new ObjectParameter("magiaovien", typeof(int));
-    
-            var mamonhocParameter = mamonhoc.HasValue ?
-                new ObjectParameter("mamonhoc", mamonhoc) :
-                new ObjectParameter("mamonhoc", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertlophoc", magiaovienParameter, mamonhocParameter);
-        }
-    
-        public virtual int ketthuchocphan(string magiangvien, Nullable<int> malop, ObjectParameter trangThai)
+        public virtual int KetThucHocPhan(string magiangvien, Nullable<int> malop, ObjectParameter trangThai)
         {
             var magiangvienParameter = magiangvien != null ?
                 new ObjectParameter("magiangvien", magiangvien) :
@@ -113,21 +114,7 @@ namespace QLSV
                 new ObjectParameter("malop", malop) :
                 new ObjectParameter("malop", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ketthuchocphan", magiangvienParameter, malopParameter, trangThai);
-        }
-    
-        public virtual ObjectResult<selectALLLopHoc_Result> selectALLLopHoc()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<selectALLLopHoc_Result>("selectALLLopHoc");
-        }
-    
-        public virtual ObjectResult<selectLopHoc_Result> selectLopHoc(Nullable<long> malophoc)
-        {
-            var malophocParameter = malophoc.HasValue ?
-                new ObjectParameter("malophoc", malophoc) :
-                new ObjectParameter("malophoc", typeof(long));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<selectLopHoc_Result>("selectLopHoc", malophocParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("KetThucHocPhan", magiangvienParameter, malopParameter, trangThai);
         }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -267,15 +254,6 @@ namespace QLSV
                 new ObjectParameter("tukhoa", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TraCuuSinhVien_Result>("TraCuuSinhVien", tukhoaParameter);
-        }
-    
-        public virtual ObjectResult<DSSVTheoLop_Result> DSSVTheoLop(Nullable<int> malophoc)
-        {
-            var malophocParameter = malophoc.HasValue ?
-                new ObjectParameter("malophoc", malophoc) :
-                new ObjectParameter("malophoc", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DSSVTheoLop_Result>("DSSVTheoLop", malophocParameter);
         }
     }
 }

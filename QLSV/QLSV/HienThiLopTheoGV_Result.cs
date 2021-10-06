@@ -17,6 +17,6 @@ namespace QLSV
         public Nullable<int> mamonhoc { get; set; }
         public string tenmonhoc { get; set; }
         public Nullable<int> sotinchi { get; set; }
-        public Nullable<int> siso { get; set; }
+        public int siso { get; set; }
     }
 }

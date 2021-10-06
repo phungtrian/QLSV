@@ -17,7 +17,7 @@ namespace QLSV.DAO
 
         public dynamic LayDSLopHoc()
         {
-            var ds = db.selectALLLopHoc().Select(s => new
+            var ds = db.DSTatCaLopHoc().Select(s => new
             {
                 s.maLopHoc,
                 s.ten,

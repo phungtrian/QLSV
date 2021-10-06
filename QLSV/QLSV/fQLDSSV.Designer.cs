@@ -235,13 +235,14 @@ namespace QLSV
             // cbLoaiGioiTinh
             // 
             this.cbLoaiGioiTinh.FormattingEnabled = true;
-            this.cbLoaiGioiTinh.Location = new System.Drawing.Point(438, 64);
+            this.cbLoaiGioiTinh.Location = new System.Drawing.Point(454, 64);
             this.cbLoaiGioiTinh.Name = "cbLoaiGioiTinh";
-            this.cbLoaiGioiTinh.Size = new System.Drawing.Size(199, 27);
+            this.cbLoaiGioiTinh.Size = new System.Drawing.Size(183, 27);
             this.cbLoaiGioiTinh.TabIndex = 11;
             // 
             // dtpNamSinh
             // 
+            this.dtpNamSinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNamSinh.Location = new System.Drawing.Point(105, 104);
             this.dtpNamSinh.Name = "dtpNamSinh";
             this.dtpNamSinh.Size = new System.Drawing.Size(263, 27);
@@ -266,10 +267,10 @@ namespace QLSV
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(438, 105);
+            this.txtSDT.Location = new System.Drawing.Point(454, 105);
             this.txtSDT.Multiline = true;
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(196, 22);
+            this.txtSDT.Size = new System.Drawing.Size(180, 22);
             this.txtSDT.TabIndex = 8;
             // 
             // btXoa
@@ -322,10 +323,10 @@ namespace QLSV
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(438, 32);
+            this.txtTen.Location = new System.Drawing.Point(454, 32);
             this.txtTen.Multiline = true;
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(199, 22);
+            this.txtTen.Size = new System.Drawing.Size(183, 22);
             this.txtTen.TabIndex = 8;
             // 
             // groupBox3

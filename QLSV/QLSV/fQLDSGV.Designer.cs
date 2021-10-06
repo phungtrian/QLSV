@@ -205,6 +205,7 @@ namespace QLSV
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightCyan;
             this.groupBox1.Controls.Add(this.cbLoaiGioiTinh);
             this.groupBox1.Controls.Add(this.dtpNamSinh);
             this.groupBox1.Controls.Add(this.label9);
@@ -235,16 +236,17 @@ namespace QLSV
             // cbLoaiGioiTinh
             // 
             this.cbLoaiGioiTinh.FormattingEnabled = true;
-            this.cbLoaiGioiTinh.Location = new System.Drawing.Point(470, 66);
+            this.cbLoaiGioiTinh.Location = new System.Drawing.Point(473, 66);
             this.cbLoaiGioiTinh.Name = "cbLoaiGioiTinh";
-            this.cbLoaiGioiTinh.Size = new System.Drawing.Size(199, 27);
+            this.cbLoaiGioiTinh.Size = new System.Drawing.Size(196, 27);
             this.cbLoaiGioiTinh.TabIndex = 11;
             // 
             // dtpNamSinh
             // 
-            this.dtpNamSinh.Location = new System.Drawing.Point(121, 104);
+            this.dtpNamSinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNamSinh.Location = new System.Drawing.Point(137, 104);
             this.dtpNamSinh.Name = "dtpNamSinh";
-            this.dtpNamSinh.Size = new System.Drawing.Size(263, 27);
+            this.dtpNamSinh.Size = new System.Drawing.Size(247, 27);
             this.dtpNamSinh.TabIndex = 10;
             // 
             // label9
@@ -258,10 +260,10 @@ namespace QLSV
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(121, 187);
+            this.txtDiaChi.Location = new System.Drawing.Point(137, 187);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(548, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(532, 22);
             this.txtDiaChi.TabIndex = 8;
             // 
             // txtSDT
@@ -298,34 +300,36 @@ namespace QLSV
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(121, 147);
+            this.txtEmail.Location = new System.Drawing.Point(137, 147);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(548, 22);
+            this.txtEmail.Size = new System.Drawing.Size(532, 22);
             this.txtEmail.TabIndex = 8;
             // 
             // txtMaGV
             // 
-            this.txtMaGV.Location = new System.Drawing.Point(121, 66);
+            this.txtMaGV.Enabled = false;
+            this.txtMaGV.Location = new System.Drawing.Point(137, 66);
             this.txtMaGV.Multiline = true;
             this.txtMaGV.Name = "txtMaGV";
-            this.txtMaGV.Size = new System.Drawing.Size(263, 22);
+            this.txtMaGV.Size = new System.Drawing.Size(247, 22);
             this.txtMaGV.TabIndex = 8;
+            this.txtMaGV.Text = "1";
             // 
             // txtHo
             // 
-            this.txtHo.Location = new System.Drawing.Point(121, 32);
+            this.txtHo.Location = new System.Drawing.Point(137, 32);
             this.txtHo.Multiline = true;
             this.txtHo.Name = "txtHo";
-            this.txtHo.Size = new System.Drawing.Size(263, 22);
+            this.txtHo.Size = new System.Drawing.Size(247, 22);
             this.txtHo.TabIndex = 8;
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(470, 29);
+            this.txtTen.Location = new System.Drawing.Point(473, 29);
             this.txtTen.Multiline = true;
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(199, 22);
+            this.txtTen.Size = new System.Drawing.Size(196, 22);
             this.txtTen.TabIndex = 8;
             // 
             // groupBox3

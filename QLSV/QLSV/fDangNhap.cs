@@ -72,7 +72,7 @@ namespace QLSV
 
             if (kt == 1)
             {
-                MessageBox.Show("Quản Trị Viên Đăng nhập thành công");
+                
                 fAdmin f = new fAdmin();
                 f.Show();
                 this.Hide();
@@ -81,7 +81,7 @@ namespace QLSV
             }
             else if (kt == 2)
             {
-                MessageBox.Show("Giảng Viên Đăng nhập thành công ");
+                
                 fGiangVien f = new fGiangVien();
                 f.maGV = int.Parse(txtTenDN.Text);
                 f.Show();
@@ -90,7 +90,7 @@ namespace QLSV
             }
             else if (kt == 3)
             {
-                MessageBox.Show("Sinh Viên Đăng nhập thành công ");
+                
                 fSinhVien f = new fSinhVien();
                 f.Show();
                 this.Hide();
