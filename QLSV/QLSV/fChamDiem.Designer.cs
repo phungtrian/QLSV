@@ -312,6 +312,7 @@ namespace QLSV
             this.btIn.TabIndex = 12;
             this.btIn.Text = "In Bảng Điểm";
             this.btIn.UseVisualStyleBackColor = true;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // fChamDiem
             // 
