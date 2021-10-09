@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLSVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLSVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Diem">
           <Key>
             <PropertyRef Name="maMonHoc" />
@@ -100,13 +100,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TaiKhoan">
-          <Property Name="tentaikhoan" Type="nvarchar" MaxLength="50" />
-          <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
-          <Property Name="hoTen" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
         <Association Name="FK_Diem_MonHoc">
           <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
           <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
@@ -164,11 +157,29 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
           <Parameter Name="diemtrongket" Type="float" Mode="In" />
           <Parameter Name="trangThai" Type="int" Mode="InOut" />
         </Function>
+        <Function Name="DangKyMonHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masinhvien" Type="int" Mode="In" />
+          <Parameter Name="malophoc" Type="int" Mode="In" />
+          <Parameter Name="kq" Type="int" Mode="InOut" />
+        </Function>
         <Function Name="DangNhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="loaitaikhoan" Type="nvarchar" Mode="In" />
           <Parameter Name="taikhoan" Type="varchar" Mode="In" />
           <Parameter Name="matkhau" Type="varchar" Mode="In" />
           <Parameter Name="dem" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="Diem1MonTheoSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masinhvien" Type="int" Mode="In" />
+          <Parameter Name="mamon" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DiemTatCaMonTheoSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masinhvien" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DSLopChuaDK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masinhvien" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DSLopTheoSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masinhvien" Type="int" Mode="In" />
         </Function>
         <Function Name="DSSVTheoLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="malophoc" Type="int" Mode="In" />
@@ -177,6 +188,11 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="HienThiLopTheoGV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="magiangvien" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HuyMon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maSinhVien" Type="int" Mode="In" />
+          <Parameter Name="maLop" Type="int" Mode="In" />
+          <Parameter Name="kq" Type="int" Mode="InOut" />
         </Function>
         <Function Name="KetThucHocPhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="magiangvien" Type="varchar" Mode="In" />
@@ -213,6 +229,9 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ThongTinChiTietSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masinhvien" Type="int" Mode="In" />
+        </Function>
         <Function Name="TraCuuGiangVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
         </Function>
@@ -250,8 +269,7 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
             <End Role="LopHoc" EntitySet="LopHoc" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLSVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -446,11 +464,11 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
             <Parameter Name="dem" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DSSVTheoLop" ReturnType="Collection(QLSVModel.DSSVTheoLop_Result)">
-            <Parameter Name="malophoc" Mode="In" Type="Int32" />
+          <Parameter Name="malophoc" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="DSTatCaLopHoc" ReturnType="Collection(QLSVModel.DSTatCaLopHoc_Result)" />
           <FunctionImport Name="HienThiLopTheoGV" ReturnType="Collection(QLSVModel.HienThiLopTheoGV_Result)">
-            <Parameter Name="magiangvien" Mode="In" Type="Int32" />
+          <Parameter Name="magiangvien" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="KetThucHocPhan">
             <Parameter Name="magiangvien" Mode="In" Type="String" />
@@ -488,16 +506,42 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="TraCuuGiangVien" ReturnType="Collection(QLSVModel.TraCuuGiangVien_Result)">
-            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          <Parameter Name="tukhoa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TraCuuLopHoc" ReturnType="Collection(QLSVModel.TraCuuLopHoc_Result)">
-            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          <Parameter Name="tukhoa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TraCuuMonHoc" ReturnType="Collection(QLSVModel.TraCuuMonHoc_Result)">
-            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          <Parameter Name="tukhoa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TraCuuSinhVien" ReturnType="Collection(QLSVModel.TraCuuSinhVien_Result)">
-            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          <Parameter Name="tukhoa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Diem1MonTheoSV" ReturnType="Collection(QLSVModel.Diem1MonTheoSV_Result)">
+            <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+            <Parameter Name="mamon" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DiemTatCaMonTheoSV" ReturnType="Collection(QLSVModel.DiemTatCaMonTheoSV_Result)">
+          <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DSLopChuaDK" ReturnType="Collection(QLSVModel.DSLopChuaDK_Result)">
+          <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DSLopTheoSinhVien" ReturnType="Collection(QLSVModel.DSLopTheoSinhVien_Result)">
+          <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ThongTinChiTietSV" ReturnType="Collection(QLSVModel.ThongTinChiTietSV_Result)">
+          <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DangKyMonHoc">
+            <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+            <Parameter Name="malophoc" Mode="In" Type="Int32" />
+            <Parameter Name="kq" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HuyMon">
+            <Parameter Name="maSinhVien" Mode="In" Type="Int32" />
+            <Parameter Name="maLop" Mode="In" Type="Int32" />
+            <Parameter Name="kq" Mode="InOut" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="DSSVTheoLop_Result">
@@ -509,8 +553,9 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
         </ComplexType>
         <ComplexType Name="DSTatCaLopHoc_Result">
           <Property Type="String" Name="tenMonHoc" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="ten" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="maLopHoc" Nullable="false" />
+          <Property Type="String" Name="HoTenGiangVien" Nullable="false" MaxLength="101" />
+          <Property Type="Int32" Name="maGiangVien" Nullable="false" />
         </ComplexType>
         <ComplexType Name="HienThiLopTheoGV_Result">
           <Property Type="Int32" Name="malophoc" Nullable="false" />
@@ -559,6 +604,47 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
           <Property Type="String" Name="queQuan" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="diaChi" Nullable="true" MaxLength="50" />
           <Property Type="Int32" Name="dienThoai" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Diem1MonTheoSV_Result">
+          <Property Type="Int32" Name="malophoc" Nullable="false" />
+          <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+          <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="sotinchi" Nullable="true" />
+          <Property Type="Double" Name="diemLan1" Nullable="false" />
+          <Property Type="Double" Name="diemLan2" Nullable="false" />
+          <Property Type="Double" Name="diemtongket" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="DiemTatCaMonTheoSV_Result">
+          <Property Type="Int32" Name="malophoc" Nullable="false" />
+          <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+          <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="sotinchi" Nullable="true" />
+          <Property Type="Double" Name="diemLan1" Nullable="false" />
+          <Property Type="Double" Name="diemLan2" Nullable="false" />
+          <Property Type="Double" Name="diemtongket" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="DSLopChuaDK_Result">
+          <Property Type="Int32" Name="malophoc" Nullable="false" />
+          <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+          <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="sotinchi" Nullable="true" />
+          <Property Type="String" Name="gvien" Nullable="false" MaxLength="101" />
+        </ComplexType>
+        <ComplexType Name="DSLopTheoSinhVien_Result">
+          <Property Type="Int32" Name="malophoc" Nullable="false" />
+          <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+          <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="sotinchi" Nullable="true" />
+          <Property Type="Int32" Name="siso" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="ThongTinChiTietSV_Result">
+          <Property Type="Int32" Name="masinhvien" Nullable="false" />
+          <Property Type="String" Name="hoten" Nullable="false" MaxLength="101" />
+          <Property Type="String" Name="diaChi" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="namSinh" Nullable="true" />
+          <Property Type="String" Name="queQuan" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="dienThoai" Nullable="false" />
+          <Property Type="String" Name="matKhau" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -684,8 +770,9 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
             <ResultMapping>
               <ComplexTypeMapping TypeName="QLSVModel.DSTatCaLopHoc_Result">
                 <ScalarProperty Name="tenMonHoc" ColumnName="tenMonHoc" />
-                <ScalarProperty Name="ten" ColumnName="ten" />
                 <ScalarProperty Name="maLopHoc" ColumnName="maLopHoc" />
+                <ScalarProperty Name="HoTenGiangVien" ColumnName="HoTenGiangVien" />
+                <ScalarProperty Name="maGiangVien" ColumnName="maGiangVien" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -771,6 +858,69 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Diem1MonTheoSV" FunctionName="QLSVModel.Store.Diem1MonTheoSV">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.Diem1MonTheoSV_Result">
+                <ScalarProperty Name="malophoc" ColumnName="malophoc" />
+                <ScalarProperty Name="mamonhoc" ColumnName="mamonhoc" />
+                <ScalarProperty Name="tenmonhoc" ColumnName="tenmonhoc" />
+                <ScalarProperty Name="sotinchi" ColumnName="sotinchi" />
+                <ScalarProperty Name="diemLan1" ColumnName="diemLan1" />
+                <ScalarProperty Name="diemLan2" ColumnName="diemLan2" />
+                <ScalarProperty Name="diemtongket" ColumnName="diemtongket" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DiemTatCaMonTheoSV" FunctionName="QLSVModel.Store.DiemTatCaMonTheoSV">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.DiemTatCaMonTheoSV_Result">
+                <ScalarProperty Name="malophoc" ColumnName="malophoc" />
+                <ScalarProperty Name="mamonhoc" ColumnName="mamonhoc" />
+                <ScalarProperty Name="tenmonhoc" ColumnName="tenmonhoc" />
+                <ScalarProperty Name="sotinchi" ColumnName="sotinchi" />
+                <ScalarProperty Name="diemLan1" ColumnName="diemLan1" />
+                <ScalarProperty Name="diemLan2" ColumnName="diemLan2" />
+                <ScalarProperty Name="diemtongket" ColumnName="diemtongket" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DSLopChuaDK" FunctionName="QLSVModel.Store.DSLopChuaDK">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.DSLopChuaDK_Result">
+                <ScalarProperty Name="malophoc" ColumnName="malophoc" />
+                <ScalarProperty Name="mamonhoc" ColumnName="mamonhoc" />
+                <ScalarProperty Name="tenmonhoc" ColumnName="tenmonhoc" />
+                <ScalarProperty Name="sotinchi" ColumnName="sotinchi" />
+                <ScalarProperty Name="gvien" ColumnName="gvien" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DSLopTheoSinhVien" FunctionName="QLSVModel.Store.DSLopTheoSinhVien">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.DSLopTheoSinhVien_Result">
+                <ScalarProperty Name="malophoc" ColumnName="malophoc" />
+                <ScalarProperty Name="mamonhoc" ColumnName="mamonhoc" />
+                <ScalarProperty Name="tenmonhoc" ColumnName="tenmonhoc" />
+                <ScalarProperty Name="sotinchi" ColumnName="sotinchi" />
+                <ScalarProperty Name="siso" ColumnName="siso" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ThongTinChiTietSV" FunctionName="QLSVModel.Store.ThongTinChiTietSV">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLSVModel.ThongTinChiTietSV_Result">
+                <ScalarProperty Name="masinhvien" ColumnName="masinhvien" />
+                <ScalarProperty Name="hoten" ColumnName="hoten" />
+                <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+                <ScalarProperty Name="namSinh" ColumnName="namSinh" />
+                <ScalarProperty Name="queQuan" ColumnName="queQuan" />
+                <ScalarProperty Name="dienThoai" ColumnName="dienThoai" />
+                <ScalarProperty Name="matKhau" ColumnName="matKhau" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DangKyMonHoc" FunctionName="QLSVModel.Store.DangKyMonHoc" />
+          <FunctionImportMapping FunctionImportName="HuyMon" FunctionName="QLSVModel.Store.HuyMon" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Core.Objects;
 
 namespace QLSV.DAO
 {
@@ -13,6 +14,8 @@ namespace QLSV.DAO
         {
             db = new QLSVEntities();
         }
+
+        //bắt đầu phân Quyền admin
 
         public dynamic LayDSSinhVIen()
         {
@@ -98,5 +101,95 @@ namespace QLSV.DAO
 
             return ds;
         }
+
+        //kết thúc phân Quyền admin
+
+        // bắt đầu phân quyền Sinh viên
+
+        public dynamic DSLopTheoSinhVien (int maSV)
+        {
+            var ds = db.DSLopTheoSinhVien(maSV).Select(s => new
+            {
+                s.malophoc,
+                s.mamonhoc,
+                s.tenmonhoc,
+                s.siso,
+                s.sotinchi
+            }).ToList();
+
+            return ds;
+        }
+
+        public dynamic DSDiemTatCaMonTheoSV(int maSV)
+        {
+            var ds = db.DiemTatCaMonTheoSV(maSV).Select(s => new
+            {
+                s.malophoc,
+                s.mamonhoc,
+                s.tenmonhoc,                
+                s.sotinchi,
+                s.diemLan1,
+                s.diemLan2,
+                s.diemtongket
+            }).ToList();
+
+            return ds;
+        }
+
+        public dynamic DSDiem1MonTheoSV(int maSV , int maMonHoc)
+        {
+            var ds = db.Diem1MonTheoSV(maSV, maMonHoc).Select(s => new
+            {
+                s.malophoc,
+                s.mamonhoc,
+                s.tenmonhoc,
+                s.sotinchi,
+                s.diemLan1,
+                s.diemLan2,
+                s.diemtongket
+            }).ToList();
+
+            return ds;
+        }
+
+        public dynamic ThongTinChiTietSV(int maSV)
+        {
+            var ds = db.ThongTinChiTietSV(maSV).Select(s => new
+            {
+                s.masinhvien,
+                s.hoten,
+                s.namSinh,
+                s.queQuan,
+                s.diaChi,
+                s.dienThoai,
+                s.matKhau             
+            }).ToList();
+            return ds;
+        }
+
+        public dynamic DSLopChuaDK(int maSV)
+        {
+            var ds = db.DSLopChuaDK(maSV).Select(s => new
+            {
+                s.malophoc,
+                s.mamonhoc,
+                s.tenmonhoc,
+                s.sotinchi,
+                s.gvien,
+                
+            }).ToList();
+            return ds;
+        }
+
+        public int DangKyMonHoc(int maSV, int maLop)
+        {
+            var kq = new ObjectParameter("kq", typeof(int));
+
+            db.DangKyMonHoc(maSV, maLop, kq);
+
+            return int.Parse(kq.Value.ToString()); // -1 đã đk môn này rôi , 1 đk thành công, o dk thất bại
+        }
+
+        //Kết thúc phân quyền Sinh viên
     }
 }

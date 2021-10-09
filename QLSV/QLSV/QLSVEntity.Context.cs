@@ -255,5 +255,80 @@ namespace QLSV
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TraCuuSinhVien_Result>("TraCuuSinhVien", tukhoaParameter);
         }
+    
+        public virtual ObjectResult<Diem1MonTheoSV_Result> Diem1MonTheoSV(Nullable<int> masinhvien, Nullable<int> mamon)
+        {
+            var masinhvienParameter = masinhvien.HasValue ?
+                new ObjectParameter("masinhvien", masinhvien) :
+                new ObjectParameter("masinhvien", typeof(int));
+    
+            var mamonParameter = mamon.HasValue ?
+                new ObjectParameter("mamon", mamon) :
+                new ObjectParameter("mamon", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Diem1MonTheoSV_Result>("Diem1MonTheoSV", masinhvienParameter, mamonParameter);
+        }
+    
+        public virtual ObjectResult<DiemTatCaMonTheoSV_Result> DiemTatCaMonTheoSV(Nullable<int> masinhvien)
+        {
+            var masinhvienParameter = masinhvien.HasValue ?
+                new ObjectParameter("masinhvien", masinhvien) :
+                new ObjectParameter("masinhvien", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DiemTatCaMonTheoSV_Result>("DiemTatCaMonTheoSV", masinhvienParameter);
+        }
+    
+        public virtual ObjectResult<DSLopChuaDK_Result> DSLopChuaDK(Nullable<int> masinhvien)
+        {
+            var masinhvienParameter = masinhvien.HasValue ?
+                new ObjectParameter("masinhvien", masinhvien) :
+                new ObjectParameter("masinhvien", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DSLopChuaDK_Result>("DSLopChuaDK", masinhvienParameter);
+        }
+    
+        public virtual ObjectResult<DSLopTheoSinhVien_Result> DSLopTheoSinhVien(Nullable<int> masinhvien)
+        {
+            var masinhvienParameter = masinhvien.HasValue ?
+                new ObjectParameter("masinhvien", masinhvien) :
+                new ObjectParameter("masinhvien", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DSLopTheoSinhVien_Result>("DSLopTheoSinhVien", masinhvienParameter);
+        }
+    
+        public virtual ObjectResult<ThongTinChiTietSV_Result> ThongTinChiTietSV(Nullable<int> masinhvien)
+        {
+            var masinhvienParameter = masinhvien.HasValue ?
+                new ObjectParameter("masinhvien", masinhvien) :
+                new ObjectParameter("masinhvien", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ThongTinChiTietSV_Result>("ThongTinChiTietSV", masinhvienParameter);
+        }
+    
+        public virtual int DangKyMonHoc(Nullable<int> masinhvien, Nullable<int> malophoc, ObjectParameter kq)
+        {
+            var masinhvienParameter = masinhvien.HasValue ?
+                new ObjectParameter("masinhvien", masinhvien) :
+                new ObjectParameter("masinhvien", typeof(int));
+    
+            var malophocParameter = malophoc.HasValue ?
+                new ObjectParameter("malophoc", malophoc) :
+                new ObjectParameter("malophoc", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DangKyMonHoc", masinhvienParameter, malophocParameter, kq);
+        }
+    
+        public virtual int HuyMon(Nullable<int> maSinhVien, Nullable<int> maLop, ObjectParameter kq)
+        {
+            var maSinhVienParameter = maSinhVien.HasValue ?
+                new ObjectParameter("maSinhVien", maSinhVien) :
+                new ObjectParameter("maSinhVien", typeof(int));
+    
+            var maLopParameter = maLop.HasValue ?
+                new ObjectParameter("maLop", maLop) :
+                new ObjectParameter("maLop", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HuyMon", maSinhVienParameter, maLopParameter, kq);
+        }
     }
 }

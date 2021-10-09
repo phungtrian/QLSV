@@ -65,6 +65,7 @@ namespace QLSV
                 {
                     MessageBox.Show("Lỗi dữ Liệu");
                 }
+                HienThiDSLH();
             }
             
 

@@ -92,6 +92,7 @@ namespace QLSV
             {
                 
                 fSinhVien f = new fSinhVien();
+                f.maSV = int.Parse(txtTenDN.Text);
                 f.Show();
                 this.Hide();
             }
@@ -106,5 +107,7 @@ namespace QLSV
         {
             Application.Exit();
         }
+
+       
     }
 }

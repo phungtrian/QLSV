@@ -101,11 +101,33 @@ namespace QLSV.BUS
             cbMonHoc.DisplayMember = "tenmonhoc";
         }
 
+        public void HienThicbTatCaLop(ComboBox cbLop, ComboBox cbMonHoc)
+        {
+            cbLop.DataSource = da.DSTatCaLop();
+            cbLop.ValueMember = "maLopHoc";
+            cbMonHoc.DataSource = da.DSTatCaLop();
+            cbMonHoc.ValueMember = "maLopHoc";
+            cbMonHoc.DisplayMember = "tenMonHoc";
+        }
+
+        
+
         public void TimKiemHienThiMH(string tuKhoa, DataGridView dg)
         {
             dg.DataSource = da.TimKiemGiangVien(tuKhoa);
         }
 
+        public int HuyMon(int maLop, int maSV)
+        {
+            int kq;
+            kq = da.HuyMon(maLop, maSV);
+            return kq; // 1 xoa thành công 0 xóa thất bại
+        }
+
+
+        //kết thúc phân quyền admin
+
+        //bắt đầu phân quyền Giang Viên
         public void HienThiDSLopTheoGV(int maGV, DataGridView dg)
         {
             dg.DataSource = da.LayDSLopTheoGV(maGV);
@@ -158,6 +180,8 @@ namespace QLSV.BUS
 
                 return 2;
             }
-        }    
+        }
+
+        // kết thức phân quyền Giảng Viên
     }
 }

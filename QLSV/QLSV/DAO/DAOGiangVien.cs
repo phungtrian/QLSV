@@ -15,6 +15,8 @@ namespace QLSV.DAO
             db = new QLSVEntities();
         }
 
+        //bắt dầu phân quyền admin
+
         public dynamic LayDSGiangVien()
         {
 
@@ -102,6 +104,31 @@ namespace QLSV.DAO
             return dsGV;
         }
 
+        public dynamic DSTatCaLop()
+        {
+            var ds = db.DSTatCaLopHoc().Select(s => new
+            {
+                s.maLopHoc,
+                s.HoTenGiangVien,
+                s.tenMonHoc,
+                s.maGiangVien
+               
+            }).ToList();
+            return ds;
+        }
+
+        public int HuyMon(int maLop, int maSV)
+        {
+            var kq = new ObjectParameter("kq", typeof(int));
+            db.HuyMon(maSV, maLop,kq);
+            return int.Parse(kq.Value.ToString()); // 1 xóa thành công, 0 xóa thất bại
+        }
+        
+
+        //Kết thúc phân quyền admin
+
+
+        //bắt đầu phân quyền giảng viên
         public int ChamDiem (int maGV, int maLop, int maSV, float diemLan1, float diemLan2, float diemTK)
         {
             var kt = new ObjectParameter("trangthai", typeof(int));
@@ -147,6 +174,6 @@ namespace QLSV.DAO
             }).ToList();
             return ds;
         }
-
+        //kết thúc phân quyền giảng viên
     }
 }

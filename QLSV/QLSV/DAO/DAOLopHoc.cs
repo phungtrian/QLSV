@@ -20,8 +20,9 @@ namespace QLSV.DAO
             var ds = db.DSTatCaLopHoc().Select(s => new
             {
                 s.maLopHoc,
-                s.ten,
-                s.tenMonHoc
+                s.HoTenGiangVien,
+                s.tenMonHoc,
+                s.maGiangVien
             }).ToList();
             return ds;
         }

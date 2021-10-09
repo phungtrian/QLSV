@@ -95,13 +95,6 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TaiKhoan">
-          <Property Name="tentaikhoan" Type="nvarchar" MaxLength="50" />
-          <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
-          <Property Name="hoTen" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
   <Association Name="FK_Diem_MonHoc">
     <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="1" />
     <End Role="Diem" Type="Self.Diem" Multiplicity="*" />
@@ -159,11 +152,29 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
     <Parameter Name="diemtrongket" Type="float" Mode="In" />
     <Parameter Name="trangThai" Type="int" Mode="InOut" />
   </Function>
+  <Function Name="DangKyMonHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masinhvien" Type="int" Mode="In" />
+    <Parameter Name="malophoc" Type="int" Mode="In" />
+    <Parameter Name="kq" Type="int" Mode="InOut" />
+  </Function>
   <Function Name="DangNhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="loaitaikhoan" Type="nvarchar" Mode="In" />
     <Parameter Name="taikhoan" Type="varchar" Mode="In" />
     <Parameter Name="matkhau" Type="varchar" Mode="In" />
     <Parameter Name="dem" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="Diem1MonTheoSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masinhvien" Type="int" Mode="In" />
+    <Parameter Name="mamon" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DiemTatCaMonTheoSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masinhvien" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DSLopChuaDK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masinhvien" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DSLopTheoSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masinhvien" Type="int" Mode="In" />
   </Function>
   <Function Name="DSSVTheoLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="malophoc" Type="int" Mode="In" />
@@ -172,6 +183,11 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="HienThiLopTheoGV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="magiangvien" Type="int" Mode="In" />
+  </Function>
+  <Function Name="HuyMon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maSinhVien" Type="int" Mode="In" />
+    <Parameter Name="maLop" Type="int" Mode="In" />
+    <Parameter Name="kq" Type="int" Mode="InOut" />
   </Function>
   <Function Name="KetThucHocPhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="magiangvien" Type="varchar" Mode="In" />
@@ -208,6 +224,9 @@ warning 6013: The table/view 'QLSV.dbo.TaiKhoan' does not have a primary key def
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ThongTinChiTietSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masinhvien" Type="int" Mode="In" />
+  </Function>
   <Function Name="TraCuuGiangVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
   </Function>

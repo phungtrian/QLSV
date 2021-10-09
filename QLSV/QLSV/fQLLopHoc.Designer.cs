@@ -45,6 +45,7 @@ namespace QLSV
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btTraCuu = new System.Windows.Forms.Button();
+            this.btXemDSSV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,10 +95,10 @@ namespace QLSV
             // btThem
             // 
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThem.Location = new System.Drawing.Point(120, 171);
+            this.btThem.Location = new System.Drawing.Point(55, 159);
             this.btThem.Margin = new System.Windows.Forms.Padding(4);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(109, 40);
+            this.btThem.Size = new System.Drawing.Size(109, 53);
             this.btThem.TabIndex = 2;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
@@ -113,6 +114,7 @@ namespace QLSV
             this.dgvDSLH.Size = new System.Drawing.Size(849, 260);
             this.dgvDSLH.TabIndex = 4;
             this.dgvDSLH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSLH_CellClick);
+            this.dgvDSLH.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSLH_CellDoubleClick);
             // 
             // groupBox1
             // 
@@ -153,6 +155,7 @@ namespace QLSV
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.cbGiangVien);
+            this.groupBox2.Controls.Add(this.btXemDSSV);
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
@@ -168,10 +171,10 @@ namespace QLSV
             // btXoa
             // 
             this.btXoa.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXoa.Location = new System.Drawing.Point(598, 171);
+            this.btXoa.Location = new System.Drawing.Point(475, 159);
             this.btXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(133, 40);
+            this.btXoa.Size = new System.Drawing.Size(133, 53);
             this.btXoa.TabIndex = 2;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
@@ -180,10 +183,10 @@ namespace QLSV
             // btSua
             // 
             this.btSua.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSua.Location = new System.Drawing.Point(352, 171);
+            this.btSua.Location = new System.Drawing.Point(244, 159);
             this.btSua.Margin = new System.Windows.Forms.Padding(4);
             this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(133, 40);
+            this.btSua.Size = new System.Drawing.Size(133, 53);
             this.btSua.TabIndex = 2;
             this.btSua.Text = "Cập nhật";
             this.btSua.UseVisualStyleBackColor = true;
@@ -232,6 +235,18 @@ namespace QLSV
             this.btTraCuu.UseVisualStyleBackColor = true;
             this.btTraCuu.Click += new System.EventHandler(this.btTraCuu_Click);
             // 
+            // btXemDSSV
+            // 
+            this.btXemDSSV.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXemDSSV.Location = new System.Drawing.Point(686, 159);
+            this.btXemDSSV.Margin = new System.Windows.Forms.Padding(4);
+            this.btXemDSSV.Name = "btXemDSSV";
+            this.btXemDSSV.Size = new System.Drawing.Size(106, 53);
+            this.btXemDSSV.TabIndex = 2;
+            this.btXemDSSV.Text = "Xem Danh Sách Sinh Viên";
+            this.btXemDSSV.UseVisualStyleBackColor = true;
+            this.btXemDSSV.Click += new System.EventHandler(this.btXemDSSV_Click);
+            // 
             // fQLLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,6 +291,7 @@ namespace QLSV
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTuKhoa;
         private System.Windows.Forms.Button btTraCuu;
+        private System.Windows.Forms.Button btXemDSSV;
     }
 }
 

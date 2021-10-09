@@ -90,14 +90,6 @@ namespace QLSV.BUS
 
         }
 
-        public void HienThiGiangVien(ComboBox cb)
-        {
-            cb.DataSource = daGV.LayDSGiangVien();
-            cb.DisplayMember = "ten";
-            cb.ValueMember = "maGiangVien";
-
-
-        }
 
         public void HienThiMonHoc(ComboBox cb)
         {
@@ -111,6 +103,13 @@ namespace QLSV.BUS
         public void TimKiemHienThiLH(string tuKhoa, DataGridView dg)
         {
             dg.DataSource = daLH.TimKiemLopHoc(tuKhoa);
+        }
+
+        public void HienThicbGiangVien(ComboBox cbGiangvien)
+        {
+            cbGiangvien.DataSource = daGV.DSTatCaLop();
+            cbGiangvien.ValueMember = "maGiangVien";
+            cbGiangvien.DisplayMember = "HoTenGiangVien";
         }
     }
 }

@@ -244,6 +244,32 @@
     <FunctionImport Name="TraCuuSinhVien" ReturnType="Collection(QLSVModel.TraCuuSinhVien_Result)">
       <Parameter Name="tukhoa" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="Diem1MonTheoSV" ReturnType="Collection(QLSVModel.Diem1MonTheoSV_Result)">
+      <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+      <Parameter Name="mamon" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DiemTatCaMonTheoSV" ReturnType="Collection(QLSVModel.DiemTatCaMonTheoSV_Result)">
+      <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DSLopChuaDK" ReturnType="Collection(QLSVModel.DSLopChuaDK_Result)">
+      <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DSLopTheoSinhVien" ReturnType="Collection(QLSVModel.DSLopTheoSinhVien_Result)">
+      <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ThongTinChiTietSV" ReturnType="Collection(QLSVModel.ThongTinChiTietSV_Result)">
+      <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DangKyMonHoc">
+      <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+      <Parameter Name="malophoc" Mode="In" Type="Int32" />
+      <Parameter Name="kq" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HuyMon">
+      <Parameter Name="maSinhVien" Mode="In" Type="Int32" />
+      <Parameter Name="maLop" Mode="In" Type="Int32" />
+      <Parameter Name="kq" Mode="InOut" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="DSSVTheoLop_Result">
     <Property Type="Int32" Name="masinhvien" Nullable="false" />
@@ -254,8 +280,9 @@
   </ComplexType>
   <ComplexType Name="DSTatCaLopHoc_Result">
     <Property Type="String" Name="tenMonHoc" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="ten" Nullable="false" MaxLength="50" />
     <Property Type="Int32" Name="maLopHoc" Nullable="false" />
+    <Property Type="String" Name="HoTenGiangVien" Nullable="false" MaxLength="101" />
+    <Property Type="Int32" Name="maGiangVien" Nullable="false" />
   </ComplexType>
   <ComplexType Name="HienThiLopTheoGV_Result">
     <Property Type="Int32" Name="malophoc" Nullable="false" />
@@ -304,5 +331,46 @@
     <Property Type="String" Name="queQuan" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="diaChi" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="dienThoai" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Diem1MonTheoSV_Result">
+    <Property Type="Int32" Name="malophoc" Nullable="false" />
+    <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+    <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="sotinchi" Nullable="true" />
+    <Property Type="Double" Name="diemLan1" Nullable="false" />
+    <Property Type="Double" Name="diemLan2" Nullable="false" />
+    <Property Type="Double" Name="diemtongket" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DiemTatCaMonTheoSV_Result">
+    <Property Type="Int32" Name="malophoc" Nullable="false" />
+    <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+    <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="sotinchi" Nullable="true" />
+    <Property Type="Double" Name="diemLan1" Nullable="false" />
+    <Property Type="Double" Name="diemLan2" Nullable="false" />
+    <Property Type="Double" Name="diemtongket" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="DSLopChuaDK_Result">
+    <Property Type="Int32" Name="malophoc" Nullable="false" />
+    <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+    <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="sotinchi" Nullable="true" />
+    <Property Type="String" Name="gvien" Nullable="false" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="DSLopTheoSinhVien_Result">
+    <Property Type="Int32" Name="malophoc" Nullable="false" />
+    <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+    <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="sotinchi" Nullable="true" />
+    <Property Type="Int32" Name="siso" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ThongTinChiTietSV_Result">
+    <Property Type="Int32" Name="masinhvien" Nullable="false" />
+    <Property Type="String" Name="hoten" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="diaChi" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="namSinh" Nullable="true" />
+    <Property Type="String" Name="queQuan" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="dienThoai" Nullable="false" />
+    <Property Type="String" Name="matKhau" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

@@ -353,6 +353,7 @@ namespace QLSV
             this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fQLDSSV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLSV";
             this.Load += new System.EventHandler(this.fQLDSSV_Load);
             this.groupBox2.ResumeLayout(false);

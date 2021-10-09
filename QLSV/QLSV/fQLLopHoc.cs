@@ -14,19 +14,23 @@ namespace QLSV
     public partial class fQLLopHoc : Form
     {
         BUSLopHoc busLH;
+        
         public fQLLopHoc()
         {
             InitializeComponent();
             busLH = new BUSLopHoc();
+            
         }
 
         private void HienThiDSLH()
         {
             busLH.DSLopHoc(dgvDSLH);
 
-            dgvDSLH.Columns[0].Width = (int)(0.3 * dgvDSLH.Width);
-            dgvDSLH.Columns[1].Width = (int)(0.3 * dgvDSLH.Width);
-            dgvDSLH.Columns[2].Width = (int)(0.3 * dgvDSLH.Width);
+            dgvDSLH.Columns[0].Width = (int)(0.1 * dgvDSLH.Width);
+            dgvDSLH.Columns[1].Width = (int)(0.4 * dgvDSLH.Width);
+            dgvDSLH.Columns[2].Width = (int)(0.4 * dgvDSLH.Width);
+            dgvDSLH.Columns[3].Width = (int)(0.1 * dgvDSLH.Width);
+            dgvDSLH.RowHeadersVisible = false;
 
         }
 
@@ -34,7 +38,7 @@ namespace QLSV
         {
             HienThiDSLH();
             busLH.HienThiMonHoc(cbMonhoc);
-            busLH.HienThiGiangVien(cbGiangVien);
+            busLH.HienThicbGiangVien(cbGiangVien);
 
 
         }
@@ -117,7 +121,7 @@ namespace QLSV
             if (e.RowIndex >= 0 && e.RowIndex < dgvDSLH.Rows.Count)
             {
                 txtMaLopHoc.Text = dgvDSLH.Rows[e.RowIndex].Cells["maLopHoc"].Value.ToString();
-                cbGiangVien.Text = dgvDSLH.Rows[e.RowIndex].Cells["ten"].Value.ToString();
+                cbGiangVien.Text = dgvDSLH.Rows[e.RowIndex].Cells["HoTenGiangVien"].Value.ToString();
                 cbMonhoc.Text = dgvDSLH.Rows[e.RowIndex].Cells["tenMonHoc"].Value.ToString();
             }
         }
@@ -128,6 +132,20 @@ namespace QLSV
             {
                 btTraCuu.PerformClick();
             }
+        }
+
+        private void btXemDSSV_Click(object sender, EventArgs e)
+        {
+            fDSSVTheoLop f = new fDSSVTheoLop();
+            f.maLop = int.Parse(txtMaLopHoc.Text);
+            f.Show();
+        }
+
+        private void dgvDSLH_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fDSSVTheoLop f = new fDSSVTheoLop();
+            f.maLop = int.Parse(dgvDSLH.Rows[e.RowIndex].Cells["maLopHoc"].Value.ToString());
+            f.Show();
         }
     }
 }

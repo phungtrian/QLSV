@@ -114,6 +114,7 @@ namespace QLSV
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fAdmin_FormClosed);
             this.Load += new System.EventHandler(this.fAdmin_Load);
             this.menuStrip1.ResumeLayout(false);

@@ -274,6 +274,7 @@ namespace QLSV
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Name = "fGiangVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fGiangVien";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fGiangVien_FormClosed);
             this.Load += new System.EventHandler(this.fGiangVien_Load);

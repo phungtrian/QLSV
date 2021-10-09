@@ -68,6 +68,18 @@
     <Compile Include="Diem.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Diem1MonTheoSV_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DiemTatCaMonTheoSV_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSLopChuaDK_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSLopTheoSinhVien_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="DSSVTheoLop_Result.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
@@ -97,6 +109,12 @@
     </Compile>
     <Compile Include="fDangNhap.Designer.cs">
       <DependentUpon>fDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fDSSVTheoLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDSSVTheoLop.Designer.cs">
+      <DependentUpon>fDSSVTheoLop.cs</DependentUpon>
     </Compile>
     <Compile Include="fGiangVien.cs">
       <SubType>Form</SubType>
@@ -184,6 +202,9 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="ThongTinChiTietSV_Result.cs">
+      <DependentUpon>QLSVEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="TraCuuGiangVien_Result.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
@@ -207,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDSSVTheoLop.resx">
+      <DependentUpon>fDSSVTheoLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fGiangVien.resx">
       <DependentUpon>fGiangVien.cs</DependentUpon>

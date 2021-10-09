@@ -31,14 +31,12 @@ namespace QLSV
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.cbSDT = new System.Windows.Forms.ComboBox();
             this.cbDiaChi = new System.Windows.Forms.ComboBox();
             this.cbQueQuan = new System.Windows.Forms.ComboBox();
             this.cbNamSinh = new System.Windows.Forms.ComboBox();
             this.cbHoTen = new System.Windows.Forms.ComboBox();
             this.cbMSSV = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,9 +45,10 @@ namespace QLSV
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblop = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dgvLopHoc = new System.Windows.Forms.DataGridView();
+            this.btTraCuuDiem = new System.Windows.Forms.Button();
+            this.btDKMonHoc = new System.Windows.Forms.Button();
+            this.btDangXuat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.lblop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
@@ -68,14 +67,12 @@ namespace QLSV
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbGioiTinh);
             this.groupBox1.Controls.Add(this.cbSDT);
             this.groupBox1.Controls.Add(this.cbDiaChi);
             this.groupBox1.Controls.Add(this.cbQueQuan);
             this.groupBox1.Controls.Add(this.cbNamSinh);
             this.groupBox1.Controls.Add(this.cbHoTen);
             this.groupBox1.Controls.Add(this.cbMSSV);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label8);
@@ -92,77 +89,65 @@ namespace QLSV
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết";
             // 
-            // cbGioiTinh
-            // 
-            this.cbGioiTinh.FormattingEnabled = true;
-            this.cbGioiTinh.Location = new System.Drawing.Point(147, 331);
-            this.cbGioiTinh.Name = "cbGioiTinh";
-            this.cbGioiTinh.Size = new System.Drawing.Size(204, 27);
-            this.cbGioiTinh.TabIndex = 1;
-            // 
             // cbSDT
             // 
+            this.cbSDT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbSDT.FormattingEnabled = true;
-            this.cbSDT.Location = new System.Drawing.Point(147, 276);
+            this.cbSDT.Location = new System.Drawing.Point(128, 364);
             this.cbSDT.Name = "cbSDT";
-            this.cbSDT.Size = new System.Drawing.Size(204, 27);
+            this.cbSDT.Size = new System.Drawing.Size(223, 27);
             this.cbSDT.TabIndex = 1;
             // 
             // cbDiaChi
             // 
+            this.cbDiaChi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbDiaChi.FormattingEnabled = true;
-            this.cbDiaChi.Location = new System.Drawing.Point(147, 228);
+            this.cbDiaChi.Location = new System.Drawing.Point(128, 299);
             this.cbDiaChi.Name = "cbDiaChi";
-            this.cbDiaChi.Size = new System.Drawing.Size(204, 27);
+            this.cbDiaChi.Size = new System.Drawing.Size(223, 27);
             this.cbDiaChi.TabIndex = 1;
             // 
             // cbQueQuan
             // 
+            this.cbQueQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbQueQuan.FormattingEnabled = true;
-            this.cbQueQuan.Location = new System.Drawing.Point(147, 173);
+            this.cbQueQuan.Location = new System.Drawing.Point(128, 233);
             this.cbQueQuan.Name = "cbQueQuan";
-            this.cbQueQuan.Size = new System.Drawing.Size(204, 27);
+            this.cbQueQuan.Size = new System.Drawing.Size(223, 27);
             this.cbQueQuan.TabIndex = 1;
             // 
             // cbNamSinh
             // 
+            this.cbNamSinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbNamSinh.FormattingEnabled = true;
-            this.cbNamSinh.Location = new System.Drawing.Point(147, 125);
+            this.cbNamSinh.Location = new System.Drawing.Point(128, 163);
             this.cbNamSinh.Name = "cbNamSinh";
-            this.cbNamSinh.Size = new System.Drawing.Size(204, 27);
+            this.cbNamSinh.Size = new System.Drawing.Size(223, 27);
             this.cbNamSinh.TabIndex = 1;
             // 
             // cbHoTen
             // 
+            this.cbHoTen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbHoTen.FormattingEnabled = true;
-            this.cbHoTen.Location = new System.Drawing.Point(147, 77);
+            this.cbHoTen.Location = new System.Drawing.Point(128, 96);
             this.cbHoTen.Name = "cbHoTen";
-            this.cbHoTen.Size = new System.Drawing.Size(204, 27);
+            this.cbHoTen.Size = new System.Drawing.Size(223, 27);
             this.cbHoTen.TabIndex = 1;
             // 
             // cbMSSV
             // 
+            this.cbMSSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbMSSV.FormattingEnabled = true;
-            this.cbMSSV.Location = new System.Drawing.Point(147, 29);
+            this.cbMSSV.Location = new System.Drawing.Point(128, 29);
             this.cbMSSV.Name = "cbMSSV";
-            this.cbMSSV.Size = new System.Drawing.Size(204, 27);
+            this.cbMSSV.Size = new System.Drawing.Size(223, 27);
             this.cbMSSV.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 339);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 19);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Giới Tính";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 236);
+            this.label7.Location = new System.Drawing.Point(20, 302);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 19);
             this.label7.TabIndex = 0;
@@ -172,7 +157,7 @@ namespace QLSV
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 181);
+            this.label6.Location = new System.Drawing.Point(18, 236);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 19);
             this.label6.TabIndex = 0;
@@ -182,7 +167,7 @@ namespace QLSV
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 284);
+            this.label8.Location = new System.Drawing.Point(20, 367);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 19);
             this.label8.TabIndex = 0;
@@ -192,7 +177,7 @@ namespace QLSV
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 85);
+            this.label4.Location = new System.Drawing.Point(18, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 19);
             this.label4.TabIndex = 0;
@@ -202,7 +187,7 @@ namespace QLSV
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 133);
+            this.label5.Location = new System.Drawing.Point(20, 166);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 19);
             this.label5.TabIndex = 0;
@@ -221,7 +206,7 @@ namespace QLSV
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 37);
+            this.label2.Location = new System.Drawing.Point(20, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 19);
             this.label2.TabIndex = 0;
@@ -229,46 +214,61 @@ namespace QLSV
             // 
             // lblop
             // 
-            this.lblop.Controls.Add(this.button2);
-            this.lblop.Controls.Add(this.button1);
             this.lblop.Controls.Add(this.dgvLopHoc);
             this.lblop.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblop.Location = new System.Drawing.Point(495, 83);
+            this.lblop.Location = new System.Drawing.Point(450, 83);
             this.lblop.Name = "lblop";
-            this.lblop.Size = new System.Drawing.Size(594, 416);
+            this.lblop.Size = new System.Drawing.Size(649, 416);
             this.lblop.TabIndex = 2;
             this.lblop.TabStop = false;
             this.lblop.Text = "Lớp học của học kỳ hiện tại";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button2.Location = new System.Drawing.Point(455, 251);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 48);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Tra Cứu Điểm";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button1.Location = new System.Drawing.Point(455, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 48);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Đăng Ký Môn Học";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // dgvLopHoc
             // 
             this.dgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLopHoc.Location = new System.Drawing.Point(6, 33);
+            this.dgvLopHoc.Location = new System.Drawing.Point(18, 33);
             this.dgvLopHoc.Name = "dgvLopHoc";
             this.dgvLopHoc.RowHeadersWidth = 51;
             this.dgvLopHoc.RowTemplate.Height = 24;
-            this.dgvLopHoc.Size = new System.Drawing.Size(416, 368);
+            this.dgvLopHoc.Size = new System.Drawing.Size(615, 368);
             this.dgvLopHoc.TabIndex = 0;
+            this.dgvLopHoc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHoc_CellDoubleClick);
+            // 
+            // btTraCuuDiem
+            // 
+            this.btTraCuuDiem.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btTraCuuDiem.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTraCuuDiem.Location = new System.Drawing.Point(823, 505);
+            this.btTraCuuDiem.Name = "btTraCuuDiem";
+            this.btTraCuuDiem.Size = new System.Drawing.Size(109, 55);
+            this.btTraCuuDiem.TabIndex = 1;
+            this.btTraCuuDiem.Text = "Tra Cứu Điểm";
+            this.btTraCuuDiem.UseVisualStyleBackColor = false;
+            this.btTraCuuDiem.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btDKMonHoc
+            // 
+            this.btDKMonHoc.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btDKMonHoc.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDKMonHoc.Location = new System.Drawing.Point(561, 505);
+            this.btDKMonHoc.Name = "btDKMonHoc";
+            this.btDKMonHoc.Size = new System.Drawing.Size(109, 55);
+            this.btDKMonHoc.TabIndex = 1;
+            this.btDKMonHoc.Text = "Đăng Ký Môn Học";
+            this.btDKMonHoc.UseVisualStyleBackColor = false;
+            this.btDKMonHoc.Click += new System.EventHandler(this.btDKMonHoc_Click);
+            // 
+            // btDangXuat
+            // 
+            this.btDangXuat.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btDangXuat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDangXuat.Location = new System.Drawing.Point(201, 505);
+            this.btDangXuat.Name = "btDangXuat";
+            this.btDangXuat.Size = new System.Drawing.Size(109, 55);
+            this.btDangXuat.TabIndex = 1;
+            this.btDangXuat.Text = "Đăng Xuất";
+            this.btDangXuat.UseVisualStyleBackColor = false;
+            this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
             // 
             // fSinhVien
             // 
@@ -276,11 +276,17 @@ namespace QLSV
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1111, 589);
+            this.Controls.Add(this.btTraCuuDiem);
             this.Controls.Add(this.lblop);
+            this.Controls.Add(this.btDangXuat);
+            this.Controls.Add(this.btDKMonHoc);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "fSinhVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fSinhVien";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fSinhVien_FormClosed);
+            this.Load += new System.EventHandler(this.fSinhVien_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.lblop.ResumeLayout(false);
@@ -294,14 +300,12 @@ namespace QLSV
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbGioiTinh;
         private System.Windows.Forms.ComboBox cbSDT;
         private System.Windows.Forms.ComboBox cbDiaChi;
         private System.Windows.Forms.ComboBox cbQueQuan;
         private System.Windows.Forms.ComboBox cbNamSinh;
         private System.Windows.Forms.ComboBox cbHoTen;
         private System.Windows.Forms.ComboBox cbMSSV;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
@@ -310,8 +314,9 @@ namespace QLSV
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox lblop;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btTraCuuDiem;
+        private System.Windows.Forms.Button btDKMonHoc;
         private System.Windows.Forms.DataGridView dgvLopHoc;
+        private System.Windows.Forms.Button btDangXuat;
     }
 }

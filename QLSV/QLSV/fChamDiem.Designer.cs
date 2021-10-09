@@ -329,6 +329,7 @@ namespace QLSV
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "fChamDiem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập điểm sinh viên";
             this.Load += new System.EventHandler(this.fChamDiem_Load);
             this.groupBox1.ResumeLayout(false);

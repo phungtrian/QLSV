@@ -11,11 +11,14 @@ namespace QLSV
 {
     using System;
     
-    public partial class DSTatCaLopHoc_Result
+    public partial class ThongTinChiTietSV_Result
     {
-        public string tenMonHoc { get; set; }
-        public int maLopHoc { get; set; }
-        public string HoTenGiangVien { get; set; }
-        public int maGiangVien { get; set; }
+        public int masinhvien { get; set; }
+        public string hoten { get; set; }
+        public string diaChi { get; set; }
+        public Nullable<System.DateTime> namSinh { get; set; }
+        public string queQuan { get; set; }
+        public int dienThoai { get; set; }
+        public string matKhau { get; set; }
     }
 }
