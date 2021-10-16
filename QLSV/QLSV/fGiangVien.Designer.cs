@@ -260,7 +260,7 @@ namespace QLSV
             this.btChamDiem.Name = "btChamDiem";
             this.btChamDiem.Size = new System.Drawing.Size(171, 40);
             this.btChamDiem.TabIndex = 2;
-            this.btChamDiem.Text = "Chấm Điểm";
+            this.btChamDiem.Text = "Nhập Điểm";
             this.btChamDiem.UseVisualStyleBackColor = true;
             this.btChamDiem.Click += new System.EventHandler(this.btChamDiem_Click);
             // 

@@ -63,7 +63,6 @@ namespace QLSV
         private void fQLDSGV_Load(object sender, EventArgs e)
         {
             HienThiDSGV();
-            busGV.HienThiLoaiGioiTinh(cbLoaiGioiTinh);
 
         }
 

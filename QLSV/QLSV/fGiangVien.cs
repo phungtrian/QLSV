@@ -91,7 +91,7 @@ namespace QLSV
             }
             else
             {
-                fChamDiem f = new fChamDiem();
+                fNhapDiem f = new fNhapDiem();
                 f.maLop = int.Parse(txtMaLopHoc.Text);
                 f.maGV = maGV;
                 f.ShowDialog();

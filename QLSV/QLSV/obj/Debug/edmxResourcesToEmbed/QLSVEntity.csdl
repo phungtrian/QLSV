@@ -38,13 +38,6 @@
     <Property Name="matKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="LopHocs" Relationship="Self.FK_lopHoc_GiangVien" FromRole="GiangVien" ToRole="LopHoc" />
   </EntityType>
-  <EntityType Name="LoaiGioiTinh">
-    <Key>
-      <PropertyRef Name="MaGioTinh" />
-    </Key>
-    <Property Name="MaGioTinh" Type="Byte" Nullable="false" />
-    <Property Name="TenGioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityType Name="LopHoc">
     <Key>
       <PropertyRef Name="maLopHoc" />
@@ -154,7 +147,6 @@
   <EntityContainer Name="QLSVEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Diems" EntityType="Self.Diem" />
     <EntitySet Name="GiangViens" EntityType="Self.GiangVien" />
-    <EntitySet Name="LoaiGioiTinhs" EntityType="Self.LoaiGioiTinh" />
     <EntitySet Name="LopHocs" EntityType="Self.LopHoc" />
     <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
     <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
@@ -315,7 +307,9 @@
   <ComplexType Name="TraCuuLopHoc_Result">
     <Property Type="Int32" Name="maLopHoc" Nullable="false" />
     <Property Type="Int32" Name="maMonHoc" Nullable="true" />
-    <Property Type="Int32" Name="maGiangVien" Nullable="true" />
+    <Property Type="Int32" Name="maGiangVien" Nullable="false" />
+    <Property Type="String" Name="tenMonHoc" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="HoTenGiangVien" Nullable="false" MaxLength="101" />
   </ComplexType>
   <ComplexType Name="TraCuuMonHoc_Result">
     <Property Type="Int32" Name="maMonHoc" Nullable="false" />

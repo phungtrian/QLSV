@@ -23,6 +23,7 @@ namespace QLSV.BUS
         public void DSSinhVien(DataGridView dg)
         {
             dg.DataSource = da.LayDSSinhVIen();
+            
         }
 
         public void ThemSV(SinhVien sv)
@@ -40,7 +41,7 @@ namespace QLSV.BUS
             }
         }
 
-        public bool SuaSinhViem(SinhVien sv)
+        public bool SuaSinhVien(SinhVien sv)
         {
             if (da.TimSinhVien(sv.maSinhVien))
             {
@@ -87,14 +88,7 @@ namespace QLSV.BUS
                 return false;
             }
         }
-        public void HienThiLoaiGioiTinh(ComboBox cb)
-        {
-            cb.DataSource = da.LayLoaiGioiTinh();
-            cb.DisplayMember = "TenGioiTinh";
-            cb.ValueMember = "MaGioTinh";
 
-
-        }
 
 
 

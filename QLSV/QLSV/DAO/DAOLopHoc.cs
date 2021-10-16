@@ -71,7 +71,8 @@ namespace QLSV.DAO
             var ds = db.TraCuuLopHoc(tuKhoa).Select(s => new
             {
                 s.maLopHoc,
-                s.maMonHoc,
+                s.HoTenGiangVien,
+                s.tenMonHoc,
                 s.maGiangVien
             }).ToList();
             return ds;

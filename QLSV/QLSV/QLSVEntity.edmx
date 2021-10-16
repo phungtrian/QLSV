@@ -40,13 +40,6 @@
           <Property Name="gioiTinh" Type="nvarchar" MaxLength="50" />
           <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="LoaiGioiTinh">
-          <Key>
-            <PropertyRef Name="MaGioTinh" />
-          </Key>
-          <Property Name="MaGioTinh" Type="tinyint" Nullable="false" />
-          <Property Name="TenGioiTinh" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="LopHoc">
           <Key>
             <PropertyRef Name="maLopHoc" />
@@ -229,6 +222,9 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SwapTonal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar(max)">
+          <Parameter Name="text" Type="nvarchar(max)" Mode="In" />
+        </Function>
         <Function Name="ThongTinChiTietSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="masinhvien" Type="int" Mode="In" />
         </Function>
@@ -247,7 +243,6 @@
         <EntityContainer Name="QLSVModelStoreContainer">
           <EntitySet Name="Diem" EntityType="Self.Diem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LoaiGioiTinh" EntityType="Self.LoaiGioiTinh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LopHoc" EntityType="Self.LopHoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
@@ -310,13 +305,6 @@
           <Property Name="gioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="matKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="LopHocs" Relationship="Self.FK_lopHoc_GiangVien" FromRole="GiangVien" ToRole="LopHoc" />
-        </EntityType>
-        <EntityType Name="LoaiGioiTinh">
-          <Key>
-            <PropertyRef Name="MaGioTinh" />
-          </Key>
-          <Property Name="MaGioTinh" Type="Byte" Nullable="false" />
-          <Property Name="TenGioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="LopHoc">
           <Key>
@@ -427,7 +415,6 @@
         <EntityContainer Name="QLSVEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Diems" EntityType="Self.Diem" />
           <EntitySet Name="GiangViens" EntityType="Self.GiangVien" />
-          <EntitySet Name="LoaiGioiTinhs" EntityType="Self.LoaiGioiTinh" />
           <EntitySet Name="LopHocs" EntityType="Self.LopHoc" />
           <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
           <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
@@ -588,7 +575,9 @@
         <ComplexType Name="TraCuuLopHoc_Result">
           <Property Type="Int32" Name="maLopHoc" Nullable="false" />
           <Property Type="Int32" Name="maMonHoc" Nullable="true" />
-          <Property Type="Int32" Name="maGiangVien" Nullable="true" />
+          <Property Type="Int32" Name="maGiangVien" Nullable="false" />
+          <Property Type="String" Name="tenMonHoc" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="HoTenGiangVien" Nullable="false" MaxLength="101" />
         </ComplexType>
         <ComplexType Name="TraCuuMonHoc_Result">
           <Property Type="Int32" Name="maMonHoc" Nullable="false" />
@@ -685,14 +674,6 @@
                 <ScalarProperty Name="nguoiCapNhat" ColumnName="nguoiCapNhat" />
                 <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
                 <ScalarProperty Name="matKhau" ColumnName="matKhau" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LoaiGioiTinhs">
-            <EntityTypeMapping TypeName="QLSVModel.LoaiGioiTinh">
-              <MappingFragment StoreEntitySet="LoaiGioiTinh">
-                <ScalarProperty Name="MaGioTinh" ColumnName="MaGioTinh" />
-                <ScalarProperty Name="TenGioiTinh" ColumnName="TenGioiTinh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -832,6 +813,8 @@
                 <ScalarProperty Name="maLopHoc" ColumnName="maLopHoc" />
                 <ScalarProperty Name="maMonHoc" ColumnName="maMonHoc" />
                 <ScalarProperty Name="maGiangVien" ColumnName="maGiangVien" />
+                <ScalarProperty Name="tenMonHoc" ColumnName="tenMonHoc" />
+                <ScalarProperty Name="HoTenGiangVien" ColumnName="HoTenGiangVien" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

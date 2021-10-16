@@ -29,7 +29,6 @@ namespace QLSV
     
         public virtual DbSet<Diem> Diems { get; set; }
         public virtual DbSet<GiangVien> GiangViens { get; set; }
-        public virtual DbSet<LoaiGioiTinh> LoaiGioiTinhs { get; set; }
         public virtual DbSet<LopHoc> LopHocs { get; set; }
         public virtual DbSet<MonHoc> MonHocs { get; set; }
         public virtual DbSet<SinhVien> SinhViens { get; set; }

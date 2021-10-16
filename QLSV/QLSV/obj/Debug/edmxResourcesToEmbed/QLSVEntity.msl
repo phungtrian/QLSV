@@ -37,14 +37,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="LoaiGioiTinhs">
-      <EntityTypeMapping TypeName="QLSVModel.LoaiGioiTinh">
-        <MappingFragment StoreEntitySet="LoaiGioiTinh">
-          <ScalarProperty Name="MaGioTinh" ColumnName="MaGioTinh" />
-          <ScalarProperty Name="TenGioiTinh" ColumnName="TenGioiTinh" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="LopHocs">
       <EntityTypeMapping TypeName="QLSVModel.LopHoc">
         <MappingFragment StoreEntitySet="LopHoc">
@@ -181,6 +173,8 @@
           <ScalarProperty Name="maLopHoc" ColumnName="maLopHoc" />
           <ScalarProperty Name="maMonHoc" ColumnName="maMonHoc" />
           <ScalarProperty Name="maGiangVien" ColumnName="maGiangVien" />
+          <ScalarProperty Name="tenMonHoc" ColumnName="tenMonHoc" />
+          <ScalarProperty Name="HoTenGiangVien" ColumnName="HoTenGiangVien" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

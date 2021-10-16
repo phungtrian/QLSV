@@ -35,13 +35,6 @@
     <Property Name="gioiTinh" Type="nvarchar" MaxLength="50" />
     <Property Name="matKhau" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="LoaiGioiTinh">
-    <Key>
-      <PropertyRef Name="MaGioTinh" />
-    </Key>
-    <Property Name="MaGioTinh" Type="tinyint" Nullable="false" />
-    <Property Name="TenGioiTinh" Type="nvarchar" MaxLength="50" Nullable="false" />
-  </EntityType>
   <EntityType Name="LopHoc">
     <Key>
       <PropertyRef Name="maLopHoc" />
@@ -224,6 +217,9 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SwapTonal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar(max)">
+    <Parameter Name="text" Type="nvarchar(max)" Mode="In" />
+  </Function>
   <Function Name="ThongTinChiTietSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="masinhvien" Type="int" Mode="In" />
   </Function>
@@ -242,7 +238,6 @@
   <EntityContainer Name="QLSVModelStoreContainer">
     <EntitySet Name="Diem" EntityType="Self.Diem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LoaiGioiTinh" EntityType="Self.LoaiGioiTinh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LopHoc" EntityType="Self.LopHoc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />

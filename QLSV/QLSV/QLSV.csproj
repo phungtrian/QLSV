@@ -42,6 +42,9 @@
     <Reference Include="itextsharp">
       <HintPath>..\..\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -95,11 +98,11 @@
     <Compile Include="fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fChamDiem.cs">
+    <Compile Include="fNhapDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fChamDiem.Designer.cs">
-      <DependentUpon>fChamDiem.cs</DependentUpon>
+    <Compile Include="fNhapDiem.Designer.cs">
+      <DependentUpon>fNhapDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="fDangKyMonHoc.cs">
       <SubType>Form</SubType>
@@ -167,9 +170,6 @@
     <Compile Include="HienThiLopTheoGV_Result.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="LoaiGioiTinh.cs">
-      <DependentUpon>QLSVEntity.tt</DependentUpon>
-    </Compile>
     <Compile Include="LopHoc.cs">
       <DependentUpon>QLSVEntity.tt</DependentUpon>
     </Compile>
@@ -223,8 +223,8 @@
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fChamDiem.resx">
-      <DependentUpon>fChamDiem.cs</DependentUpon>
+    <EmbeddedResource Include="fNhapDiem.resx">
+      <DependentUpon>fNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fDangKyMonHoc.resx">
       <DependentUpon>fDangKyMonHoc.cs</DependentUpon>

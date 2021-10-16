@@ -31,8 +31,17 @@ namespace QLSV
             dgvDSSV.Columns[4].Width = (int)(0.1 * dgvDSSV.Width);
             dgvDSSV.Columns[5].Width = (int)(0.19 * dgvDSSV.Width);
             dgvDSSV.Columns[6].Width = (int)(0.1 * dgvDSSV.Width);
-            dgvDSSV.Columns[7].Width = (int)(0.1 * dgvDSSV.Width);
-            dgvDSSV.RowHeadersVisible = false;
+            dgvDSSV.Columns[7].Width = (int)(0.125 * dgvDSSV.Width);
+            //dgvDSSV.RowHeadersVisible = false;
+            //dgvDSSV.AllowUserToAddRows = true;
+            //dgvDSSV.AllowUserToDeleteRows = true;
+            //dgvDSSV.AllowUserToOrderColumns = true;
+            
+            //for (int i = 0; i < dgvDSSV.Rows.Count; i++)
+            //{
+            //    DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+            //    dgvDSSV[8, i] = linkCell;
+            //}
         }
         private bool KiemTraTXTMa()
         {
@@ -52,7 +61,6 @@ namespace QLSV
         private void fQLDSSV_Load(object sender, EventArgs e)
         {
             HienThiDSSV();
-            busDSSV.HienThiLoaiGioiTinh(cbLoaiGioiTinh);
 
         }
 
@@ -68,15 +76,16 @@ namespace QLSV
                 sv.namSinh = dtpNamSinh.Value;
                 sv.gioiTinh = cbLoaiGioiTinh.Text;
                 sv.diaChi = txtDiaChi.Text;
+                sv.dienThoai = int.Parse(txtSDT.Text);
                 sv.queQuan = txtQueQuan.Text;
                 sv.matKhau = "123";
 
-                if (busDSSV.SuaSinhViem(sv))
+                if (busDSSV.SuaSinhVien(sv))
                 {
                     MessageBox.Show("Cập nhật thông tin sinh viên Thành Công");
                 }
                 else
-                    MessageBox.Show("Bạn nhập MSSV sai. Hoặc không tìm thấy sinh viên");
+                    MessageBox.Show("Bạn nhập MSSV sai hoặc không tìm thấy sinh viên");
                 HienThiDSSV();
             }
         }
@@ -153,6 +162,29 @@ namespace QLSV
             busDSSV.ThemSV(sv);
 
             HienThiDSSV();
+        }
+
+
+        private void dgvDSSV_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                MessageBox.Show("Không thể sửa mã sv");
+            }
+            else
+            {
+                SinhVien sv = new SinhVien();
+                sv.maSinhVien = int.Parse(dgvDSSV.Rows[e.RowIndex].Cells["maSinhVien"].Value.ToString());
+                sv.Ho = dgvDSSV.Rows[e.RowIndex].Cells["Ho"].Value.ToString();
+                sv.Ten = dgvDSSV.Rows[e.RowIndex].Cells["Ten"].Value.ToString();
+                sv.gioiTinh = dgvDSSV.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString();
+                sv.namSinh = (DateTime)dgvDSSV.Rows[e.RowIndex].Cells["NamSinh"].Value;
+                sv.queQuan = dgvDSSV.Rows[e.RowIndex].Cells["QueQuan"].Value.ToString();
+                sv.diaChi = dgvDSSV.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
+                sv.dienThoai = int.Parse(dgvDSSV.Rows[e.RowIndex].Cells["DienThoai"].Value.ToString());
+                sv.matKhau = "123";
+                busDSSV.SuaSinhVien(sv);
+            }
         }
     }
 }

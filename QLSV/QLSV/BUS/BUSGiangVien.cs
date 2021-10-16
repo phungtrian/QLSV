@@ -85,12 +85,7 @@ namespace QLSV.BUS
                 return false;
             }
         }
-        public void HienThiLoaiGioiTinh(ComboBox cb)
-        {
-            cb.DataSource = da.LayLoaiGioiTinh();
-            cb.DisplayMember = "TenGioiTinh";
-            cb.ValueMember = "MaGioTinh";
-        }
+
 
         public void HienThicbLop(int maGV, ComboBox cbLop,ComboBox cbMonHoc)
         {

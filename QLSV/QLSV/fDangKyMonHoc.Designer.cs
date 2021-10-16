@@ -47,7 +47,7 @@ namespace QLSV
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(375, 22);
+            this.label1.Location = new System.Drawing.Point(403, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(266, 37);
             this.label1.TabIndex = 0;
@@ -59,7 +59,7 @@ namespace QLSV
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(24, 76);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(437, 403);
+            this.groupBox1.Size = new System.Drawing.Size(497, 403);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Môn Đã Đăng Ký";
@@ -71,16 +71,16 @@ namespace QLSV
             this.dgvMonDaDK.Name = "dgvMonDaDK";
             this.dgvMonDaDK.RowHeadersWidth = 51;
             this.dgvMonDaDK.RowTemplate.Height = 24;
-            this.dgvMonDaDK.Size = new System.Drawing.Size(421, 371);
+            this.dgvMonDaDK.Size = new System.Drawing.Size(485, 371);
             this.dgvMonDaDK.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvMonChuaDK);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(467, 76);
+            this.groupBox2.Location = new System.Drawing.Point(527, 76);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(525, 403);
+            this.groupBox2.Size = new System.Drawing.Size(569, 403);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Môn Chưa Đăng Ký";
@@ -92,7 +92,7 @@ namespace QLSV
             this.dgvMonChuaDK.Name = "dgvMonChuaDK";
             this.dgvMonChuaDK.RowHeadersWidth = 51;
             this.dgvMonChuaDK.RowTemplate.Height = 24;
-            this.dgvMonChuaDK.Size = new System.Drawing.Size(513, 371);
+            this.dgvMonChuaDK.Size = new System.Drawing.Size(552, 371);
             this.dgvMonChuaDK.TabIndex = 0;
             this.dgvMonChuaDK.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonChuaDK_CellDoubleClick);
             // 
@@ -101,7 +101,7 @@ namespace QLSV
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.PaleVioletRed;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(437, 492);
+            this.label2.Location = new System.Drawing.Point(523, 496);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(511, 22);
             this.label2.TabIndex = 3;
@@ -123,7 +123,7 @@ namespace QLSV
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1004, 534);
+            this.ClientSize = new System.Drawing.Size(1097, 533);
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);

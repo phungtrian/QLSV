@@ -107,6 +107,7 @@ namespace QLSV
             // 
             // dgvDSSV
             // 
+            this.dgvDSSV.AllowUserToOrderColumns = true;
             this.dgvDSSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDSSV.Location = new System.Drawing.Point(6, 19);
             this.dgvDSSV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -116,11 +117,13 @@ namespace QLSV
             this.dgvDSSV.Size = new System.Drawing.Size(948, 236);
             this.dgvDSSV.TabIndex = 0;
             this.dgvDSSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSV_CellClick);
+            this.dgvDSSV.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSV_CellValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
             this.label1.Location = new System.Drawing.Point(324, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(391, 51);
@@ -131,6 +134,7 @@ namespace QLSV
             // btThem
             // 
             this.btThem.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btThem.ForeColor = System.Drawing.Color.Black;
             this.btThem.Location = new System.Drawing.Point(87, 214);
             this.btThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btThem.Name = "btThem";
@@ -235,6 +239,9 @@ namespace QLSV
             // cbLoaiGioiTinh
             // 
             this.cbLoaiGioiTinh.FormattingEnabled = true;
+            this.cbLoaiGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.cbLoaiGioiTinh.Location = new System.Drawing.Point(454, 64);
             this.cbLoaiGioiTinh.Name = "cbLoaiGioiTinh";
             this.cbLoaiGioiTinh.Size = new System.Drawing.Size(183, 27);

@@ -34,7 +34,7 @@ namespace QLSV.BUS
             }
             else
             {
-                MessageBox.Show("Lỗi Đăng Nhập");
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu đang nhập");
                 return 0;
             }
         }

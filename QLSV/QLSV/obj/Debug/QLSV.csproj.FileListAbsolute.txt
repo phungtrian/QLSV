@@ -29,7 +29,6 @@ D:\gitDoAn\QLSV\QLSV\bin\Debug\EntityFramework.xml
 D:\gitDoAn\QLSV\QLSV\bin\Debug\EntityFramework.SqlServer.xml
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.csprojAssemblyReference.cache
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fAdmin.resources
-D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fChamDiem.resources
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fDangNhap.resources
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fGiangVien.resources
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fQLDSGV.resources
@@ -45,3 +44,4 @@ D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fDangKyMonHoc.resources
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fTraCuuDiemSV.resources
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fDSSVTheoLop.resources
 D:\gitDoAn\QLSV\QLSV\bin\Debug\itextsharp.dll
+D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fNhapDiem.resources

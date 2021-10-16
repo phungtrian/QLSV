@@ -68,15 +68,6 @@ namespace QLSV.DAO
 
         }
 
-        public dynamic LayLoaiGioiTinh()
-        {
-            var ds = db.LoaiGioiTinhs.Select(s => new
-            {
-                s.MaGioTinh,
-                s.TenGioiTinh
-            }).ToList();
-            return ds;
-        }
 
         public void XoaSinhVien(SinhVien sv)
         {

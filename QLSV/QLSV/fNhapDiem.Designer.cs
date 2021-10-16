@@ -1,7 +1,7 @@
 ﻿
 namespace QLSV
 {
-    partial class fChamDiem
+    partial class fNhapDiem
     {
         /// <summary>
         /// Required designer variable.
@@ -56,6 +56,7 @@ namespace QLSV
             this.btThoat = new System.Windows.Forms.Button();
             this.btNhap = new System.Windows.Forms.Button();
             this.btIn = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -314,11 +315,15 @@ namespace QLSV
             this.btIn.UseVisualStyleBackColor = true;
             this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
-            // fChamDiem
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Excel 2003|*.xls|Excel 2019|*.xlsx";
+            // 
+            // fNhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(873, 463);
             this.Controls.Add(this.btIn);
             this.Controls.Add(this.btThoat);
@@ -329,7 +334,7 @@ namespace QLSV
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "fChamDiem";
+            this.Name = "fNhapDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập điểm sinh viên";
             this.Load += new System.EventHandler(this.fChamDiem_Load);
@@ -386,5 +391,6 @@ namespace QLSV
         private System.Windows.Forms.TextBox txtDiemTongKet;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btChonLop;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

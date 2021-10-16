@@ -15,6 +15,8 @@ namespace QLSV
     {
         public int maLopHoc { get; set; }
         public Nullable<int> maMonHoc { get; set; }
-        public Nullable<int> maGiangVien { get; set; }
+        public int maGiangVien { get; set; }
+        public string tenMonHoc { get; set; }
+        public string HoTenGiangVien { get; set; }
     }
 }

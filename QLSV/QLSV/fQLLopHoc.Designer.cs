@@ -39,13 +39,13 @@ namespace QLSV
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaLopHoc = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btXemDSSV = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btTraCuu = new System.Windows.Forms.Button();
-            this.btXemDSSV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSLH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,9 +79,9 @@ namespace QLSV
             this.label2.Location = new System.Drawing.Point(116, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 21);
+            this.label2.Size = new System.Drawing.Size(89, 21);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Giáo viên";
+            this.label2.Text = "Giảng viên";
             // 
             // cbGiangVien
             // 
@@ -168,6 +168,18 @@ namespace QLSV
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin Lớp Học";
             // 
+            // btXemDSSV
+            // 
+            this.btXemDSSV.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXemDSSV.Location = new System.Drawing.Point(686, 159);
+            this.btXemDSSV.Margin = new System.Windows.Forms.Padding(4);
+            this.btXemDSSV.Name = "btXemDSSV";
+            this.btXemDSSV.Size = new System.Drawing.Size(114, 53);
+            this.btXemDSSV.TabIndex = 2;
+            this.btXemDSSV.Text = "Xem Danh Sách Sinh Viên";
+            this.btXemDSSV.UseVisualStyleBackColor = true;
+            this.btXemDSSV.Click += new System.EventHandler(this.btXemDSSV_Click);
+            // 
             // btXoa
             // 
             this.btXoa.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,18 +246,6 @@ namespace QLSV
             this.btTraCuu.Text = "Tra Cứu";
             this.btTraCuu.UseVisualStyleBackColor = true;
             this.btTraCuu.Click += new System.EventHandler(this.btTraCuu_Click);
-            // 
-            // btXemDSSV
-            // 
-            this.btXemDSSV.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXemDSSV.Location = new System.Drawing.Point(686, 159);
-            this.btXemDSSV.Margin = new System.Windows.Forms.Padding(4);
-            this.btXemDSSV.Name = "btXemDSSV";
-            this.btXemDSSV.Size = new System.Drawing.Size(106, 53);
-            this.btXemDSSV.TabIndex = 2;
-            this.btXemDSSV.Text = "Xem Danh Sách Sinh Viên";
-            this.btXemDSSV.UseVisualStyleBackColor = true;
-            this.btXemDSSV.Click += new System.EventHandler(this.btXemDSSV_Click);
             // 
             // fQLLopHoc
             // 

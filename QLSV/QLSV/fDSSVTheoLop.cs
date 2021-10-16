@@ -69,19 +69,19 @@ namespace QLSV
 
             if(kq == 1)
             {
-                MessageBox.Show("Hủy đăng ký Lớp của sinh viên" + txtMSSV.Text + "Thành công");
+                MessageBox.Show("Hủy đăng ký Lớp của sinh viên " + txtMSSV.Text + " Thành công");
                 HienThiDSSVTheoLop(maLop);
             }
             else
             {
-                MessageBox.Show("Hủy đăng ký Lớp của sinh viên" + txtMSSV.Text + "Thất bại");
+                MessageBox.Show("Hủy đăng ký Lớp của sinh viên " + txtMSSV.Text + " Thất bại");
                 HienThiDSSVTheoLop(maLop);
             }    
         }
 
         private void btChamDiem_Click(object sender, EventArgs e)
         {
-            fChamDiem f = new fChamDiem();
+            fNhapDiem f = new fNhapDiem();
             f.maLop = maLop;
             f.maGV = 0;
             f.ShowDialog();

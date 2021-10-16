@@ -236,6 +236,9 @@ namespace QLSV
             // cbLoaiGioiTinh
             // 
             this.cbLoaiGioiTinh.FormattingEnabled = true;
+            this.cbLoaiGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.cbLoaiGioiTinh.Location = new System.Drawing.Point(473, 66);
             this.cbLoaiGioiTinh.Name = "cbLoaiGioiTinh";
             this.cbLoaiGioiTinh.Size = new System.Drawing.Size(196, 27);
