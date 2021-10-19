@@ -13,11 +13,13 @@ namespace QLSV
 {
     public partial class fQLDSGV : Form
     {
+        XuatExcel xuatFile;
         BUSGiangVien busGV;
         public fQLDSGV()
         {
             InitializeComponent();
             busGV = new BUSGiangVien();
+            xuatFile = new XuatExcel();
         }
 
         private void txtTuKhoa_Enter(object sender, EventArgs e)
@@ -168,6 +170,15 @@ namespace QLSV
             {
                 btTraCuu.PerformClick();
             }
+        }
+
+        private void btXuat_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xuatFile.XuatFileExcelDanhSach(dgvDSGV, saveFileDialog1.FileName, "Danh Sách Tất Cả Các Giảng Viên");
+            }
+
         }
     }
 }

@@ -22,7 +22,8 @@ namespace QLSV.DAO
                 s.maLopHoc,
                 s.HoTenGiangVien,
                 s.tenMonHoc,
-                s.maGiangVien
+                s.maGiangVien,
+                s.daKetThuc
             }).ToList();
             return ds;
         }
@@ -54,6 +55,7 @@ namespace QLSV.DAO
             o.maLopHoc = lh.maLopHoc;
             o.maMonHoc = lh.maMonHoc;
             o.maGiangVien = lh.maGiangVien;
+            o.daKetThuc = lh.daKetThuc;
 
 
             db.SaveChanges();

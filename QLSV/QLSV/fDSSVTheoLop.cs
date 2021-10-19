@@ -37,8 +37,9 @@ namespace QLSV
             dgvDiem.Columns[0].Width = (int)(0.2 * dgvDiem.Width);
             dgvDiem.Columns[1].Width = (int)(0.2 * dgvDiem.Width);
             dgvDiem.Columns[2].Width = (int)(0.2 * dgvDiem.Width);
-            dgvDiem.Columns[3].Width = (int)(0.15 * dgvDiem.Width);
-            dgvDiem.Columns[4].Width = (int)(0.15 * dgvDiem.Width);
+            dgvDiem.Columns[3].Width = (int)(0.2 * dgvDiem.Width);
+            dgvDiem.Columns[4].Width = (int)(0.2 * dgvDiem.Width);
+            dgvDiem.RowHeadersVisible = false;
 
         }
 

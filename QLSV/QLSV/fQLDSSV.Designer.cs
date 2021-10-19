@@ -30,6 +30,7 @@ namespace QLSV
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLDSSV));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btTraCuu = new System.Windows.Forms.Button();
@@ -57,6 +58,8 @@ namespace QLSV
             this.txtHo = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btXuat = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSV)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -123,7 +126,7 @@ namespace QLSV
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(324, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(391, 51);
@@ -341,23 +344,41 @@ namespace QLSV
             this.groupBox3.Controls.Add(this.txtTuKhoa);
             this.groupBox3.Controls.Add(this.btTraCuu);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(136, 346);
+            this.groupBox3.Location = new System.Drawing.Point(36, 346);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(796, 75);
+            this.groupBox3.Size = new System.Drawing.Size(689, 75);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tra Cứu Sinh Viên";
+            // 
+            // btXuat
+            // 
+            this.btXuat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXuat.Location = new System.Drawing.Point(750, 366);
+            this.btXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btXuat.Name = "btXuat";
+            this.btXuat.Size = new System.Drawing.Size(151, 55);
+            this.btXuat.TabIndex = 0;
+            this.btXuat.Text = "Xuất Danh Sách Sinh Viên";
+            this.btXuat.UseVisualStyleBackColor = true;
+            this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Excel 2019|*.xlsx|Excel 2003|*.xls";
             // 
             // fQLDSSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1042, 706);
+            this.Controls.Add(this.btXuat);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fQLDSSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -403,5 +424,7 @@ namespace QLSV
         private System.Windows.Forms.ComboBox cbLoaiGioiTinh;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btXuat;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

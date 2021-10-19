@@ -329,5 +329,14 @@ namespace QLSV
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HuyMon", maSinhVienParameter, maLopParameter, kq);
         }
+    
+        public virtual ObjectResult<DiemTatCaHKTheoSV_Result> DiemTatCaHKTheoSV(Nullable<int> masinhvien)
+        {
+            var masinhvienParameter = masinhvien.HasValue ?
+                new ObjectParameter("masinhvien", masinhvien) :
+                new ObjectParameter("masinhvien", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DiemTatCaHKTheoSV_Result>("DiemTatCaHKTheoSV", masinhvienParameter);
+        }
     }
 }

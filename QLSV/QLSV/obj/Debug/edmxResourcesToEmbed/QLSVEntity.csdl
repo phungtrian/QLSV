@@ -262,6 +262,9 @@
       <Parameter Name="maLop" Mode="In" Type="Int32" />
       <Parameter Name="kq" Mode="InOut" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="DiemTatCaHKTheoSV" ReturnType="Collection(QLSVModel.DiemTatCaHKTheoSV_Result)">
+      <Parameter Name="masinhvien" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="DSSVTheoLop_Result">
     <Property Type="Int32" Name="masinhvien" Nullable="false" />
@@ -275,6 +278,7 @@
     <Property Type="Int32" Name="maLopHoc" Nullable="false" />
     <Property Type="String" Name="HoTenGiangVien" Nullable="false" MaxLength="101" />
     <Property Type="Int32" Name="maGiangVien" Nullable="false" />
+    <Property Type="Byte" Name="daKetThuc" Nullable="true" />
   </ComplexType>
   <ComplexType Name="HienThiLopTheoGV_Result">
     <Property Type="Int32" Name="malophoc" Nullable="false" />
@@ -366,5 +370,14 @@
     <Property Type="String" Name="queQuan" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="dienThoai" Nullable="false" />
     <Property Type="String" Name="matKhau" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="DiemTatCaHKTheoSV_Result">
+    <Property Type="Int32" Name="malophoc" Nullable="false" />
+    <Property Type="Int32" Name="mamonhoc" Nullable="true" />
+    <Property Type="String" Name="tenmonhoc" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="sotinchi" Nullable="true" />
+    <Property Type="Double" Name="diemLan1" Nullable="false" />
+    <Property Type="Double" Name="diemLan2" Nullable="false" />
+    <Property Type="Double" Name="diemtongket" Nullable="true" />
   </ComplexType>
 </Schema>

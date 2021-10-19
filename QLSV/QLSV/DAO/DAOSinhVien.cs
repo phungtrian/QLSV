@@ -127,6 +127,22 @@ namespace QLSV.DAO
             return ds;
         }
 
+        public dynamic DSDiemTatCaHKTheoSV(int maSV)
+        {
+            var ds = db.DiemTatCaHKTheoSV(maSV).Select(s => new
+            {
+                s.malophoc,
+                s.mamonhoc,
+                s.tenmonhoc,
+                s.sotinchi,
+                s.diemLan1,
+                s.diemLan2,
+                s.diemtongket
+            }).ToList();
+
+            return ds;
+        }
+
         public dynamic DSDiem1MonTheoSV(int maSV , int maMonHoc)
         {
             var ds = db.Diem1MonTheoSV(maSV, maMonHoc).Select(s => new

@@ -160,6 +160,9 @@
     <Parameter Name="masinhvien" Type="int" Mode="In" />
     <Parameter Name="mamon" Type="int" Mode="In" />
   </Function>
+  <Function Name="DiemTatCaHKTheoSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="masinhvien" Type="int" Mode="In" />
+  </Function>
   <Function Name="DiemTatCaMonTheoSV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="masinhvien" Type="int" Mode="In" />
   </Function>

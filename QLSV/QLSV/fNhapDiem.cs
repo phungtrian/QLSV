@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLSV.BUS;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System.IO;
 using Microsoft.Office.Interop.Excel;
 
@@ -18,6 +16,7 @@ namespace QLSV
 
     public partial class fNhapDiem : Form
     {
+        XuatExcel xuatFile;
         public int maLop;
         public int maGV;
         BUSGiangVien bus;
@@ -26,6 +25,7 @@ namespace QLSV
 
             InitializeComponent();
             bus = new BUSGiangVien();
+            xuatFile = new XuatExcel();
 
         }
 
@@ -37,8 +37,9 @@ namespace QLSV
             dgvDiem.Columns[0].Width = (int)(0.2 * dgvDiem.Width);
             dgvDiem.Columns[1].Width = (int)(0.2 * dgvDiem.Width);
             dgvDiem.Columns[2].Width = (int)(0.2 * dgvDiem.Width);
-            dgvDiem.Columns[3].Width = (int)(0.15 * dgvDiem.Width);
-            dgvDiem.Columns[4].Width = (int)(0.15 * dgvDiem.Width);
+            dgvDiem.Columns[3].Width = (int)(0.2 * dgvDiem.Width);
+            dgvDiem.Columns[4].Width = (int)(0.2 * dgvDiem.Width);
+            dgvDiem.RowHeadersVisible = false;
 
         }
 
@@ -90,26 +91,35 @@ namespace QLSV
             }
          
             int maSV = int.Parse(txtMaSV.Text);
-            float diemLan1 = float.Parse(txtDiemLan1.Text);
-            float diemLan2 = float.Parse(txtDiemLan2.Text);
-            float diemTK = float.Parse(txtDiemTongKet.Text);
 
-            int kq = bus.ChamDiem(maGV, maLop, maSV, diemLan1, diemLan2, diemTK);
-
-            if(kq == 1)
+            try
             {
-                MessageBox.Show("Nhập diểm thành công");
-                HienThiDSSVTheoLop(maLop);
+                float diemLan1 = float.Parse(txtDiemLan1.Text);
+                float diemLan2 = float.Parse(txtDiemLan2.Text);
+                float diemTK = float.Parse(txtDiemTongKet.Text);
+
+                int kq = bus.ChamDiem(maGV, maLop, maSV, diemLan1, diemLan2, diemTK);
+
+                if (kq == 1)
+                {
+                    MessageBox.Show("Nhập diểm thành công");
+                    HienThiDSSVTheoLop(maLop);
+                }
+                else if (kq == 0)
+                {
+                    MessageBox.Show("Nhập diểm thất bại");
+                    HienThiDSSVTheoLop(maLop);
+                }
+                else
+                {
+                    MessageBox.Show("lỗi phát sinh từ cơ sở dữ liệu");
+                    HienThiDSSVTheoLop(maLop);
+                }
             }
-            else if(kq == 0)
+            catch (Exception)
             {
-                MessageBox.Show("Nhập diểm thất bại");
-                HienThiDSSVTheoLop(maLop);
-            }   
-            else
-            {
-                MessageBox.Show("lỗi phát sinh từ cơ sở dữ liệu");
-                HienThiDSSVTheoLop(maLop);
+
+                MessageBox.Show("Chỉ được nhập điểm bằng số");
             }    
         }
 
@@ -217,89 +227,13 @@ namespace QLSV
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                ToExcel(dgvDiem, saveFileDialog1.FileName);
+                xuatFile.XuatFileExcelBangDiem(dgvDiem, saveFileDialog1.FileName, "Bảng Điểm lớp " + maLop + " môn " + cbMonHoc.Text);
             }
 
             #endregion
         }
 
-        private void ToExcel(DataGridView dg, string fileName)
-        {
-            Microsoft.Office.Interop.Excel.Application excel;
-            Microsoft.Office.Interop.Excel.Workbook workbook;
-            Microsoft.Office.Interop.Excel.Worksheet worksheet;
-            
-
-
-            try
-            {
-                excel = new Microsoft.Office.Interop.Excel.Application();
-                excel.Visible = false;
-                excel.DisplayAlerts = false;
-
-                workbook = excel.Workbooks.Add(Type.Missing);
-
-                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
-                worksheet.Name = "Bảng Điểm";
-                Range range;
- 
-                // export tiêu đề
-
-                worksheet.Cells[1,  1] = "Bảng Điểm lớp " + maLop + " môn " + cbMonHoc.Text;
-                worksheet.Range["A1:C1"].Merge();
-
-                // export header
-                for (int i = 0; i < dg.ColumnCount; i++)
-                {
-                    worksheet.Cells[2, i + 1] = dg.Columns[i].HeaderText;
-                    range = worksheet.Cells[2, i + 1];
-                    Borders borders = range.Borders;
-
-                    //Set the hair lines style
-                    borders.LineStyle = XlLineStyle.xlContinuous;
-                    borders.Weight = 3d;
-
-                }
-
-                // export content
-                for (int i = 0; i < dg.RowCount; i++)
-                {
-                    for (int j = 0; j < dg.ColumnCount; j++)
-                    {
-                        worksheet.Cells[i + 3, j + 1] = dg.Rows[i].Cells[j].Value.ToString();
-                        range = worksheet.Cells[i + 3, j + 1];
-                        Borders borders = range.Borders;
-
-                        //Set the hair lines style
-                        borders.LineStyle = XlLineStyle.xlContinuous;
-                        borders.Weight = 2d;
-                    }
-                }
-
-                worksheet.Columns[1].AutoFit();
-                worksheet.Columns[2].AutoFit();
-                worksheet.Columns[3].AutoFit();
-                worksheet.Columns[4].AutoFit();
-                worksheet.Columns[5].AutoFit();
-                
-
-
-
-                // save workbook
-                workbook.SaveAs(fileName);
-                workbook.Close();
-                excel.Quit();
-                MessageBox.Show("Xuất file Excel thành công");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                workbook = null;
-                worksheet = null;
-            }
-        }
+        
+        
     }
 }

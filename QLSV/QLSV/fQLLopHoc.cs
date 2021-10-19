@@ -14,11 +14,23 @@ namespace QLSV
     public partial class fQLLopHoc : Form
     {
         BUSLopHoc busLH;
-        
+        XuatExcel xuatFile;
         public fQLLopHoc()
         {
             InitializeComponent();
             busLH = new BUSLopHoc();
+            xuatFile = new XuatExcel();
+        }
+
+        private void DieuChinhCBTrangThai()
+        {
+            dynamic items = new[] {
+            new { Text = "Đang Mở", Value = 0 },
+            new { Text = "Đã kết Thúc", Value = 1 }
+            }.ToList();
+            cbTrangThai.DataSource = items;
+            cbTrangThai.DisplayMember = "Text";
+            cbTrangThai.ValueMember = "Value";
             
         }
 
@@ -27,9 +39,10 @@ namespace QLSV
             busLH.DSLopHoc(dgvDSLH);
 
             dgvDSLH.Columns[0].Width = (int)(0.1 * dgvDSLH.Width);
-            dgvDSLH.Columns[1].Width = (int)(0.4 * dgvDSLH.Width);
-            dgvDSLH.Columns[2].Width = (int)(0.4 * dgvDSLH.Width);
+            dgvDSLH.Columns[1].Width = (int)(0.35 * dgvDSLH.Width);
+            dgvDSLH.Columns[2].Width = (int)(0.35 * dgvDSLH.Width);
             dgvDSLH.Columns[3].Width = (int)(0.1 * dgvDSLH.Width);
+            dgvDSLH.Columns[4].Width = (int)(0.1 * dgvDSLH.Width);
             dgvDSLH.RowHeadersVisible = false;
 
         }
@@ -39,6 +52,7 @@ namespace QLSV
             HienThiDSLH();
             busLH.HienThiMonHoc(cbMonhoc);
             busLH.HienThicbGiangVien(cbGiangVien);
+            DieuChinhCBTrangThai();
 
 
         }
@@ -49,6 +63,7 @@ namespace QLSV
             lh.maLopHoc = int.Parse(txtMaLopHoc.Text);
             lh.maGiangVien = int.Parse(cbGiangVien.SelectedValue.ToString());
             lh.maMonHoc = int.Parse(cbMonhoc.SelectedValue.ToString());
+            lh.daKetThuc = 0;
 
             busLH.ThemLopHoc(lh);
 
@@ -78,6 +93,7 @@ namespace QLSV
                 lh.maLopHoc = int.Parse(txtMaLopHoc.Text);
                 lh.maGiangVien = int.Parse(cbGiangVien.SelectedValue.ToString());
                 lh.maMonHoc = int.Parse(cbMonhoc.SelectedValue.ToString());
+                lh.daKetThuc = byte.Parse(cbTrangThai.SelectedValue.ToString());
 
                 if (busLH.SuaLopHoc(lh))
                 {
@@ -123,6 +139,7 @@ namespace QLSV
                 txtMaLopHoc.Text = dgvDSLH.Rows[e.RowIndex].Cells["maLopHoc"].Value.ToString();
                 cbGiangVien.Text = dgvDSLH.Rows[e.RowIndex].Cells["HoTenGiangVien"].Value.ToString();
                 cbMonhoc.Text = dgvDSLH.Rows[e.RowIndex].Cells["tenMonHoc"].Value.ToString();
+                cbTrangThai.SelectedValue = int.Parse(dgvDSLH.Rows[e.RowIndex].Cells["daKetThuc"].Value.ToString());
             }
         }
 
@@ -146,6 +163,15 @@ namespace QLSV
             fDSSVTheoLop f = new fDSSVTheoLop();
             f.maLop = int.Parse(dgvDSLH.Rows[e.RowIndex].Cells["maLopHoc"].Value.ToString());
             f.Show();
+        }
+
+        private void btXuatDS_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xuatFile.XuatFileExcelDanhSach(dgvDSLH, saveFileDialog1.FileName, "Danh Sách Tất Cả Các Lớp Học");
+            }
+            
         }
     }
 }

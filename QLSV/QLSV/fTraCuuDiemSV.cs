@@ -13,6 +13,7 @@ namespace QLSV
 {
     public partial class fTraCuuDiemSV : Form
     {
+        XuatExcel xuatFile;
         BUSSinhVien bus;
         public int maSV;
         public int maMon;
@@ -20,6 +21,7 @@ namespace QLSV
         {
             InitializeComponent();
             bus = new BUSSinhVien();
+            xuatFile = new XuatExcel();
         }
 
         private void HienThiDiemTheoSinhVien (int maSinhVien, int maMonHoc)
@@ -63,6 +65,25 @@ namespace QLSV
         private void btTim_Click(object sender, EventArgs e)
         {
             HienThiDiemTheoSinhVien(maSV, int.Parse(cbMonHoc.SelectedValue.ToString()));
+        }
+
+        private void btTatCaHK_Click(object sender, EventArgs e)
+        {
+            bus.HienThiDiemTatCaHKTheoSV(maSV, dgvDiemSV);
+        }
+
+        private void btHKHienTai_Click(object sender, EventArgs e)
+        {
+            HienThiDiemTheoSinhVien(maSV, 0);
+        }
+
+        private void btXuatExcel_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xuatFile.XuatFileExcelBangDiem(dgvDiemSV, saveFileDialog1.FileName,"Bảng Điểm Sinh Viên " + maSV);
+            }
+            
         }
     }
 }

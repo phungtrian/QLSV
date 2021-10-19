@@ -36,6 +36,7 @@ namespace QLSV
             dgvDSLH.Columns[2].Width = (int)(0.2 * dgvDSLH.Width);
             dgvDSLH.Columns[3].Width = (int)(0.2 * dgvDSLH.Width);
             dgvDSLH.Columns[4].Width = (int)(0.2 * dgvDSLH.Width);
+            dgvDSLH.RowHeadersVisible = false;
 
         }
 

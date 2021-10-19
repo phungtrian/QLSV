@@ -114,6 +114,7 @@
           <ScalarProperty Name="maLopHoc" ColumnName="maLopHoc" />
           <ScalarProperty Name="HoTenGiangVien" ColumnName="HoTenGiangVien" />
           <ScalarProperty Name="maGiangVien" ColumnName="maGiangVien" />
+          <ScalarProperty Name="daKetThuc" ColumnName="daKetThuc" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -264,5 +265,18 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="DangKyMonHoc" FunctionName="QLSVModel.Store.DangKyMonHoc" />
     <FunctionImportMapping FunctionImportName="HuyMon" FunctionName="QLSVModel.Store.HuyMon" />
+    <FunctionImportMapping FunctionImportName="DiemTatCaHKTheoSV" FunctionName="QLSVModel.Store.DiemTatCaHKTheoSV">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QLSVModel.DiemTatCaHKTheoSV_Result">
+          <ScalarProperty Name="malophoc" ColumnName="malophoc" />
+          <ScalarProperty Name="mamonhoc" ColumnName="mamonhoc" />
+          <ScalarProperty Name="tenmonhoc" ColumnName="tenmonhoc" />
+          <ScalarProperty Name="sotinchi" ColumnName="sotinchi" />
+          <ScalarProperty Name="diemLan1" ColumnName="diemLan1" />
+          <ScalarProperty Name="diemLan2" ColumnName="diemLan2" />
+          <ScalarProperty Name="diemtongket" ColumnName="diemtongket" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

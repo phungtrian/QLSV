@@ -30,6 +30,7 @@ namespace QLSV
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLDSMH));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btXoa = new System.Windows.Forms.Button();
@@ -48,6 +49,8 @@ namespace QLSV
             this.dgvDSMH = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btXuat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMH)).BeginInit();
@@ -233,7 +236,7 @@ namespace QLSV
             this.groupBox3.Controls.Add(this.txtTuKhoa);
             this.groupBox3.Controls.Add(this.btTraCuu);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(202, 334);
+            this.groupBox3.Location = new System.Drawing.Point(79, 334);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -245,6 +248,7 @@ namespace QLSV
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(338, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(387, 51);
@@ -252,17 +256,35 @@ namespace QLSV
             this.label1.Text = "Danh Sách Môn Học";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Excel 2019|*.xlsx|Excel 2003|*.xls";
+            // 
+            // btXuat
+            // 
+            this.btXuat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btXuat.Location = new System.Drawing.Point(806, 350);
+            this.btXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btXuat.Name = "btXuat";
+            this.btXuat.Size = new System.Drawing.Size(151, 60);
+            this.btXuat.TabIndex = 0;
+            this.btXuat.Text = "Xuất Danh Sách Môn Học";
+            this.btXuat.UseVisualStyleBackColor = true;
+            this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
+            // 
             // fQLDSMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1052, 752);
+            this.Controls.Add(this.btXuat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fQLDSMH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -299,5 +321,7 @@ namespace QLSV
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTuKhoa;
         private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button btXuat;
     }
 }

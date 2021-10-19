@@ -109,6 +109,11 @@ namespace QLSV.BUS
             dg.DataSource = da.DSDiemTatCaMonTheoSV(maSV);
         }
 
+        public void HienThiDiemTatCaHKTheoSV(int maSV, DataGridView dg)
+        {
+            dg.DataSource = da.DSDiemTatCaHKTheoSV(maSV);
+        }
+
         public void HienThiDiem1MonTheoSV(int maSV,int maMon, DataGridView dg)
         {
             dg.DataSource = da.DSDiem1MonTheoSV(maSV, maMon);

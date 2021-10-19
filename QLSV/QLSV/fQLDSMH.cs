@@ -13,11 +13,13 @@ namespace QLSV
 {
     public partial class fQLDSMH : Form
     {
+        XuatExcel xuatFile;
         BUSMonHoc busDSMH;
         public fQLDSMH()
         {
             InitializeComponent();
             busDSMH = new BUSMonHoc();
+            xuatFile = new XuatExcel();
         }
 
         private void HienThiDSMH()
@@ -126,6 +128,14 @@ namespace QLSV
             if (e.KeyCode == Keys.Enter)
             {
                 btTraCuu.PerformClick();
+            }
+        }
+
+        private void btXuat_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                xuatFile.XuatFileExcelDanhSach(dgvDSMH, saveFileDialog1.FileName, "Danh Sách Tất Cả Các Môn Học");
             }
         }
     }

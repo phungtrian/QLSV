@@ -29,28 +29,29 @@ namespace QLSV
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDSSVTheoLop));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbLop = new System.Windows.Forms.ComboBox();
-            this.txtMSSV = new System.Windows.Forms.TextBox();
-            this.cbMonHoc = new System.Windows.Forms.ComboBox();
             this.btChon = new System.Windows.Forms.Button();
-            this.btHuyMon = new System.Windows.Forms.Button();
+            this.cbMonHoc = new System.Windows.Forms.ComboBox();
+            this.cbLop = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDiem = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btHuyMon = new System.Windows.Forms.Button();
+            this.txtMSSV = new System.Windows.Forms.TextBox();
             this.btChamDiem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiem)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(271, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(524, 46);
@@ -70,6 +71,34 @@ namespace QLSV
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chọn Lớp";
             // 
+            // btChon
+            // 
+            this.btChon.Location = new System.Drawing.Point(391, 22);
+            this.btChon.Name = "btChon";
+            this.btChon.Size = new System.Drawing.Size(104, 33);
+            this.btChon.TabIndex = 1;
+            this.btChon.Text = "Chọn";
+            this.btChon.UseVisualStyleBackColor = true;
+            this.btChon.Click += new System.EventHandler(this.btChon_Click);
+            // 
+            // cbMonHoc
+            // 
+            this.cbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbMonHoc.FormattingEnabled = true;
+            this.cbMonHoc.Location = new System.Drawing.Point(113, 26);
+            this.cbMonHoc.Name = "cbMonHoc";
+            this.cbMonHoc.Size = new System.Drawing.Size(243, 27);
+            this.cbMonHoc.TabIndex = 0;
+            // 
+            // cbLop
+            // 
+            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.Location = new System.Drawing.Point(6, 26);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.Size = new System.Drawing.Size(101, 27);
+            this.cbLop.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvDiem);
@@ -80,6 +109,17 @@ namespace QLSV
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Sinh Viên";
+            // 
+            // dgvDiem
+            // 
+            this.dgvDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDiem.Location = new System.Drawing.Point(6, 26);
+            this.dgvDiem.Name = "dgvDiem";
+            this.dgvDiem.RowHeadersWidth = 51;
+            this.dgvDiem.RowTemplate.Height = 24;
+            this.dgvDiem.Size = new System.Drawing.Size(965, 432);
+            this.dgvDiem.TabIndex = 0;
+            this.dgvDiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiem_CellClick);
             // 
             // groupBox3
             // 
@@ -93,41 +133,6 @@ namespace QLSV
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sinh Viên được chọn";
             // 
-            // cbLop
-            // 
-            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(6, 26);
-            this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(101, 27);
-            this.cbLop.TabIndex = 0;
-            // 
-            // txtMSSV
-            // 
-            this.txtMSSV.Location = new System.Drawing.Point(24, 27);
-            this.txtMSSV.Name = "txtMSSV";
-            this.txtMSSV.Size = new System.Drawing.Size(197, 27);
-            this.txtMSSV.TabIndex = 0;
-            // 
-            // cbMonHoc
-            // 
-            this.cbMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cbMonHoc.FormattingEnabled = true;
-            this.cbMonHoc.Location = new System.Drawing.Point(113, 26);
-            this.cbMonHoc.Name = "cbMonHoc";
-            this.cbMonHoc.Size = new System.Drawing.Size(243, 27);
-            this.cbMonHoc.TabIndex = 0;
-            // 
-            // btChon
-            // 
-            this.btChon.Location = new System.Drawing.Point(391, 22);
-            this.btChon.Name = "btChon";
-            this.btChon.Size = new System.Drawing.Size(104, 33);
-            this.btChon.TabIndex = 1;
-            this.btChon.Text = "Chọn";
-            this.btChon.UseVisualStyleBackColor = true;
-            this.btChon.Click += new System.EventHandler(this.btChon_Click);
-            // 
             // btHuyMon
             // 
             this.btHuyMon.Location = new System.Drawing.Point(367, 21);
@@ -138,16 +143,12 @@ namespace QLSV
             this.btHuyMon.UseVisualStyleBackColor = true;
             this.btHuyMon.Click += new System.EventHandler(this.btHuyMon_Click);
             // 
-            // dgvDiem
+            // txtMSSV
             // 
-            this.dgvDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiem.Location = new System.Drawing.Point(6, 26);
-            this.dgvDiem.Name = "dgvDiem";
-            this.dgvDiem.RowHeadersWidth = 51;
-            this.dgvDiem.RowTemplate.Height = 24;
-            this.dgvDiem.Size = new System.Drawing.Size(965, 432);
-            this.dgvDiem.TabIndex = 0;
-            this.dgvDiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiem_CellClick);
+            this.txtMSSV.Location = new System.Drawing.Point(24, 27);
+            this.txtMSSV.Name = "txtMSSV";
+            this.txtMSSV.Size = new System.Drawing.Size(197, 27);
+            this.txtMSSV.TabIndex = 0;
             // 
             // btChamDiem
             // 
@@ -164,22 +165,23 @@ namespace QLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightCyan;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1070, 612);
             this.Controls.Add(this.btChamDiem);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fDSSVTheoLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fDSSVTheoLop";
             this.Load += new System.EventHandler(this.fDSSVTheoLop_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiem)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

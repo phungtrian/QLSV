@@ -13,11 +13,13 @@ namespace QLSV
 {
     public partial class fQLDSSV : Form
     {
+        XuatExcel xuatFile;
         BUSSinhVien busDSSV;
         public fQLDSSV()
         {
             InitializeComponent();
             busDSSV = new BUSSinhVien();
+            xuatFile = new XuatExcel();
         }
 
         private void HienThiDSSV()
@@ -32,7 +34,7 @@ namespace QLSV
             dgvDSSV.Columns[5].Width = (int)(0.19 * dgvDSSV.Width);
             dgvDSSV.Columns[6].Width = (int)(0.1 * dgvDSSV.Width);
             dgvDSSV.Columns[7].Width = (int)(0.125 * dgvDSSV.Width);
-            //dgvDSSV.RowHeadersVisible = false;
+            dgvDSSV.RowHeadersVisible = false;
             //dgvDSSV.AllowUserToAddRows = true;
             //dgvDSSV.AllowUserToDeleteRows = true;
             //dgvDSSV.AllowUserToOrderColumns = true;
@@ -70,7 +72,15 @@ namespace QLSV
             {
                 SinhVien sv;
                 sv = new SinhVien();
-                sv.maSinhVien = int.Parse(txtMSSV.Text);
+                try
+                {
+                    sv.maSinhVien = int.Parse(txtMSSV.Text.ToString());
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Mã Sinh Viên chỉ được phép nhập số");
+                }
                 sv.Ho = txtHo.Text;
                 sv.Ten = txtTen.Text;
                 sv.namSinh = dtpNamSinh.Value;
@@ -149,7 +159,15 @@ namespace QLSV
         private void btThem_Click(object sender, EventArgs e)
         {
             SinhVien sv = new SinhVien();
-            sv.maSinhVien = int.Parse(txtMSSV.Text.ToString());
+            try
+            {
+                sv.maSinhVien = int.Parse(txtMSSV.Text.ToString());
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Mã Sinh Viên chỉ được phép nhập số");
+            }
             sv.Ho = txtHo.Text.ToString();
             sv.Ten = txtTen.Text.ToString();
             sv.gioiTinh = cbLoaiGioiTinh.Text;
@@ -167,23 +185,32 @@ namespace QLSV
 
         private void dgvDSSV_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            // nhập trên data gridview
+            //if (e.ColumnIndex == 0)
+            //{
+            //    MessageBox.Show("Không thể sửa mã sv");
+            //}
+            //else
+            //{
+            //    SinhVien sv = new SinhVien();
+            //    sv.maSinhVien = int.Parse(dgvDSSV.Rows[e.RowIndex].Cells["maSinhVien"].Value.ToString());
+            //    sv.Ho = dgvDSSV.Rows[e.RowIndex].Cells["Ho"].Value.ToString();
+            //    sv.Ten = dgvDSSV.Rows[e.RowIndex].Cells["Ten"].Value.ToString();
+            //    sv.gioiTinh = dgvDSSV.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString();
+            //    sv.namSinh = (DateTime)dgvDSSV.Rows[e.RowIndex].Cells["NamSinh"].Value;
+            //    sv.queQuan = dgvDSSV.Rows[e.RowIndex].Cells["QueQuan"].Value.ToString();
+            //    sv.diaChi = dgvDSSV.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
+            //    sv.dienThoai = int.Parse(dgvDSSV.Rows[e.RowIndex].Cells["DienThoai"].Value.ToString());
+            //    sv.matKhau = "123";
+            //    busDSSV.SuaSinhVien(sv);
+            //}
+        }
+
+        private void btXuat_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Không thể sửa mã sv");
-            }
-            else
-            {
-                SinhVien sv = new SinhVien();
-                sv.maSinhVien = int.Parse(dgvDSSV.Rows[e.RowIndex].Cells["maSinhVien"].Value.ToString());
-                sv.Ho = dgvDSSV.Rows[e.RowIndex].Cells["Ho"].Value.ToString();
-                sv.Ten = dgvDSSV.Rows[e.RowIndex].Cells["Ten"].Value.ToString();
-                sv.gioiTinh = dgvDSSV.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString();
-                sv.namSinh = (DateTime)dgvDSSV.Rows[e.RowIndex].Cells["NamSinh"].Value;
-                sv.queQuan = dgvDSSV.Rows[e.RowIndex].Cells["QueQuan"].Value.ToString();
-                sv.diaChi = dgvDSSV.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
-                sv.dienThoai = int.Parse(dgvDSSV.Rows[e.RowIndex].Cells["DienThoai"].Value.ToString());
-                sv.matKhau = "123";
-                busDSSV.SuaSinhVien(sv);
+                xuatFile.XuatFileExcelDanhSach(dgvDSSV, saveFileDialog1.FileName, "Danh Sách Tất Cả Các Sinh Viên");
             }
         }
     }

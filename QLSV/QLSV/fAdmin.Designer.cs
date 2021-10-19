@@ -29,6 +29,7 @@ namespace QLSV
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.quanLySinhVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyGiangVienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,7 +98,7 @@ namespace QLSV
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.LightCyan;
+            this.pnlContent.BackColor = System.Drawing.Color.Beige;
             this.pnlContent.Location = new System.Drawing.Point(0, 33);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1196, 734);
@@ -112,6 +113,7 @@ namespace QLSV
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

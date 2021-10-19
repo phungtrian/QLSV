@@ -30,6 +30,7 @@ namespace QLSV
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNhapDiem));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btChonLop = new System.Windows.Forms.Button();
@@ -317,7 +318,7 @@ namespace QLSV
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.Filter = "Excel 2003|*.xls|Excel 2019|*.xlsx";
+            this.saveFileDialog1.Filter = "Excel 2019|*.xlsx|Excel 2003|*.xls";
             // 
             // fNhapDiem
             // 
@@ -334,6 +335,7 @@ namespace QLSV
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fNhapDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập điểm sinh viên";
