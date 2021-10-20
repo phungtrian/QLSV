@@ -153,7 +153,7 @@ namespace QLSV
             this.groupBox2.Location = new System.Drawing.Point(21, 185);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(742, 106);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chi tiết";
             // 
@@ -162,7 +162,7 @@ namespace QLSV
             this.txtDiemLan1.Location = new System.Drawing.Point(197, 69);
             this.txtDiemLan1.Name = "txtDiemLan1";
             this.txtDiemLan1.Size = new System.Drawing.Size(70, 26);
-            this.txtDiemLan1.TabIndex = 9;
+            this.txtDiemLan1.TabIndex = 1;
             // 
             // label12
             // 
@@ -178,14 +178,14 @@ namespace QLSV
             this.txtDiemTongKet.Location = new System.Drawing.Point(655, 69);
             this.txtDiemTongKet.Name = "txtDiemTongKet";
             this.txtDiemTongKet.Size = new System.Drawing.Size(59, 26);
-            this.txtDiemTongKet.TabIndex = 11;
+            this.txtDiemTongKet.TabIndex = 3;
             // 
             // txtDiemLan2
             // 
             this.txtDiemLan2.Location = new System.Drawing.Point(431, 69);
             this.txtDiemLan2.Name = "txtDiemLan2";
             this.txtDiemLan2.Size = new System.Drawing.Size(59, 26);
-            this.txtDiemLan2.TabIndex = 11;
+            this.txtDiemLan2.TabIndex = 2;
             // 
             // label2
             // 
@@ -226,7 +226,7 @@ namespace QLSV
             this.txtMaSV.Location = new System.Drawing.Point(197, 28);
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.Size = new System.Drawing.Size(112, 26);
-            this.txtMaSV.TabIndex = 5;
+            this.txtMaSV.TabIndex = 0;
             // 
             // label7
             // 
@@ -287,7 +287,7 @@ namespace QLSV
             this.btThoat.Location = new System.Drawing.Point(769, 308);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(92, 39);
-            this.btThoat.TabIndex = 8;
+            this.btThoat.TabIndex = 2;
             this.btThoat.Text = "Thoát ";
             this.btThoat.UseVisualStyleBackColor = true;
             // 
@@ -298,7 +298,7 @@ namespace QLSV
             this.btNhap.Location = new System.Drawing.Point(769, 237);
             this.btNhap.Name = "btNhap";
             this.btNhap.Size = new System.Drawing.Size(92, 39);
-            this.btNhap.TabIndex = 5;
+            this.btNhap.TabIndex = 1;
             this.btNhap.Text = "Nhập";
             this.btNhap.UseVisualStyleBackColor = true;
             this.btNhap.Click += new System.EventHandler(this.btNhap_Click);
@@ -311,7 +311,7 @@ namespace QLSV
             this.btIn.Location = new System.Drawing.Point(769, 384);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(92, 37);
-            this.btIn.TabIndex = 12;
+            this.btIn.TabIndex = 3;
             this.btIn.Text = "In Bảng Điểm";
             this.btIn.UseVisualStyleBackColor = true;
             this.btIn.Click += new System.EventHandler(this.btIn_Click);

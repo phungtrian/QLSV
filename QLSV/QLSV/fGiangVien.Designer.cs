@@ -108,7 +108,7 @@ namespace QLSV
             this.groupBox2.Location = new System.Drawing.Point(81, 102);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(840, 219);
-            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin Lớp Học";
             // 
@@ -148,7 +148,7 @@ namespace QLSV
             this.txtTenMonHoc.Multiline = true;
             this.txtTenMonHoc.Name = "txtTenMonHoc";
             this.txtTenMonHoc.Size = new System.Drawing.Size(185, 22);
-            this.txtTenMonHoc.TabIndex = 6;
+            this.txtTenMonHoc.TabIndex = 4;
             // 
             // txtSiSo
             // 
@@ -156,7 +156,7 @@ namespace QLSV
             this.txtSiSo.Multiline = true;
             this.txtSiSo.Name = "txtSiSo";
             this.txtSiSo.Size = new System.Drawing.Size(185, 22);
-            this.txtSiSo.TabIndex = 6;
+            this.txtSiSo.TabIndex = 3;
             // 
             // txtMaMonHoc
             // 
@@ -164,7 +164,7 @@ namespace QLSV
             this.txtMaMonHoc.Multiline = true;
             this.txtMaMonHoc.Name = "txtMaMonHoc";
             this.txtMaMonHoc.Size = new System.Drawing.Size(185, 22);
-            this.txtMaMonHoc.TabIndex = 6;
+            this.txtMaMonHoc.TabIndex = 2;
             // 
             // label7
             // 
@@ -184,7 +184,7 @@ namespace QLSV
             this.txtMaLopHoc.Multiline = true;
             this.txtMaLopHoc.Name = "txtMaLopHoc";
             this.txtMaLopHoc.Size = new System.Drawing.Size(185, 22);
-            this.txtMaLopHoc.TabIndex = 6;
+            this.txtMaLopHoc.TabIndex = 1;
             // 
             // label5
             // 
@@ -228,7 +228,7 @@ namespace QLSV
             this.cbGiangVien.Margin = new System.Windows.Forms.Padding(4);
             this.cbGiangVien.Name = "cbGiangVien";
             this.cbGiangVien.Size = new System.Drawing.Size(185, 27);
-            this.cbGiangVien.TabIndex = 1;
+            this.cbGiangVien.TabIndex = 5;
             // 
             // btKetThucMon
             // 
@@ -237,7 +237,7 @@ namespace QLSV
             this.btKetThucMon.Margin = new System.Windows.Forms.Padding(4);
             this.btKetThucMon.Name = "btKetThucMon";
             this.btKetThucMon.Size = new System.Drawing.Size(203, 40);
-            this.btKetThucMon.TabIndex = 2;
+            this.btKetThucMon.TabIndex = 8;
             this.btKetThucMon.Text = "Kết Thúc Môn";
             this.btKetThucMon.UseVisualStyleBackColor = true;
             this.btKetThucMon.Click += new System.EventHandler(this.btKetThucMon_Click);
@@ -249,7 +249,7 @@ namespace QLSV
             this.btDangXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btDangXuat.Name = "btDangXuat";
             this.btDangXuat.Size = new System.Drawing.Size(165, 40);
-            this.btDangXuat.TabIndex = 2;
+            this.btDangXuat.TabIndex = 9;
             this.btDangXuat.Text = "Đăng Xuất";
             this.btDangXuat.UseVisualStyleBackColor = true;
             this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
@@ -261,7 +261,7 @@ namespace QLSV
             this.btChamDiem.Margin = new System.Windows.Forms.Padding(4);
             this.btChamDiem.Name = "btChamDiem";
             this.btChamDiem.Size = new System.Drawing.Size(171, 40);
-            this.btChamDiem.TabIndex = 2;
+            this.btChamDiem.TabIndex = 7;
             this.btChamDiem.Text = "Nhập Điểm";
             this.btChamDiem.UseVisualStyleBackColor = true;
             this.btChamDiem.Click += new System.EventHandler(this.btChamDiem_Click);

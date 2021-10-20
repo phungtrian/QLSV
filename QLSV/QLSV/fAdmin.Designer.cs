@@ -52,7 +52,7 @@ namespace QLSV
             this.DangXuatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1043, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1071, 30);
             this.menuStrip1.TabIndex = 1;
             // 
             // quanLySinhVienToolStripMenuItem
@@ -99,9 +99,11 @@ namespace QLSV
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.Beige;
+            this.pnlContent.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlContent.BackgroundImage")));
+            this.pnlContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlContent.Location = new System.Drawing.Point(0, 33);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1196, 734);
+            this.pnlContent.Size = new System.Drawing.Size(1071, 616);
             this.pnlContent.TabIndex = 2;
             // 
             // fAdmin
@@ -109,7 +111,7 @@ namespace QLSV
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1043, 767);
+            this.ClientSize = new System.Drawing.Size(1071, 646);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

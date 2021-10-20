@@ -80,7 +80,7 @@ namespace QLSV
             this.txtTuKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTuKhoa.Name = "txtTuKhoa";
             this.txtTuKhoa.Size = new System.Drawing.Size(290, 27);
-            this.txtTuKhoa.TabIndex = 1;
+            this.txtTuKhoa.TabIndex = 0;
             this.txtTuKhoa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTuKhoa_KeyDown);
             // 
             // btTraCuu
@@ -90,7 +90,7 @@ namespace QLSV
             this.btTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btTraCuu.Name = "btTraCuu";
             this.btTraCuu.Size = new System.Drawing.Size(151, 39);
-            this.btTraCuu.TabIndex = 0;
+            this.btTraCuu.TabIndex = 1;
             this.btTraCuu.Text = "Tra cứu";
             this.btTraCuu.UseVisualStyleBackColor = true;
             this.btTraCuu.Click += new System.EventHandler(this.btTraCuu_Click);
@@ -139,7 +139,7 @@ namespace QLSV
             this.btThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(134, 38);
-            this.btThem.TabIndex = 6;
+            this.btThem.TabIndex = 9;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
@@ -233,7 +233,7 @@ namespace QLSV
             this.groupBox1.Location = new System.Drawing.Point(132, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(791, 264);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Giảng Viên";
             // 
@@ -246,7 +246,7 @@ namespace QLSV
             this.cbLoaiGioiTinh.Location = new System.Drawing.Point(473, 66);
             this.cbLoaiGioiTinh.Name = "cbLoaiGioiTinh";
             this.cbLoaiGioiTinh.Size = new System.Drawing.Size(196, 27);
-            this.cbLoaiGioiTinh.TabIndex = 11;
+            this.cbLoaiGioiTinh.TabIndex = 4;
             // 
             // dtpNamSinh
             // 
@@ -254,7 +254,7 @@ namespace QLSV
             this.dtpNamSinh.Location = new System.Drawing.Point(137, 104);
             this.dtpNamSinh.Name = "dtpNamSinh";
             this.dtpNamSinh.Size = new System.Drawing.Size(247, 27);
-            this.dtpNamSinh.TabIndex = 10;
+            this.dtpNamSinh.TabIndex = 5;
             // 
             // label9
             // 
@@ -279,7 +279,7 @@ namespace QLSV
             this.txtSDT.Multiline = true;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(196, 22);
-            this.txtSDT.TabIndex = 8;
+            this.txtSDT.TabIndex = 6;
             // 
             // btXoa
             // 
@@ -288,7 +288,7 @@ namespace QLSV
             this.btXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(134, 38);
-            this.btXoa.TabIndex = 6;
+            this.btXoa.TabIndex = 11;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
@@ -300,7 +300,7 @@ namespace QLSV
             this.btCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btCapNhat.Name = "btCapNhat";
             this.btCapNhat.Size = new System.Drawing.Size(152, 38);
-            this.btCapNhat.TabIndex = 6;
+            this.btCapNhat.TabIndex = 10;
             this.btCapNhat.Text = "Cập Nhật";
             this.btCapNhat.UseVisualStyleBackColor = true;
             this.btCapNhat.Click += new System.EventHandler(this.btCapNhat_Click);
@@ -311,7 +311,7 @@ namespace QLSV
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(532, 22);
-            this.txtEmail.TabIndex = 8;
+            this.txtEmail.TabIndex = 7;
             // 
             // txtMaGV
             // 
@@ -320,7 +320,7 @@ namespace QLSV
             this.txtMaGV.Multiline = true;
             this.txtMaGV.Name = "txtMaGV";
             this.txtMaGV.Size = new System.Drawing.Size(247, 22);
-            this.txtMaGV.TabIndex = 8;
+            this.txtMaGV.TabIndex = 3;
             this.txtMaGV.Text = "1";
             // 
             // txtHo
@@ -329,7 +329,7 @@ namespace QLSV
             this.txtHo.Multiline = true;
             this.txtHo.Name = "txtHo";
             this.txtHo.Size = new System.Drawing.Size(247, 22);
-            this.txtHo.TabIndex = 8;
+            this.txtHo.TabIndex = 1;
             // 
             // txtTen
             // 
@@ -337,7 +337,7 @@ namespace QLSV
             this.txtTen.Multiline = true;
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(196, 22);
-            this.txtTen.TabIndex = 8;
+            this.txtTen.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -347,7 +347,7 @@ namespace QLSV
             this.groupBox3.Location = new System.Drawing.Point(97, 346);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(679, 75);
-            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tra Cứu Giảng Viên";
             // 
@@ -358,7 +358,7 @@ namespace QLSV
             this.btXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btXuat.Name = "btXuat";
             this.btXuat.Size = new System.Drawing.Size(151, 50);
-            this.btXuat.TabIndex = 0;
+            this.btXuat.TabIndex = 2;
             this.btXuat.Text = "Xuất Danh Sách Giảng Viên";
             this.btXuat.UseVisualStyleBackColor = true;
             this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
@@ -383,7 +383,7 @@ namespace QLSV
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fQLDSGV";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "QLSV";
             this.Load += new System.EventHandler(this.fQLDSGV_Load);
             this.groupBox2.ResumeLayout(false);

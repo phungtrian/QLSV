@@ -106,7 +106,7 @@ namespace QLSV
             this.groupBox2.Location = new System.Drawing.Point(12, 136);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(978, 464);
-            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Sinh Viên";
             // 
@@ -129,7 +129,7 @@ namespace QLSV
             this.groupBox3.Location = new System.Drawing.Point(556, 58);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(491, 63);
-            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sinh Viên được chọn";
             // 
@@ -156,7 +156,7 @@ namespace QLSV
             this.btChamDiem.Location = new System.Drawing.Point(996, 177);
             this.btChamDiem.Name = "btChamDiem";
             this.btChamDiem.Size = new System.Drawing.Size(68, 81);
-            this.btChamDiem.TabIndex = 4;
+            this.btChamDiem.TabIndex = 3;
             this.btChamDiem.Text = "Nhập Điểm";
             this.btChamDiem.UseVisualStyleBackColor = true;
             this.btChamDiem.Click += new System.EventHandler(this.btChamDiem_Click);

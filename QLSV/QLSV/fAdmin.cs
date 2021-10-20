@@ -20,11 +20,12 @@ namespace QLSV
         {
             this.pnlContent.Controls.Clear();
             //this.mnsMain.Show();
+            
             f.TopLevel = false;
             f.AutoScroll = false;
             f.FormBorderStyle = FormBorderStyle.None;
             f.Dock = DockStyle.Fill;
-            f.StartPosition = FormStartPosition.Manual;
+            f.StartPosition = FormStartPosition.CenterParent;
             this.Text = f.Text;
             this.pnlContent.Controls.Add(f);
             f.Show();

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLSV.BUS;
 using System.IO;
-using Microsoft.Office.Interop.Excel;
+
 
 namespace QLSV
 {

@@ -287,6 +287,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -315,6 +316,7 @@
   <ItemGroup>
     <Content Include="bloc notas.ico" />
     <Content Include="image\bloc notas.ico" />
+    <None Include="image\phan-mem-quan-ly-hoc-sinh.jpg" />
     <Content Include="QLSVEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLSVEntity.edmx</DependentUpon>
