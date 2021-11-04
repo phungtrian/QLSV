@@ -103,7 +103,7 @@ namespace QLSV
             this.pnlContent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlContent.Location = new System.Drawing.Point(0, 33);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1071, 616);
+            this.pnlContent.Size = new System.Drawing.Size(1071, 677);
             this.pnlContent.TabIndex = 2;
             // 
             // fAdmin
@@ -111,7 +111,7 @@ namespace QLSV
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1071, 646);
+            this.ClientSize = new System.Drawing.Size(1071, 722);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

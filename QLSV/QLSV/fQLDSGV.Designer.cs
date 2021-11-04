@@ -174,7 +174,7 @@ namespace QLSV
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 190);
+            this.label5.Location = new System.Drawing.Point(6, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 19);
             this.label5.TabIndex = 7;
@@ -183,7 +183,7 @@ namespace QLSV
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 150);
+            this.label6.Location = new System.Drawing.Point(6, 143);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 19);
             this.label6.TabIndex = 7;
@@ -192,7 +192,7 @@ namespace QLSV
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 104);
+            this.label7.Location = new System.Drawing.Point(6, 108);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 19);
             this.label7.TabIndex = 7;
@@ -267,18 +267,18 @@ namespace QLSV
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(137, 187);
+            this.txtDiaChi.Location = new System.Drawing.Point(137, 178);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(532, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(532, 31);
             this.txtDiaChi.TabIndex = 8;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(473, 105);
+            this.txtSDT.Location = new System.Drawing.Point(473, 99);
             this.txtSDT.Multiline = true;
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(196, 22);
+            this.txtSDT.Size = new System.Drawing.Size(196, 28);
             this.txtSDT.TabIndex = 6;
             // 
             // btXoa
@@ -307,36 +307,36 @@ namespace QLSV
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(137, 147);
+            this.txtEmail.Location = new System.Drawing.Point(137, 140);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(532, 22);
+            this.txtEmail.Size = new System.Drawing.Size(532, 29);
             this.txtEmail.TabIndex = 7;
             // 
             // txtMaGV
             // 
             this.txtMaGV.Enabled = false;
-            this.txtMaGV.Location = new System.Drawing.Point(137, 66);
+            this.txtMaGV.Location = new System.Drawing.Point(137, 60);
             this.txtMaGV.Multiline = true;
             this.txtMaGV.Name = "txtMaGV";
-            this.txtMaGV.Size = new System.Drawing.Size(247, 22);
+            this.txtMaGV.Size = new System.Drawing.Size(247, 28);
             this.txtMaGV.TabIndex = 3;
             this.txtMaGV.Text = "1";
             // 
             // txtHo
             // 
-            this.txtHo.Location = new System.Drawing.Point(137, 32);
+            this.txtHo.Location = new System.Drawing.Point(137, 26);
             this.txtHo.Multiline = true;
             this.txtHo.Name = "txtHo";
-            this.txtHo.Size = new System.Drawing.Size(247, 22);
+            this.txtHo.Size = new System.Drawing.Size(247, 28);
             this.txtHo.TabIndex = 1;
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(473, 29);
+            this.txtTen.Location = new System.Drawing.Point(473, 26);
             this.txtTen.Multiline = true;
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(196, 22);
+            this.txtTen.Size = new System.Drawing.Size(196, 25);
             this.txtTen.TabIndex = 2;
             // 
             // groupBox3

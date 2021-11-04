@@ -43,5 +43,4 @@ D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fSinhVien.resources
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fDangKyMonHoc.resources
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fTraCuuDiemSV.resources
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fDSSVTheoLop.resources
-D:\gitDoAn\QLSV\QLSV\bin\Debug\itextsharp.dll
 D:\gitDoAn\QLSV\QLSV\obj\Debug\QLSV.fNhapDiem.resources
