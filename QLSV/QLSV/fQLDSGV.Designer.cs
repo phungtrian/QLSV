@@ -354,10 +354,10 @@ namespace QLSV
             // btXuat
             // 
             this.btXuat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btXuat.Location = new System.Drawing.Point(820, 369);
+            this.btXuat.Location = new System.Drawing.Point(820, 360);
             this.btXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btXuat.Name = "btXuat";
-            this.btXuat.Size = new System.Drawing.Size(151, 50);
+            this.btXuat.Size = new System.Drawing.Size(151, 59);
             this.btXuat.TabIndex = 2;
             this.btXuat.Text = "Xuất Danh Sách Giảng Viên";
             this.btXuat.UseVisualStyleBackColor = true;
